@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insane clicker</title>
+
+</head>
+<body >
+
+        <div class="container">
+
+            <div class="liczbawelne">
+                <b><img src="bawelna.png" height="50px" width="50px" id="zdj1"><div id="bawelna" class="liczbawelne2"> 0 </div></b>
+            </div>
+            <div class="liczresety">
+                <b><img src="rebirth.png" height="45px" width="45px"><div id="rebirty" class="liczresety2"> 0 </div></b>
+            </div>
+            <div class="liczziarna">
+                <b><img src="rice.png" height="45px" width="55px"><div id="zbziarna" class="liczziarna2"> 0 </div></b>
+            </div>
+            <button onclick="dupa()">ZAPIS</button>
+            <button onclick="dupa2()">RESET WARTOSCI</button>
+        </div>
+        <div class="display">
+                <div class="odstep">
+                <div class="fleks">
+                    <div class="przycisksklep" ONCLICK="ShowAndHide()">
+                        <img src="sklep.png" width="70px" height="70px" class="xd22">
+                    </div>
+                    <div class="przycisksklep2" ONCLICK="ShowAndHide2()">
+                        <img src="rebirth.png" width="50px" height="50px" class="xd21">
+                    </div>
+                    <div class="przycisksklep3" ONCLICK="ShowAndHide3()">
+                        <img src="rice.png" width="60px" height="55px" class="xd20">
+                    </div>
+                    <div class="przycisksklep4" ONCLICK="ShowAndHide4()">
+                        <img src="chest1.png" width="60px" height="55px" class="xd20">
+                    </div>
+
+                </div>
+            </div>
+            
+        <div class="odstep2">
+            <div class="klikanie" onclick="klikniecia()"  ><p class="srodek"><img src="bawelna.png" height="200px" width="200px" class="srodek" id="zdjzbieranie"></p></div>
+        </div>
+    </div>
+
+    <DIV ID="pokazsklep" STYLE="display:none" class="sklepy">
+        <div class="tekst"><img src="sklep.png" width="75px" height="75px" class="tekst1">
+           <b><p class="napiswsklepie">SKLEP</p></b>
+        </div>
+        <div class="ulepszenie" onclick="upnarzedzia1()">
+            <b>
+            <div class="ikonaulepki" id="u1"><p class="zdjecie"><img src="narzedziewood.png" height="60" width="60px"></p></div>
+            <div class="nazwaulepki">Drewniane narzędzia</div>
+            <div class="opisulepki">Ulepsz narzędzia do zbierania bawełny,<br> takie jak kosy, podcinacze, czy kombajny,<br> aby zwiększyć wydajność zbierania.</div>
+            <div class="kosztulepki">20</div>
+            </b>
+        </div>
+        <div class="ulepszenie" onclick="upnarzedzia2()">
+            <b>
+            <div class="ikonaulepki" id="u2"><p class="zdjecie"><img src="narzedziestone.png" height="60" width="60px"></p></div>
+            <div class="nazwaulepki">Kamienne narzędzia</div>
+            <div class="opisulepki">Ulepsz narzędzia do zbierania bawełny,<br> takie jak kosy, podcinacze, czy kombajny,<br> aby zwiększyć wydajność zbierania.</div>
+            <div class="kosztulepki">350</div>
+            </b>
+        </div>
+        <div class="ulepszenie" onclick="upnarzedzia3()">
+            <b>
+            <div class="ikonaulepki" id="u3"><p class="zdjecie"><img src="narzedzieiron.png" height="60" width="60px"></p></div>
+            <div class="nazwaulepki">Żelazne narzędzia</div>
+            <div class="opisulepki">Ulepsz narzędzia do zbierania bawełny,<br> takie jak kosy, podcinacze, czy kombajny,<br> aby zwiększyć wydajność zbierania.</div>
+            <div class="kosztulepki">2.5K</div>
+            </b>
+        </div>
+        <div class="ulepszenie" onclick="upnawadnianie()">
+            <b>
+            <div class="ikonaulepki" id="u4"><p class="zdjecie2"><img src="nawadnianie1.png" height="50" width="50px"></p></div>
+            <div class="nazwaulepki">Nawadnianie kroplowe</div>
+            <div class="opisulepki">Zainwestuj w system nawadniania kroplowego,<br> aby zwiększyć plony bawełny przy każdym kliknięciu.</div>
+            <div class="kosztulepki">4K</div>
+            </b>
+        </div>
+        <div class="ulepszenie" onclick="upszybszeraczki()">
+            <b>
+            <div class="ikonaulepki" id="u5"><p class="zdjecie2"><img src="szybszeraczki.png" height="50" width="50px"></p></div>
+            <div class="nazwaulepki">Szybsze rączki</div>
+            <div class="opisulepki">Ulepszenie zdolności gracza do zbierania bawełny,<br>zwiększając tempo zbierania.</div>
+            <div class="kosztulepki">25K</div>
+            </b>
+        </div>
+        <div class="ulepszenie" onclick="upzmeczonyczarnuch()">
+            <b>
+            <div class="ikonaulepki" id="u6"><p class="zdjecie2"><img src="farmer.png" height="50" width="50px"></p></div>
+            <div class="nazwaulepki">Zmęczony czarnuch</div>
+            <div class="opisulepki">Możliwość zakupienia czarnucha, <br> który zbiera bawełnę powolną techniką</div>
+            <div class="kosztulepki">60K</div>
+            </b>
+        </div>
+        <div class="ulepszenie" onclick="upstarszyczlowiek()">
+            <b>
+            <div class="ikonaulepki" id="u7"><p class="zdjecie2"><img src="staryczlowiek.png" height="50" width="50px"></p></div>
+            <div class="nazwaulepki">Starszy czlowiek na etacie</div>
+            <div class="opisulepki">starsza osoba, która doświadczeniem i wiedzą<br> przyczynia się do efektywności pracy na farmie.</div>
+            <div class="kosztulepki">650K</div>
+            </b>
+        </div>
+        <div class="ulepszenie" onclick="upwheelchair()">
+            <b>
+            <div class="ikonaulepki" id="u8"><p class="zdjecie2"><img src="zbieraczbawelny.png" height="50" width="50px"></p></div>
+            <div class="nazwaulepki">Zbieracz bawełny na wózku</div>
+            <div class="opisulepki">Wyposaż swoich pracowników w wózek inwalidzki,<br> który pozwala im zbierać bawełnę<br> podczas przemieszczania się po polu.</div>
+            <div class="kosztulepki">2.5M</div>
+            </b>
+        </div>
+        <div class="ulepszenie" onclick="uplepszabawelna()">
+            <b>
+            <div class="ikonaulepki" id="u9"><p class="zdjecie2"><img src="bawelnalep.png" height="50" width="50px"></p></div>
+            <div class="nazwaulepki">Lepsza bawełna</div>
+            <div class="opisulepki">wprowadza do Twojej farmy nową<br> odmianę bawełny o wyjątkowej jakości.<br> Ta wyjątkowa odmiana bawełny jest znacznie<br> bardziej wartościowa i wydajna</div>
+            <div class="kosztulepki">25M</div>
+            </b>
+        </div>
+    </DIV>
+    <div class="kolekcja">
+        <div class="czarnuch1"><img src="farmer.png" height="50px" width="50px" STYLE="display:none" id="zbieracz1"></div>
+        <div class="czarnuch2"><img src="staryczlowiek.png" height="50px" width="50px" STYLE="display:none" id="zbieracz2"></div>
+        <div class="czarnuch3"><img src="zbieraczbawelny.png" height="50px" width="50px" STYLE="display:none" id="zbieracz3"></div>
+    </div>
+    
+    <DIV ID="pokazrebirth" STYLE="display:none" class="rebirthy">
+        <div class="tekst"><img src="rebirth.png" width="50px" height="50px" class="tekst1">
+            <b><p class="napiswsklepie">RESET</p></b>
+         </div>
+         <div class="opisrebirth1">
+          Mnożniki produkcji
+          <div class="opisrebirth2">
+            Zresetowanie postępu pozwala na zdobycie mnożników produkcji bawełny.<br>
+             Im więcej razy zresetujesz postęp, tym większe mnożniki otrzymasz.<br>
+              Te mnożniki są stosowane do wszystkich aspektów produkcji bawełny,<br>
+               co pozwala na zbieranie większych ilości surowca w krótszym czasie.<br>
+          </div>
+        </div>
+          <div class="opisrebirth1">
+            <p class="walutaziarna">Waluta "Ziarna Ryżu"</p>
+
+            <div class="opisrebirth2">
+                <p class="zdjeciee"><img src="rice.png" width="72px" height="50px"></p>
+                Po każdym zresetowaniu postępu gracz otrzymuje "ziarna ryżu,"
+                które stanowią specjalną walutę. Można je wykorzystać do zakupu unikalnych ulepszeń,
+                 budynków<br> lub innych elementów, które są dostępne tylko za pomocą tej waluty.<br>
+            </div>
+        </div>
+        <div class="przyciskreset" onclick="reset()">
+            <div class="res1">RESET</div>
+            <div class="res1" id="rst1">KOSZT: 100K</div>
+        </div>
+         
+    </DIV>
+    <DIV ID="pokazupziarna" STYLE="display:none" class="ziarnasklep">
+        <div class="tekst3"><img src="rice.png" width="55px" height="50px" >
+            <b><p class="napiswupach">ULEPSZENIA PERNAMENTNE</p></b>
+         </div> 
+         <div class="konteinerziarna">
+            <div class="konteiner1">
+                <div class="ziarna1">
+                    <div class="ziarna2"> <img src="genetyczne.png" width="50px" height="50px" class="ziarnazdj"></div>
+                    <div class="ziarna3"> <b class="ziarnaopis"> ZAAWANSOWANA GENETYKA</b></div>
+                    <div class="ziarna4">i</div><b class="koszta" id="ziarnakoszt1"> 0/10</b>
+                </div>
+                <div class="ziarna1">
+                    <div class="ziarna2"> <img src="kofeina.png" width="50px" height="50px" class="ziarnazdj"></div>
+                    <div class="ziarna3"> <b class="ziarnaopis"> CZARNI NAPĘDZANI KOFEINĄ</b></div>
+                    <div class="ziarna4">i</div><b class="koszta" id="ziarnakoszt2"> 0/10</b>
+                </div>
+                <div class="ziarna1">
+                    <div class="ziarna2"> <img src="prad.png" width="50px" height="50px" class="ziarnazdj"></div>
+                    <div class="ziarna3"> <b class="ziarnaopis"> ELEKTRYFIKACJA NARZĘDZI</b></div>
+                    <div class="ziarna4">i</div><b class="koszta" id="ziarnakoszt3"> 0/10</b>
+                </div>
+            </div>
+            <div class="konteiner2">
+                <div class="opisziarna">
+                    dasdasd
+                </div>
+            </div>
+        </div>
+    </DIV>
+    <DIV ID="caseshop" STYLE="display:none" class="ziarnasklep">
+        <div class="tekst3"><img src="losowe.png" width="55px" height="50px" >
+            <b><p class="napiswupach">Bazar losowej nagrody</p></b>
+         </div> 
+         <div class="sloty">
+            <div class="slota" onclick="otwieraj1()">
+                <img src="chest1.png" onmouseover="czest1()" onmouseout="czest1a()" height="130px" width="140px" id="ches1">
+            </div>
+            <div class="slota">
+                <img src="chest2.png" onmouseover="czest2()" onmouseout="czest2a()" height="130px" width="140px" id="ches2">
+            </div>
+            <div class="slota">
+                <img src="chest3.png" onmouseover="czest3()" onmouseout="czest3a()" height="130px" width="140px" id="ches3">
+            </div>
+            <div class="slota">
+                <img src="chest4.png" onmouseover="czest4()" onmouseout="czest4a()" height="130px" width="140px" id="ches4">
+            </div>
+         </div>
+         <div class="sloty">
+            <div class="kupuj" onclick="klucza1()">
+                    10 <img src="rice.png" height="40px" width="50px" class="zdj4">
+            </div>
+            <div class="kupuj">
+
+            </div>
+            <div class="kupuj">
+
+            </div>
+            <div class="kupuj">
+
+            </div>
+         </div>
+         <div class="informacja" id="informacja1"> informacja </div>
+    </DIV>
+    <div class="listaczanych">
+        <div class="opcja1"> 
+            <img src="nohands.png" width="50px" height="50px"> <b id="bezrak"> 0x</b>
+        </div>
+        <div class="opcja1"> 
+            <img src="zloty.png" width="50px" height="50px"> <b id="zlotyczern"> 0x</b>
+        </div>
+    </div>
+    <script src="function.js" type="text/javascript"></script>
+
+</body>
+</html>

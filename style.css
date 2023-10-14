@@ -1,0 +1,545 @@
+body {
+    background-color: rgb(32, 34, 37);
+    height: 900px;
+    margin: 0;
+}
+
+.liczbawelne {
+  background-color: #9da9ac;
+  width: 300px;
+  margin-left: 20px;
+  height: 50px;
+  border-radius: 30px;
+  margin-bottom: 5px;
+  border-style: inset;
+  border-color:rgb(185, 200, 212);
+  flex: 33%;
+}
+.liczbawelne2 {
+  position: relative;
+  top: -45px;
+  left: 50px;
+  color:#2a3236;
+  font-size: 35px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+}
+.fleks {
+  width: 30%;
+}
+.liczresety {
+  background-color: #e71313;
+  width: 300px;
+  margin-left: 20px;
+  height: 50px;
+  border-radius: 30px;
+  margin-bottom: 5px;
+  border-style: inset;
+  border-color:rgb(145, 11, 11);
+  flex:33%;
+}
+.liczresety2 {
+  position: relative;
+  top: -45px;
+  left: 45px;
+  color:#8b0f0f;
+  font-size: 35px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.liczziarna {
+  background-color: #ddbf14;
+  width: 300px;
+  margin-left: 20px;
+  height: 50px;
+  border-radius: 30px;
+  margin-bottom: 5px;
+  border-style: inset;
+  border-color:rgb(226, 194, 9);
+  flex:33%;
+}
+.liczziarna2 {
+  position: relative;
+  top: -45px;
+  left: 45px;
+  color:#0e344d;
+  font-size: 35px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.klikanie {
+  height: 300px;
+  width: 300px;
+
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 100px;
+}
+.srodek:hover {
+  cursor: pointer;
+}
+.srodek:active {
+  height: 205px;
+  width: 205px;
+}
+.container {
+  padding: 20px;
+  display: flex;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.przycisksklep {
+  width: 80px;
+  height: 80px;
+  background-color: #393c41;
+  border-radius: 50px;
+  margin-left: 10px;
+}
+.przycisksklep2 {
+  width: 80px;
+  height: 80px;
+  background-color: #393c41;
+  border-radius: 50px;
+  margin-left: 10px;
+  position: relative;
+  top: -80px;
+  left: 90px;
+}
+.przycisksklep3 {
+  width: 80px;
+  height: 80px;
+  background-color: #393c41;
+  border-radius: 50px;
+  margin-left: 10px;
+  position: relative;
+  top: -160px;
+  left: 180px;
+}
+.przycisksklep4 {
+  width: 80px;
+  height: 80px;
+  background-color: #393c41;
+  border-radius: 50px;
+  margin-left: 10px;
+  position: relative;
+  top: -150px;
+  left: 0px;
+}
+.przycisksklep:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+.przycisksklep2:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+.przycisksklep3:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+.przycisksklep4:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+.xd22:hover {
+  width: 72px;
+  height: 72px;
+}
+.xd21 {
+  position: relative;
+  left: 12px;
+  top: 15px;
+}
+.xd21:hover {
+  width: 52px;
+  height: 52px;
+}
+.xd20 {
+  position: relative;
+  left: 12px;
+  top: 15px;
+}
+.xd20:hover {
+  width: 59px;
+  height: 54px;
+}
+.sklepy {
+  background-color: #2a3236;
+  position: relative;
+  top: -250px;
+  display: flex;
+  width: 33%;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 4000;
+}
+.napiswsklepie {
+  position: relative;
+  top: -50px;
+  left: 33%;
+  font-size: 20px;
+  color:rgb(73, 107, 128);
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20px;
+}
+.napiswupach {
+  position: relative;
+  top: 0px;
+  left: 1px;
+  font-size: 20px;
+  color:rgb(73, 107, 128);
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20px;
+}
+.tekst1 {
+  position: relative;
+  top: 15px;
+  left: 22%;
+}
+.tekst {
+  position:relative;
+  left: 15%;
+  
+}
+.tekst3 {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+
+}
+.ulepszenie {
+  width: 500px;
+  height: 100px;
+  background-color: #4f6068;
+  position: relative;
+  left: 50px;
+  top: -20px;
+  border-radius: 30px;
+  border-style: inset;
+  margin: 10px;
+}
+.ulepszenie:hover {
+  cursor: pointer;
+  background-color: #6d7d85;
+}
+.ikonaulepki {
+  background-color: #b6cad3;
+  padding: 10px;
+  border-radius: 20px;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+.zdjecie {
+  position: relative;
+  top: -20px;
+  left: -5px;
+}
+.zdjecie2 {
+  position: relative;
+  top: -20px;
+  left: 2px;
+}
+.nazwaulepki {
+  color:rgb(67, 167, 230);
+  position: relative;
+  top: -60px;
+  left: 95px;
+  font-size: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.opisulepki {
+  color:rgb(185, 181, 181);
+  position: relative;
+  top: -60px;
+  left: 95px;
+  font-size: 12px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.kosztulepki {
+  color:rgb(71, 194, 40);
+  position: relative;
+  top: -120px;
+  left: 430px;
+  font-size: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.czarnuch1 {
+  position: absolute;
+  left: 740px;
+  top: 200px;
+  width: 10%;
+}
+.czarnuch2 {
+  position: absolute;
+  left: 790px;
+  top: 150px;
+  width: 10%;
+}
+.czarnuch3 {
+  position: absolute;
+  left: 840px;
+  top: 120px;
+  width: 10%;
+}
+.rebirthy {
+  background-color: #2a3236;
+  position: relative;
+  top: -250px;
+  display: flex;
+  width: 33%;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 4000;
+}
+.opisrebirth1 {
+  position: relative;
+  top: -30px;
+  left: 10px;
+  color:rgb(67, 167, 230);
+  font-size: 25px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.opisrebirth2 {
+  position: relative;
+
+  left: 10px;
+  color:rgb(182, 218, 240);
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-align: left;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.zdjeciee {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  top: 20px;
+}
+.walutaziarna {
+  position: relative;
+  top: 40px;
+}
+.przyciskreset {
+  position: relative;
+  height: 50px;
+  width: 300px;
+  background-color: #4d7d94;
+  border-radius: 30px;
+  margin: auto;
+  text-align: center;
+}
+.przyciskreset:hover {
+  cursor: pointer;
+  background-color: rgb(27, 128, 168);
+}
+.res1 {
+  text-align: center;
+  position: relative;
+  top: 15px;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 15px;
+}
+.ziarna1 {
+  background-color: #4f6068;
+  height: 100px;
+  width: 450px;
+  position: relative;
+  top: 10px;
+  left: 15%;;
+  border-radius: 20px;
+  border-style: outset;
+  border-color:rgb(67, 167, 230);
+  display: flex;
+  margin: 10px;
+}
+.ziarna2 {
+  background-color: #3bbcf8;
+  height: 75px;
+  width: 75px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  border-radius: 20px;
+  border-style: outset;
+  border-color:rgb(5, 108, 172);
+}
+.ziarna3 {
+
+  height: 100px;
+  width: 50%;
+
+}
+.ziarna4 {
+  background-color: #3bbcf8;
+  height: 25px;
+  width: 25px;
+  border-radius: 30px;
+  position: relative;
+  top: 12px;
+  left: 110px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+.ziarna4:hover {
+  background-color: #a4d8f0;
+  cursor: pointer;
+  height: 27px;
+  width: 27px;
+}
+.ziarnazdj {
+  position: relative;
+  top: 15px;
+  left: 10px;
+}
+.ziarnaopis {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color:rgb(136, 179, 228);
+  font-size: 20px;
+  position: relative;
+  top: 15px;
+  left: 15px;
+  letter-spacing: 1px;
+  height: 20px;
+  width: 20px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.koszta {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color:rgb(231, 225, 223);
+  font-size: 25px;
+  position: relative;
+  top: 70px;
+  left: -68%;
+  letter-spacing: 1px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.ziarnasklep {
+  background-color: #2a3236;
+  position: relative;
+  top: -250px;
+  display: flex;
+  width: 900px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 4000;
+}
+.konteinerziarna {
+  display: flex;
+}
+.konteiner1 {
+  flex:50%;
+}
+.konteiner2 {
+  flex:25%;
+
+}
+.opisziarna {
+  width: 80%;
+  background-color: #4f6068;
+  height: 100%;
+  border-color:#3bbcf8;
+  border-style: inset;
+  position: relative;
+  left: 15px;
+  border-radius: 30px;
+  font-size: 25px;
+  color:rgb(67, 167, 230);
+  text-align: center;
+}
+.odstep {
+  flex: 10%;
+
+  width: 20%;
+}
+.odstep2 {
+  flex: 90%;
+  width: 80%;
+}
+.display {
+  display: flex;
+}
+.sloty {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slota {
+  width: 150px;
+  height: 150px;
+  background-color: #e7d98b;
+  margin: 15px;
+  border-radius: 30px;
+}
+.slota:hover {
+  background-color: #eceada;
+
+  border-radius: 30px;
+  width: 150px;
+  height: 140px;
+  cursor: pointer;
+}
+.kupuj {
+  width: 150px;
+  height: 50px;
+  background-color: #f0a70a;
+  margin: 15px;
+  border-radius: 30px;
+  color:rgb(0, 0, 0);
+  font-size: 25px;
+  text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.kupuj:hover{
+  background-color: white;
+  cursor: pointer;
+}
+.zdj4 {
+  position: relative;
+  top: 10px;
+}
+.informacja {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
+.listaczanych {
+  background-color: #27292b;
+  height: 500px;
+  width: 200px;
+  position: absolute;
+  left: 100px;
+  border-radius: 40px;
+  color: white;
+}
+.opcja1 {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
