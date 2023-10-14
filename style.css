@@ -74,12 +74,15 @@ body {
   position: relative;
   top: 100px;
 }
+.srodek {
+  transition: 100ms;
+
+}
 .srodek:hover {
   cursor: pointer;
 }
 .srodek:active {
-  height: 205px;
-  width: 205px;
+  transform: scale(1.05);
 }
 .container {
   padding: 20px;
