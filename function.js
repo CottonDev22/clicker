@@ -51,6 +51,8 @@ wartosci.bawelna += 1;
 
 localStorage.setItem("gra", JSON.stringify(wartosci));
 }
+setInterval(dupa, 55000);
+dupa();
 var zd = document.getElementById('zdj1');
 var l= document.getElementById('zbieracz1');
 var la= document.getElementById('zbieracz2');
