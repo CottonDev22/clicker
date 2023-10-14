@@ -159,10 +159,10 @@ function upnarzedzia1() {
             if (wartosci.narzedzia == 0 && wartosci.bawelna >= 20) {
                 wartosci.bawelna = wartosci.bawelna - 20;
                 wartosci.wyliczanie = wartosci.bawelna;
+                document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
                 wartosci.narzedzia = 1;
                 document.getElementById("u1").style.backgroundColor = "moccasin";
-                wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
-                document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
+
             }
 
 }
@@ -170,55 +170,49 @@ function upnarzedzia2() {
             if (wartosci.narzedzia == 1 && wartosci.bawelna >= 350) {
                 wartosci.bawelna = wartosci.bawelna - 350;
                 wartosci.wyliczanie = wartosci.bawelna;
+                document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
                 wartosci.narzedzia = 5;
                 document.getElementById("u2").style.backgroundColor = "moccasin";
 
-                wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
-                document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
             }
 }
 function upnarzedzia3() {
             if (wartosci.narzedzia == 5 && wartosci.bawelna >= 2500) {
                 wartosci.bawelna = wartosci.bawelna - 2500;
                 wartosci.wyliczanie = wartosci.bawelna;
+                document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
                 wartosci.narzedzia = 12;
                 document.getElementById("u3").style.backgroundColor = "moccasin";
 
-                wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
-                document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
             }
 }
 function upnawadnianie() {
             if (wartosci.nawadnianie == 1 && wartosci.bawelna >= 4000) {
                 wartosci.bawelna = wartosci.bawelna - 4000;
                 wartosci.wyliczanie = wartosci.bawelna;
+                document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
                 wartosci.nawadnianie = 1.02;
                 document.getElementById("u4").style.backgroundColor = "moccasin";
 
-                wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
-                document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
+
             }
 }
 function upszybszeraczki() {
             if (wartosci.szybszeraczki == 1 && wartosci.bawelna >= 25000) {
                 wartosci.bawelna = wartosci.bawelna - 25000;
                 wartosci.wyliczanie = wartosci.bawelna;
+                document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
                 wartosci.szybszeraczki = 1.03;
                 document.getElementById("u5").style.backgroundColor = "moccasin";
-
-                wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
-                document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
             }
 }
 function upzmeczonyczarnuch() {
             if (wartosci.autoczarny1 == 0 && wartosci.bawelna >= 60000) {
                 wartosci.bawelna = wartosci.bawelna - 60000;
                 wartosci.wyliczanie = wartosci.bawelna;
+                document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
                 wartosci.autoczarny1 = 1;
                 document.getElementById("u6").style.backgroundColor = "moccasin";
-
-                wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
-                document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
                 
             }
 }
@@ -226,11 +220,10 @@ function uplepszabawelna() {
             if (wartosci.lepszabawelna == 1 && wartosci.bawelna >= 25000000) {
                 wartosci.bawelna = wartosci.bawelna - 25000000;
                 wartosci.wyliczanie = wartosci.bawelna;
+                document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
                 wartosci.lepszabawelna = 1.1;
                 document.getElementById("u9").style.backgroundColor = "moccasin";
 
-                wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
-                document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
                 document.getElementById("zdjzbieranie").src="bawelnalep.png";
             }
 }
