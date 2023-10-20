@@ -5,10 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotton Clicker</title>
-
+    <script src="jquery-3.6.3.min.js"></script>
 </head>
 <body onload="klikniecia()">
+<div class="pozycja">
+    <div class="expcounter">
 
+        <div class="xpbar">
+            <b id="xp">dssd</b>
+            <div class="progres">
+                <progress id="progres" max="cost" value="xp"></progress>
+            </div>
+        </div>
+        
+        <div class="lvlbar" >
+        <b> <p id="lvltekst"> 0</p></b>
+        </div>
+    </div>
         <div class="container">
 
             <div class="liczbawelne">
@@ -24,6 +37,8 @@
             
             <button onclick="dupa2()">RESET WARTOSCI</button>
         </div>
+
+</div>
         <div class="display">
                 <div class="odstep">
                 <div class="fleks">
@@ -38,6 +53,9 @@
                     </div>
                     <div class="przycisksklep4" ONCLICK="ShowAndHide4()">
                         <img src="chest1.png" width="60px" height="55px" class="xd20">
+                    </div>
+                    <div class="przycisksklep5" ONCLICK="ShowAndHide5()">
+                        <img src="building.png" width="60px" height="55px" class="xd20">
                     </div>
 
                 </div>
@@ -191,19 +209,19 @@
     </DIV>
     <DIV ID="caseshop" STYLE="display:none" class="ziarnasklep">
         <div class="tekst3"><img src="losowe.png" width="55px" height="50px" >
-            <b><p class="napiswupach">Bazar losowej nagrody</p></b>
+            <b><p class="napiswupach">Czarny rynek</p></b>
          </div> 
          <div class="sloty">
             <div class="slota" onclick="otwieraj1()">
                 <img src="chest1.png" onmouseover="czest1()" onmouseout="czest1a()" height="130px" width="140px" id="ches1">
             </div>
-            <div class="slota">
+            <div class="slota" onclick="otwieraj2()">
                 <img src="chest2.png" onmouseover="czest2()" onmouseout="czest2a()" height="130px" width="140px" id="ches2">
             </div>
-            <div class="slota">
+            <div class="slota" onclick="otwieraj3()">
                 <img src="chest3.png" onmouseover="czest3()" onmouseout="czest3a()" height="130px" width="140px" id="ches3">
             </div>
-            <div class="slota">
+            <div class="slota" onclick="otwieraj4()">
                 <img src="chest4.png" onmouseover="czest4()" onmouseout="czest4a()" height="130px" width="140px" id="ches4">
             </div>
          </div>
@@ -211,17 +229,148 @@
             <div class="kupuj" onclick="klucza1()">
                     10 <img src="rice.png" height="40px" width="50px" class="zdj4">
             </div>
-            <div class="kupuj">
-
+            <div class="kupuj" onclick="klucza2()">
+                70 <img src="rice.png" height="40px" width="50px" class="zdj4">
             </div>
-            <div class="kupuj">
-
+            <div class="kupuj" onclick="klucza3()">
+                200 <img src="rice.png" height="40px" width="50px" class="zdj4">
             </div>
-            <div class="kupuj">
-
+            <div class="kupuj" onclick="klucza4()">
+                850 <img src="rice.png" height="40px" width="50px" class="zdj4">
             </div>
          </div>
-         <div class="informacja" id="informacja1"> informacja </div>
+         <div class="informacja" ><img src="" height="50px" width="50px" id="info"> <p id="informacja1">informacja</p> </div>
+    </DIV>
+    <DIV ID="budynki" STYLE="display:none" class="budynkiclass">
+        <div class="tekst3"><img src="building.png" width="55px" height="50px" >
+            <b><p class="napiswupach">Budynki Specjalne</p></b>
+         </div> 
+         <div class="budynek" onclick="budynek0()">
+            <div class="budynek1" >
+                <img src="bman.png" height="50px" width="50px" class="wodnezrodlo1">
+            </div>
+            <div class="opis">
+                <b>Czarnuch</b><br>Zbiera bawełnę za Ciebie<br> radzi sobie całkiem nieźle
+            </div>
+            <div class="liczba2" id="licz0">
+                100
+            </div>
+            <div class="liczba" id="licz0a">
+                0
+            </div>
+         </div>
+         <div class="budynek" onclick="budynek1()">
+            <div class="budynek1" >
+                <img src="wodnezrodlo.png" height="50px" width="50px" class="wodnezrodlo1">
+            </div>
+            <div class="opis">
+                <b>Wodne źródło</b><br>Woda - jest,<br> murzyni - zakaz wstępu.
+                <p class="podpis"> mnożnik 1.01x</p>
+            </div>
+            <div class="liczba2" id="licz1">
+                1000
+            </div>
+            <div class="liczba" id="licz2">
+                0
+            </div>
+         </div>
+         <!--dasasdasdasdasdasdsad-->
+         <div class="budynek" onclick="budynek2()">
+            <div class="budynek1">
+                <img src="stadnina.png" height="50px" width="50px" class="wodnezrodlo1">
+            </div>
+            <div class="opis">
+                <b>Stadnina Llam</b><br>Murzyni jeżdzą tutaj na lamach, nie ułatwia to im zbierania bawełny
+                <p class="podpis"> mnożnik 1.015x</p>
+            </div>
+            <div class="liczba2" id="licz3">
+                1000
+            </div>
+            <div class="liczba" id="licz4">
+                0
+            </div>
+         </div>
+
+         <div class="budynek" onclick="budynek3()">
+            <div class="budynek1">
+                <img src="bamboo.png" height="50px" width="50px" class="wodnezrodlo1">
+            </div>
+            <div class="opis">
+                <b>Farma wśród bambusów</b><br>Legendy głoszą, że murzyni<br> popędzani są tutaj bambusami
+                <p class="podpis"> mnożnik 1.02x</p>
+            </div>
+            <div class="liczba2" id="licz5">
+                1000
+            </div>
+            <div class="liczba" id="licz6">
+                0
+            </div>
+         </div>
+
+         <div class="budynek" onclick="budynek4()">
+            <div class="budynek1">
+                <img src="mine.png" height="50px" width="50px" class="wodnezrodlo1">
+            </div>
+            <div class="opis">
+                <b>Kopalnia bawełny</b><br>Czarnuchy kilofy w dłoń zamiast zbierać bawełnę zbierają całe krzaki
+
+                <p class="podpis"> mnożnik 1.03x</p>
+            </div>
+            <div class="liczba2" id="licz7">
+                1000
+            </div>
+            <div class="liczba" id="licz8">
+                0
+            </div>
+         </div>
+
+         <div class="budynek" onclick="budynek5()">
+            <div class="budynek1">
+                <img src="farm.png" height="50px" width="50px" class="wodnezrodlo1">
+            </div>
+            <div class="opis">
+                <b>Farma żywności czarnucha</b><br>Każdy murzin dostaje jedzenie, nie chcesz wiedzieć czym ich karmią.
+                
+                <p class="podpis"> mnożnik 1.05x</p>
+            </div>
+            <div class="liczba2" id="licz9">
+                1000
+            </div>
+            <div class="liczba" id="licz10">
+                0
+            </div>
+         </div>
+
+         <div class="budynek" onclick="budynek6()">
+            <div class="budynek1">
+                <img src="szkola.png" height="50px" width="50px" class="wodnezrodlo1">
+            </div>
+            <div class="opis">
+                <b>Szkoła zbierania bawełny</b><br> w rzeczywistości - obóz koncentracyjny
+                <p class="podpis"> mnożnik 1.06x</p>
+            </div>
+            <div class="liczba2" id="licz11">
+                1000
+            </div>
+            <div class="liczba" id="licz12">
+                0
+            </div>
+         </div>
+
+         <div class="budynek" onclick="budynek7()">
+            <div class="budynek1">
+                <img src="forge.png" height="50px" width="50px" class="wodnezrodlo1">
+            </div>
+            <div class="opis">
+                <b>Kuźnia Czarnych Mężczyzn</b><br>Tworzone tu są genetycznie zmodyfikowane czarnuchy,<br> czasem zdarzy się dodatkowa ręka.
+            </div>
+            <div class="liczba2" id="licz13">
+                1000
+            </div>
+            <div class="liczba" id="licz14">
+                0
+            </div>
+         </div>
     </DIV>
     <div class="listaczanych">
         <div class="opcja1"> 
@@ -229,6 +378,15 @@
         </div>
         <div class="opcja1"> 
             <img src="zloty.png" width="50px" height="50px"> <b id="zlotyczern"> 0x</b>
+        </div>
+        <div class="opcja1"> 
+            <img src="MJ.png" width="50px" height="50px"> <b id="MJ"> 0x</b>
+        </div>
+        <div class="opcja1"> 
+            <img src="floryda.png" width="50px" height="50px"> <b id="floyd"> 0x</b>
+        </div>
+        <div class="opcja1"> 
+            <img src="obama.png" width="50px" height="50px"> <b id="obama"> 0x</b>
         </div>
     </div>
     <script src="function.js" type="text/javascript"></script>

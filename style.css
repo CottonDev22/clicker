@@ -87,7 +87,7 @@ body {
 .container {
   padding: 20px;
   display: flex;
-  width: 50%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -128,6 +128,16 @@ body {
   top: -150px;
   left: 0px;
 }
+.przycisksklep5 {
+  width: 80px;
+  height: 80px;
+  background-color: #393c41;
+  border-radius: 50px;
+  margin-left: 10px;
+  position: relative;
+  top: -230px;
+  left: 90px;
+}
 .przycisksklep:hover {
   cursor: pointer;
   background-color: #fff;
@@ -141,6 +151,10 @@ body {
   background-color: #fff;
 }
 .przycisksklep4:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+.przycisksklep5:hover {
   cursor: pointer;
   background-color: #fff;
 }
@@ -545,4 +559,121 @@ body {
   left: 10px;
   font-size: 20px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.budynkiclass {
+  background-color: #2a3236;
+  position: relative;
+  top: -250px;
+  display: flex;
+  width: 600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 4000;
+}
+.budynek {
+  background-color: #242529;
+  width: 100%;
+  height: 90px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 5px;
+  border-style: outset;
+  border-color:rgb(179, 27, 27);
+  display: flex;
+}
+.budynek:hover {
+  background-color: #1b1c1f;
+  cursor: pointer;
+}
+.budynek1 {
+  border-radius: 5px;
+  border-style: outset;
+  border-color:rgb(38, 172, 224);
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 12px;
+  left: 10px;
+}
+.wodnezrodlo1 {
+  position: relative;
+  left: 5px;
+  top: 5px;
+}
+.opis {
+  color:rgb(151, 15, 15);
+  font-size: 15px;
+  position: relative;
+
+  left: 20px;
+  width: 50%;
+}
+.liczba {
+  width: 25px;
+  position: relative;
+  left: 80px;
+  font-size: 50px;
+  color: rgb(102, 11, 11);
+  text-align: left;
+  top: 20px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.liczba2 {
+  width: 25px;
+  position: relative;
+
+  font-size: 25px;
+  color: rgb(53, 169, 236);
+  text-align: left;
+  left: 15px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.podpis {
+  color:rgb(235, 221, 30);
+  font-size: 15px;
+  position: relative;
+
+  left: 20px;
+  width: 50%;
+}
+.expcounter {
+  width: 30%;
+  height: 100px;
+  
+}
+.pozycja {
+  display: flex;
+}
+.xpbar {
+  background-color: #393c41;
+  width: 200px;
+  height: 50px;
+  position: relative;
+  top: 20px;
+  left: 40px;
+  color:rgb(71, 164, 223);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  border-radius: 40px;
+}
+.lvlbar {
+  background-color: #3bbcf8;
+  height: 50px;
+  width: 50px;
+  border-radius: 40px;
+  position: relative;
+  top: -33%;
+  border-style: inset;
+  border-color:rgb(32, 32, 32);
+  color:rgb(255, 255, 255);
+  text-align: center;
+
+}
+.progres {
+  width: 100%;
+  background-color: #393c41;
+  border-radius: 40px;
 }
