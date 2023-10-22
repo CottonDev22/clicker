@@ -138,6 +138,16 @@ body {
   top: -230px;
   left: 90px;
 }
+.przycisksklep6 {
+  width: 80px;
+  height: 80px;
+  background-color: #393c41;
+  border-radius: 50px;
+  margin-left: 10px;
+  position: relative;
+  top: -310px;
+  left: 180px;
+}
 .przycisksklep:hover {
   cursor: pointer;
   background-color: #fff;
@@ -155,6 +165,10 @@ body {
   background-color: #fff;
 }
 .przycisksklep5:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+.przycisksklep6:hover {
   cursor: pointer;
   background-color: #fff;
 }
@@ -183,9 +197,9 @@ body {
 .sklepy {
   background-color: #2a3236;
   position: relative;
-  top: -250px;
+  top: -350px;
   display: flex;
-  width: 33%;
+  width: 40%;
   height: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -310,7 +324,7 @@ body {
 .rebirthy {
   background-color: #2a3236;
   position: relative;
-  top: -250px;
+  top: -350px;
   display: flex;
   width: 33%;
   height: 600px;
@@ -452,7 +466,7 @@ body {
 .ziarnasklep {
   background-color: #2a3236;
   position: relative;
-  top: -250px;
+  top: -350px;
   display: flex;
   width: 900px;
   height: 600px;
@@ -544,26 +558,18 @@ body {
   color: white;
   font-size: 25px;
 }
-.listaczanych {
-  background-color: #27292b;
-  height: 500px;
-  width: 200px;
-  position: absolute;
-  left: 100px;
-  border-radius: 40px;
-  color: white;
-}
+
 .opcja1 {
   position: relative;
   top: 10px;
   left: 10px;
-  font-size: 20px;
+  font-size: 15px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .budynkiclass {
   background-color: #2a3236;
   position: relative;
-  top: -250px;
+  top: -350px;
   display: flex;
   width: 600px;
   height: 600px;
@@ -676,4 +682,103 @@ body {
   width: 100%;
   background-color: #393c41;
   border-radius: 40px;
+}
+.idx {
+  height: 90%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #27292b;
+  position: relative;
+  top: -50px;
+  border-radius: 15px;
+
+}
+.id1 {
+  background-color: rgb(127, 128, 127);
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  border-style: outset;
+  border-color: #2e302e;
+  border-radius: 10px;
+}
+.id2 {
+  background-color: rgb(64, 143, 64);
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  border-style: outset;
+  border-color: #275e2c;
+  border-radius: 10px;
+}
+.id3 {
+  background-color: rgb(30, 132, 201);
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  border-style: outset;
+  border-color: #1a6c8d;
+  border-radius: 10px;
+}
+.id4 {
+  background-color: rgb(125, 16, 175);
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  border-style: outset;
+  border-color: #4e177c;
+  border-radius: 10px;
+}
+.id5 {
+  background-color: rgb(234, 238, 26);
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  border-style: outset;
+  border-color: #e9c213;
+  border-radius: 10px;
+}
+.id6 {
+  background-color: rgb(255, 90, 227);
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  border-style: outset;
+  border-color: #be14a2;
+  border-radius: 10px;
+}
+.idh1 {
+  background-color: rgb(228, 140, 26);
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  border-style: outset;
+  border-color: #161413;
+  border-radius: 10px;
+}
+.flex_id {
+  display: flex;
+}
+.id_pozycja {
+  position: relative;
+  z-index: 100;
+  top: -20px;
+  color: rgb(226, 226, 226);
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }

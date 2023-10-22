@@ -41,6 +41,25 @@ var wartosci = {
     podwajacz: 0,
     floyd: 0,
     obama: 0,
+    gigner: 0,
+    blm: 0,
+    farm1: 0,
+    farm2: 0,
+    golem: 0,
+    giant: 0,
+    bodypositive: 0,
+    will: 0,
+    stopracism: 0,
+    znikawnocy: 0,
+    rudyzyd: 0,
+    vtbg: 0,
+    common: 0,
+    uncommon: 0,
+    rare: 0,
+    epic: 0,
+    legendary: 0,
+    special: 0,
+    h1: 0,
 // itd
 };
 //RESET WARTOSCI
@@ -88,6 +107,25 @@ var wartosci = {
     delay1: 1000,
     floyd: 0,
     obama: 0,
+    gigner: 0,
+    blm: 0,
+    farm1: 0,
+    farm2: 0,
+    golem: 0,
+    giant: 0,
+    bodypositive: 0,
+    will: 0,
+    stopracism: 0,
+    znikawnocy: 0,
+    rudyzyd: 0,
+    vtbg: 0,
+    common: 0,
+    uncommon: 0,
+    rare: 0,
+    epic: 0,
+    legendary: 0,
+    special: 0,
+    h1: 0,
 // itd
 };
 
@@ -95,6 +133,27 @@ localStorage.setItem("gra", JSON.stringify(wartosci));
 }
 
 if (localStorage.getItem("gra") !== null) wartosci = JSON.parse(localStorage.getItem("gra"));
+function dupa3() {
+    wartosci.gigner= 0;
+    wartosci.blm= 0;
+    wartosci.farm1= 0;
+    wartosci.farm2= 0;
+    wartosci.golem= 0;
+    wartosci.giant= 0;
+    wartosci.bodypositive= 0;
+    wartosci.will= 0;
+    wartosci.stopracism= 0;
+    wartosci.znikawnocy= 0;
+    wartosci.rudyzyd= 0;
+    wartosci.vtbg= 0;
+    wartosci.common= 0;
+    wartosci.uncommon= 0;
+    wartosci.rare= 0;
+    wartosci.epic= 0;
+    wartosci.legendary= 0;
+    wartosci.special= 0;
+    wartosci.h1 = 0;
+}
 function dupa(){  // Button click
     if (wartosci.narzedzia >= 1) document.getElementById("u1").style.backgroundColor = "moccasin";
     if (wartosci.narzedzia >= 5) document.getElementById("u2").style.backgroundColor = "moccasin";
@@ -121,7 +180,8 @@ var xb = document.getElementById('pokazrebirth');
 var xc = document.getElementById('pokazupziarna');
 var xe = document.getElementById('caseshop');
 var xf = document.getElementById('budynki');
-
+var xg = document.getElementById('pokazindex');
+//FUNKCJA KLIKNMIEC
 function klikniecia() {
 
     wartosci.bawelna = wartosci.bawelna + ((1 + wartosci.narzedzia * wartosci.lepszabawelna * (wartosci.nawadnianie * wartosci.szybszeraczki))  * wartosci.resetmnoznik) ;
@@ -146,12 +206,23 @@ document.getElementById("progres").setAttribute("value", wartosci.exp);
             document.getElementById('rebirty').innerHTML = wartosci.resetv;
             document.getElementById('rst1').innerHTML = "KOSZT: " + abbrNum((25000 * wartosci.kosztreset),2);
             document.getElementById('zbziarna').innerHTML = wartosci.ziarenka;
-            document.getElementById("bezrak").innerHTML = wartosci.murzynbezrak + "x";
-            document.getElementById("zlotyczern").innerHTML = wartosci.zlotymurzyn + "x";
-            document.getElementById("MJ").innerHTML = wartosci.platynowymurzyn + "x";
-            document.getElementById("floyd").innerHTML = wartosci.floyd + "x";
-            document.getElementById("obama").innerHTML = wartosci.obama + "x";
-
+            document.getElementById("bezrak").innerHTML = abbrNum(wartosci.murzynbezrak,1);
+            document.getElementById("zlotyczern").innerHTML = abbrNum(wartosci.zlotymurzyn,1);
+            document.getElementById("MJ").innerHTML = abbrNum(wartosci.platynowymurzyn,1);
+            document.getElementById("floyd").innerHTML = abbrNum(wartosci.floyd,1);
+            document.getElementById("obama").innerHTML = abbrNum(wartosci.obama,1);
+            document.getElementById("gigner").innerHTML = abbrNum(wartosci.gigner,1);
+            document.getElementById("blm").innerHTML = abbrNum(wartosci.blm,1);
+            document.getElementById("blackfarmer1").innerHTML = abbrNum(wartosci.farm1,1);
+            document.getElementById("blackfarmer2").innerHTML = abbrNum(wartosci.farm2,1);
+            document.getElementById("golem").innerHTML = abbrNum(wartosci.golem,1);
+            document.getElementById("giantfarmer").innerHTML = abbrNum(wartosci.giant,1);
+            document.getElementById("bodypositive").innerHTML = abbrNum(wartosci.bodypositive,1);
+            document.getElementById("will").innerHTML = abbrNum(wartosci.will,1);
+            document.getElementById("brakrasizmu").innerHTML = abbrNum(wartosci.stopracism,1);
+            document.getElementById("znika").innerHTML = abbrNum(wartosci.znikawnocy,1);
+            document.getElementById("rudyzyd").innerHTML = abbrNum(wartosci.rudyzyd,1);
+            document.getElementById("vtbg").innerHTML = abbrNum(wartosci.vtbg,1);
             //budynek0
             document.getElementById("licz0").innerHTML = abbrNum(100*(1 + wartosci.build0)* (1 + wartosci.licz0),2);
             document.getElementById("licz0a").innerHTML = abbrNum(wartosci.licz0,1);
@@ -237,6 +308,7 @@ function ShowAndHide() {
                 xc.style.display = 'none';
                 xe.style.display = 'none';
                 xf.style.display = 'none';
+                xg.style.display = 'none';
             } else {
                 xa.style.display = 'none';
             }
@@ -250,6 +322,7 @@ function ShowAndHide2() {
                 xc.style.display = 'none';
                 xe.style.display = 'none';
                 xf.style.display = 'none';
+                xg.style.display = 'none';
             } else {
                 xb.style.display = 'none';
             }
@@ -261,6 +334,7 @@ function ShowAndHide3() {
                 xa.style.display = 'none';
                 xe.style.display = 'none';
                 xf.style.display = 'none';
+                xg.style.display = 'none';
             } else {
                 xc.style.display = 'none';
             }
@@ -272,6 +346,7 @@ function ShowAndHide4() {
                 xa.style.display = 'none';
                 xc.style.display = 'none';
                 xf.style.display = 'none';
+                xg.style.display = 'none';
             } else {
                 xe.style.display = 'none';
             }
@@ -283,8 +358,21 @@ function ShowAndHide5() {
                     xa.style.display = 'none';
                     xc.style.display = 'none';
                     xe.style.display = 'none';
+                    xg.style.display = 'none';
                 } else {
                     xf.style.display = 'none';
+                }
+                }
+function ShowAndHide6() {
+                if (xg.style.display == 'none') {
+                    xg.style.display = 'block';
+                    xb.style.display = 'none';
+                    xa.style.display = 'none';
+                    xc.style.display = 'none';
+                    xe.style.display = 'none';
+                    xf.style.display = 'none';
+                } else {
+                    xg.style.display = 'none';
                 }
                 }
 function upnarzedzia1() {
@@ -464,65 +552,78 @@ function abbrNum(number, decPlaces) {
 setInterval(xddddd, 1);
 xddddd();
 
-function bezrak() {
-    if (wartosci.murzynbezrak>=1) {
-        wartosci.bawelna = wartosci.bawelna + 5 * wartosci.murzynbezrak;
+function common() {
+    if (wartosci.common>=1) {
+        wartosci.bawelna = wartosci.bawelna + 15 * (wartosci.murzynbezrak + wartosci.gigner + wartosci.blm + wartosci.farm1 + wartosci.golem + wartosci.farm2);
         wartosci.wyliczanie = wartosci.bawelna;
         wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
 document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
     }
 }
 
-setInterval(bezrak, 5000);
-bezrak();
+setInterval(common, 5000);
+common();
 
-function zlotyblack() {
-    if (wartosci.zlotymurzyn>=1) {
-        wartosci.bawelna = wartosci.bawelna + 100 * wartosci.zlotymurzyn;
+function uncommon() {
+    if (wartosci.uncommon>=1) {
+        wartosci.bawelna = wartosci.bawelna + 55 * (wartosci.floyd+ wartosci.giant + wartosci.bodypositive);
         wartosci.wyliczanie = wartosci.bawelna;
         wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
 document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
     }
 }
 
-setInterval(zlotyblack, 5);
-zlotyblack();
+setInterval(uncommon, 4000);
+uncommon();
 
-function platynowyblack() {
-    if (wartosci.platynowymurzyn>=1) {
-        wartosci.bawelna = wartosci.bawelna + 20000 * wartosci.platynowymurzyn;
+function rare() {
+    if (wartosci.rare>=1) {
+        wartosci.bawelna = wartosci.bawelna + 180 * (wartosci.will + wartosci.stopracism);
         wartosci.wyliczanie = wartosci.bawelna;
         wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
 document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
     }
 }
 
-setInterval(platynowyblack, 2);
-platynowyblack();
+setInterval(rare, 2500);
+rare();
 
-function florydaa() {
-    if (wartosci.floyd>=1) {
-        wartosci.bawelna = wartosci.bawelna + 50 * wartosci.floyd;
+function epic() {
+    if (wartosci.epic>=1) {
+        wartosci.bawelna = wartosci.bawelna + 650 * (wartosci.zlotymurzyn + wartosci.platynowymurzyn);
         wartosci.wyliczanie = wartosci.bawelna;
         wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
 document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
     }
 }
 
-setInterval(florydaa, 3000);
-florydaa();
+setInterval(epic, 650);
+epic();
 
-function oba_ma() {
-    if (wartosci.obama>=1) {
-        wartosci.bawelna = wartosci.bawelna + (80000 * wartosci.obama * wartosci.resetmnoznik) ;
+function legendary() {
+    if (wartosci.legendary>=1) {
+        wartosci.bawelna = wartosci.bawelna + 2350 * (wartosci.znikawnocy + wartosci.rudyzyd);
         wartosci.wyliczanie = wartosci.bawelna;
         wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
 document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
     }
 }
 
-setInterval(oba_ma, 1);
-oba_ma();
+setInterval(legendary, 25);
+legendary();
+
+function special() {
+    if (wartosci.special>=1) {
+        wartosci.bawelna = wartosci.bawelna + 12000 * (wartosci.obama + wartosci.vtbg);
+        wartosci.wyliczanie = wartosci.bawelna;
+        wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
+document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
+    }
+}
+
+setInterval(special, 1);
+special();
+
 
 function czest1() {
     var c1 = document.getElementById('ches1');
@@ -592,32 +693,43 @@ function otwieraj1() {
     if (wartosci.klucz1 >= 1) {
         wartosci.klucz1 = wartosci.klucz1 - 1;
         let essa = Math.floor((Math.random() * 1000) + 1);
-        if (essa <= 500) {
+        if (essa <= 300) {
             document.getElementById("informacja1").innerHTML =  "dropnieto: murzyn bez rąk";
             wartosci.murzynbezrak = wartosci.murzynbezrak + 1;
-            document.getElementById("bezrak").innerHTML = wartosci.murzynbezrak + "x";
-        } else if (essa<=850 && essa >= 501) {
-            document.getElementById("informacja1").innerHTML = "dropnieto 1,01x twoja bawelna";
-            wartosci.bawelna = wartosci.bawelna * 1.01;
-            wartosci.wyliczanie = wartosci.bawelna;
-            wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
-            document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
-
-        } else if (essa <= 900 && essa >= 851) {
-            document.getElementById("informacja1").innerHTML = "dropnieto 15 ryżu";
-            wartosci.ziarenka = wartosci.ziarenka + 15;
-            document.getElementById("zbziarna").innerHTML = wartosci.ziarenka;
-        } else if (essa <= 999 && essa >= 901) {
+            document.getElementById("info").src="nohands.png";
+            document.getElementById("bezrak").innerHTML = abbrNum(wartosci.murzynbezrak,1);
+            wartosci.common = 1;
+        } else if (essa<=600 && essa >= 301) {
+            document.getElementById("informacja1").innerHTML =  "dropnieto: czarny farmer v1";
+            wartosci.farm1 = wartosci.farm1 + 1;
+            document.getElementById("info").src="blackfarmer.png";
+            document.getElementById("blackfarmer1").innerHTML = abbrNum(wartosci.farm1,1);
+            wartosci.common = 1;
+        } else if (essa <= 900 && essa >= 601) {
+            document.getElementById("informacja1").innerHTML = "dropnieto: czarny farmer v2";
+            document.getElementById("info").src="blackfarmer2.png";
+            wartosci.farm2 = wartosci.farm2 + 1;
+            document.getElementById("blackfarmer2").innerHTML = abbrNum(wartosci.farm2,1);
+            wartosci.common = 1;
+        } else if (essa <= 990 && essa >= 901) {
             document.getElementById("informacja1").innerHTML = "dropnieto: 1,02x twoja bawelna";
             wartosci.bawelna = wartosci.bawelna * 1.02;
             wartosci.wyliczanie = wartosci.bawelna;
             wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
             document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
-
+            document.getElementById("info").src="bawelna.png";
+        } else if (essa <= 999 && essa >= 991) {
+            document.getElementById("informacja1").innerHTML = "dropnieto: Will Smith";
+            wartosci.will = wartosci.will + 1;
+            document.getElementById("will").innerHTML = abbrNum(wartosci.will,1);
+            document.getElementById("info").src="will.png";
+            wartosci.rare = 1;
         } else if (essa == 1000) {
             document.getElementById("informacja1").innerHTML = "dropnieto: złoty murzyn";
             wartosci.zlotymurzyn = wartosci.zlotymurzyn + 1;
-            document.getElementById("zlotyczern").innerHTML = wartosci.zlotymurzyn + "x";
+            document.getElementById("zlotyczern").innerHTML = abbrNum(wartosci.zlotymurzyn,1);
+            wartosci.epic = 1;
+            document.getElementById("info").src="zloty.png";
         }
     } else {
         document.getElementById("informacja1").innerHTML = "brak klucza";
@@ -649,12 +761,19 @@ function otwieraj2() {
             document.getElementById("info").src="star.png";
             document.getElementById('xp').innerHTML = abbrNum(wartosci.exp,2) + " / " +  abbrNum(1000 * (wartosci.lvl*1.7), 2);
 
-        } else if (essa <= 600 && essa >= 351) {
-            document.getElementById("informacja1").innerHTML = "dropnieto 10x murzynbezrak";
-            wartosci.murzynbezrak = wartosci.murzynbezrak + 10;
-            document.getElementById("bezrak").innerHTML = wartosci.murzynbezrak + "x";
-            document.getElementById("info").src="nohands.png";
-        } else if (essa <= 989 && essa >= 601) {
+        } else if (essa <= 550 && essa >= 351) {
+            document.getElementById("informacja1").innerHTML = "dropnieto: gigantyczny murzyn zbieracz";
+            wartosci.giant = wartosci.giant + 1;
+            document.getElementById("giantfarmer").innerHTML = abbrNum(wartosci.giant,1);
+            document.getElementById("info").src="giantfarmer.png";
+            wartosci.uncommon = 1;
+        } else if (essa <= 900 && essa >= 551) {
+            document.getElementById("informacja1").innerHTML = "dropnieto: black lives mater";
+            wartosci.blm = wartosci.blm + 1;
+            document.getElementById("blm").innerHTML = abbrNum(wartosci.blm,1);
+            document.getElementById("info").src="blm.png";
+            wartosci.uncommon = 1;
+        } else if (essa <= 989 && essa >= 901) {
             document.getElementById("informacja1").innerHTML = "dropnieto: 1,01x twoja bawelna";
             document.getElementById("info").src="bawelna.png";
             wartosci.bawelna = wartosci.bawelna * 1.01;
@@ -676,8 +795,9 @@ function otwieraj2() {
          else if (essa == 1000) {
             document.getElementById("informacja1").innerHTML = "dropnieto: Platynowy Murzyn";
             wartosci.platynowymurzyn = wartosci.platynowymurzyn + 1;
-            document.getElementById("MJ").innerHTML = wartosci.platynowymurzyn + "x";
+            document.getElementById("MJ").innerHTML = abbrNum(wartosci.platynowymurzyn,1);
             document.getElementById("info").src="MJ.png";
+            wartosci.epic = 1;
         }
     }
     else {
@@ -700,27 +820,31 @@ document.getElementById("progres").setAttribute("value", wartosci.exp);
 
             } else if (essa<=55000 && essa >= 10001) {
 
-                document.getElementById("informacja1").innerHTML = "dropnieto: 1,02x twoja bawelna";
-                document.getElementById("info").src="bawelna.png";
-                wartosci.bawelna = wartosci.bawelna * 1.02;
-                wartosci.wyliczanie = wartosci.bawelna;
-                wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
-                document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
-    
-    
-            } else if (essa <= 90000 && essa >= 55001) {
+                document.getElementById("informacja1").innerHTML = "dropnieto: gigner dziecko";
+
+                wartosci.gigner = wartosci.gigner + 1;
+                document.getElementById("gigner").innerHTML =abbrNum(wartosci.gigner,1);
+                document.getElementById("info").src="gigner.png";
+                wartosci.common = 1;
+            } else if (essa <= 72500 && essa >= 55001) {
                 document.getElementById("informacja1").innerHTML = "dropnieto: Grzegorz Floryda x1";
                 wartosci.floyd = wartosci.floyd + 1;
-                document.getElementById("floyd").innerHTML = wartosci.floyd + "x";
+                document.getElementById("floyd").innerHTML =abbrNum(wartosci.floyd,1);
                 document.getElementById("info").src="floryda.png";
-
+                wartosci.uncommon = 1;
+            } else if (essa <= 90000 && essa >= 72501) {
+                document.getElementById("informacja1").innerHTML = "dropnieto: Body Positive x1";
+                wartosci.bodypositive = wartosci.bodypositive + 1;
+                document.getElementById("bodypositive").innerHTML =abbrNum(wartosci.bodypositive,1);
+                document.getElementById("info").src="bodypositive.png";
+                wartosci.uncommon = 1;
             } else if (essa <= 96000 && essa >= 90001) {
-                document.getElementById("informacja1").innerHTML = "dropnieto: 100x murzyn bez rąk";
-                wartosci.murzynbezrak = wartosci.murzynbezrak + 100;
-                document.getElementById("bezrak").innerHTML = wartosci.murzynbezrak + "x";
-                document.getElementById("info").src="nohands.png";
-    
-            } else if (essa <= 99999 && essa >= 96001) {
+                document.getElementById("informacja1").innerHTML = "dropnieto: stop rasizmowi";
+                wartosci.stopracism = wartosci.stopracism + 1;
+                document.getElementById("brakrasizmu").innerHTML = abbrNum(wartosci.stopracism,1);
+                document.getElementById("info").src="brakrasizmu.png";
+                wartosci.rare = 1;
+            } else if (essa <= 99989 && essa >= 96001) {
                 document.getElementById("informacja1").innerHTML = "dropnieto: 1500xp";
                 wartosci.exp = wartosci.exp + 1500;
                 if (wartosci.exp >= 1000 * (wartosci.lvl*1.7)) {
@@ -730,12 +854,19 @@ document.getElementById("progres").setAttribute("value", wartosci.exp);
                 }
                 document.getElementById("info").src="star.png";
                 document.getElementById('xp').innerHTML = abbrNum(wartosci.exp,2) + " / " +  abbrNum(1000 * (wartosci.lvl*1.7), 2);
-            }
-             else if (essa == 100000) {
+            }else if (essa <= 99999 && essa >= 99991) {
+                document.getElementById("informacja1").innerHTML = "dropnieto: Znikający w nocy";
+                wartosci.znikawnocy = wartosci.znikawnocy + 1;
+                document.getElementById("znika").innerHTML = abbrNum(wartosci.znikawnocy,1);
+                document.getElementById("info").src="znikawnocy.png";
+                wartosci.legendary = 1;
+            
+            }else if (essa == 100000) {
                 document.getElementById("informacja1").innerHTML = "dropnieto: Obama!";
                 wartosci.obama = wartosci.obama + 1;
-                document.getElementById("obama").innerHTML = wartosci.obama + "x";
+                document.getElementById("obama").innerHTML = abbrNum(wartosci.obama,1);
                 document.getElementById("info").src="drop.png";
+                wartosci.special = 1;
             }
         }
         else {

@@ -36,6 +36,7 @@
             <button onclick="dupa()">ZAPIS</button>
             
             <button onclick="dupa2()">RESET WARTOSCI</button>
+            <button onclick="dupa3()">DODAJ UPDATE</button>
         </div>
 
 </div>
@@ -56,6 +57,9 @@
                     </div>
                     <div class="przycisksklep5" ONCLICK="ShowAndHide5()">
                         <img src="building.png" width="60px" height="55px" class="xd20">
+                    </div>
+                    <div class="przycisksklep6" ONCLICK="ShowAndHide6()">
+                        <img src="enchant.png" width="60px" height="55px" class="xd20">
                     </div>
 
                 </div>
@@ -372,23 +376,255 @@
             </div>
          </div>
     </DIV>
-    <div class="listaczanych">
-        <div class="opcja1"> 
-            <img src="nohands.png" width="50px" height="50px"> <b id="bezrak"> 0x</b>
+    <DIV ID="pokazindex" STYLE="display:none" class="sklepy">
+        <div class="tekst"><img src="enchant.png" width="75px" height="75px" class="tekst1">
+           <b><p class="napiswsklepie">Black Index</p></b>
         </div>
-        <div class="opcja1"> 
-            <img src="zloty.png" width="50px" height="50px"> <b id="zlotyczern"> 0x</b>
+        <div class="idx">
+            <div class="flex_id">
+                <div class="id1">
+                    <div class="opcja1"> 
+                        <img src="nohands.png" width="50px" height="50px"> 
+                        <b id="bezrak" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id1">
+                    <div class="opcja1"> 
+                        <img src="gigner.png" width="50px" height="50px">
+                        <b id="gigner" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id1">
+                    <div class="opcja1"> 
+                        <img src="blm.png" width="50px" height="50px">
+                        <b id="blm" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id1">
+                    <div class="opcja1"> 
+                        <img src="blackfarmer.png" width="50px" height="50px">
+                        <b id="blackfarmer1" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id1">
+                    <div class="opcja1"> 
+                        <img src="golem.png" width="50px" height="50px">
+                        <b id="golem" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id1">
+                    <div class="opcja1"> 
+                        <img src="blackfarmer2.png" width="50px" height="50px">
+                        <b id="blackfarmer2" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id2">
+                    <div class="opcja1"> 
+                        <img src="floryda.png" width="50px" height="50px">
+                        <b id="floyd" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id2">
+                    <div class="opcja1"> 
+                        <img src="giantfarmer.png" width="50px" height="50px">
+                        <b id="giantfarmer" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+            </div>
+            <div class="flex_id">
+                <div class="id2">
+                    <div class="opcja1"> 
+                        <img src="bodypositive.png" width="50px" height="50px">
+                        <b id="bodypositive" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id3">
+                    <div class="opcja1"> 
+                        <img src="will.png" width="50px" height="50px">
+                        <b id="will" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id3">
+                    <div class="opcja1"> 
+                        <img src="brakrasizmu.png" width="50px" height="50px">
+                        <b id="brakrasizmu" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id4">
+                    <div class="opcja1"> 
+                        <img src="zloty.png" width="50px" height="50px">
+                        <b id="zlotyczern" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id4">
+                    <div class="opcja1"> 
+                        <img src="MJ.png" width="50px" height="50px">
+                        <b id="MJ" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id5">
+                    <div class="opcja1"> 
+                        <img src="znikawnocy.png" width="50px" height="50px">
+                        <b id="znika" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+
+                <div class="id5">
+                    <div class="opcja1"> 
+                        <img src="rudyzyd.png" width="50px" height="50px">
+                        <b id="rudyzyd" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="id6">
+                    <div class="opcja1"> 
+                        <img src="obama.png" width="50px" height="50px">
+                        <b id="obama" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="flex_id">
+                <div class="id6">
+                    <div class="opcja1"> 
+                        <img src="vengeful true black god.png" width="50px" height="50px">
+                        <b id="vtbg" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="idh1">
+                    <div class="opcja1"> 
+                        <img src="h1common.png" width="50px" height="50px">
+                        <b id="h1common" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="idh1">
+                    <div class="opcja1"> 
+                        <img src="h1uncommon.png" width="50px" height="50px">
+                        <b id="h1uncommon" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="idh1">
+                    <div class="opcja1"> 
+                        <img src="h1rare.png" width="50px" height="50px">
+                        <b id="h1rare" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="idh1">
+                    <div class="opcja1"> 
+                        <img src="h1epic.png" width="50px" height="50px">
+                        <b id="h1epic" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="idh1">
+                    <div class="opcja1"> 
+                        <img src="h1legendary.png" width="50px" height="50px">
+                        <b id="h1legendary" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+                <div class="idh1">
+                    <div class="opcja1"> 
+                        <img src="h1special.png" width="50px" height="50px">
+                        <b id="h1special" class="id_pozycja"> 0x</b>
+                    </div>
+                </div>
+            </div>
+            <div class="flex_id">
+                <div class="id">
+
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+            </div>
+            <div class="flex_id">
+                <div class="id">
+
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+            </div>
+            <div class="flex_id">
+                <div class="id">
+
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+            </div>
+            <div class="flex_id">
+                <div class="id">
+
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+                <div class="id">
+                    
+                </div>
+            </div>
         </div>
-        <div class="opcja1"> 
-            <img src="MJ.png" width="50px" height="50px"> <b id="MJ"> 0x</b>
-        </div>
-        <div class="opcja1"> 
-            <img src="floryda.png" width="50px" height="50px"> <b id="floyd"> 0x</b>
-        </div>
-        <div class="opcja1"> 
-            <img src="obama.png" width="50px" height="50px"> <b id="obama"> 0x</b>
-        </div>
-    </div>
+
+    </DIV>
+
     <script src="function.js" type="text/javascript"></script>
 
 </body>
