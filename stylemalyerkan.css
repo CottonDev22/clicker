@@ -1,26 +1,27 @@
 body {
-    background-color: rgb(32, 34, 37);  
+    background-color: rgb(33, 38, 46);  
     margin: 0;
     height: 900px;
 }
 
 .liczbawelne {
   background-color: #9da9ac;
-  width: 60%;
+  width: 250px;
   margin-left: 20px;
   height: 50px;
   border-radius: 30px;
   margin-bottom: 5px;
   border-style: inset;
   border-color:rgb(185, 200, 212);
-  flex: 33%;
+  position: relative;
+
 }
 .liczbawelne2 {
   position: relative;
   top: -45px;
   left: 50px;
   color:#2a3236;
-  font-size: 150%;
+  font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
@@ -29,7 +30,7 @@ body {
 }
 .liczresety {
   background-color: #e71313;
-  width: 30%;
+  width: 250px;
   margin-left: 20px;
   height: 50px;
   border-radius: 30px;
@@ -48,7 +49,7 @@ body {
 }
 .liczziarna {
   background-color: #ddbf14;
-  width: 30%;
+  width: 250px;
   margin-left: 20px;
   height: 50px;
   border-radius: 30px;
@@ -86,7 +87,7 @@ body {
 }
 .container {
   padding: 20px;
-  display: flex;
+
   width: 70%;
   margin-left: auto;
   margin-right: auto;
@@ -187,10 +188,11 @@ body {
 }
 .sklepy {
   background-color: #2a3236;
-  position: relative;
-  top: -350px;
+  position: absolute;
+  top: 15%;
+  left: 20%;
   display: flex;
-  width: 40%;
+  width: 100%;
   height: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -220,7 +222,7 @@ body {
 .tekst1 {
   position: relative;
   top: 15px;
-  left: 22%;
+  left: 12%;
 }
 .tekst {
   position:relative;
@@ -228,18 +230,18 @@ body {
   
 }
 .tekst3 {
-  align-items: center;
-  justify-content: center;
+
+
   display: flex;
   position: relative;
 
 }
 .ulepszenie {
-  width: 500px;
+  width: 100%;
   height: 100px;
   background-color: #4f6068;
   position: relative;
-  left: 50px;
+
   top: -20px;
   border-radius: 30px;
   border-style: inset;
@@ -286,38 +288,40 @@ body {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 .kosztulepki {
-  color:rgb(71, 194, 40);
-  position: relative;
-  top: -120px;
-  left: 430px;
+  color:rgb(255, 255, 255);
+  position: absolute;
+  z-index: 100;
+  left: 5%;
+  top: -2%;
   font-size: 20px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
-
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
 .czarnuch1 {
-  position: absolute;
-  left: 740px;
-  top: 200px;
+  position: relative;
+  left: 25%;
+  top: -300px;
   width: 10%;
 }
 .czarnuch2 {
-  position: absolute;
-  left: 790px;
-  top: 150px;
+    position: relative;
+    left: 35%;
+    top: -300px;
   width: 10%;
 }
 .czarnuch3 {
-  position: absolute;
-  left: 840px;
-  top: 120px;
+    position: relative;
+    left: 55%;
+    top: -350px;
   width: 10%;
 }
 .rebirthy {
   background-color: #2a3236;
-  position: relative;
-  top: -350px;
+  position: absolute;
+  top: 15%;
+  left: 10%;
   display: flex;
-  width: 33%;
+  width: 90%;
   height: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -382,10 +386,10 @@ body {
 .ziarna1 {
   background-color: #4f6068;
   height: 100px;
-  width: 450px;
+  width: 50%;
   position: relative;
   top: 10px;
-  left: 15%;;
+  left: 1%;;
   border-radius: 20px;
   border-style: outset;
   border-color:rgb(67, 167, 230);
@@ -416,7 +420,7 @@ body {
   border-radius: 30px;
   position: relative;
   top: 12px;
-  left: 110px;
+  left: 10%;
   text-align: center;
   color: white;
   font-size: 20px;
@@ -456,8 +460,9 @@ body {
 }
 .ziarnasklep {
   background-color: #2a3236;
-  position: relative;
-  top: -350px;
+  position: absolute;
+  top: 15%;
+  left: 12%;
   display: flex;
   width: 900px;
   height: 600px;
