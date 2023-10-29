@@ -1165,7 +1165,7 @@ function halloween1() {
         }
     }
     function halloween5() {
-        if (wartosci.candy >=250 * (1+((wartosci.h1mnoznik*10)*5 * wartosci.h1mnoznik)) && wartosci.h1mnoznik < 33) { 
+        if (wartosci.candy >=250 * (1+((wartosci.h1mnoznik*10) * wartosci.h1mnoznik)) && wartosci.h1mnoznik < 33) { 
             wartosci.candy = wartosci.candy - 250 * (1+((wartosci.h1mnoznik*10)* wartosci.h1mnoznik));
             wartosci.h1mnoznik = wartosci.h1mnoznik + 3;
 
