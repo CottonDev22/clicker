@@ -14,13 +14,13 @@ var wartosci = {
     resetmnoznik: 1,
     lepszabawelna: 1,
     ziarenka: 0,
+
+//SKRZYNIE
     klucz1: 0,
     klucz2: 0,
     klucz3: 0,
     klucz4: 0,
-    murzynbezrak: 0,
-    zlotymurzyn: 0,
-    platynowymurzyn: 0,
+//BUDYNKI
     build0: 0,
     licz0: 0,
     build1: 0,
@@ -37,8 +37,12 @@ var wartosci = {
     licz6: 0,
     build7: 0,
     licz7: 0,
-    delay1: 1000,
     podwajacz: 0,
+    delay1: 1000,
+//NIEWOLNICY
+    murzynbezrak: 0,
+    zlotymurzyn: 0,
+    platynowymurzyn: 0,
     floyd: 0,
     obama: 0,
     gigner: 0,
@@ -53,13 +57,25 @@ var wartosci = {
     znikawnocy: 0,
     rudyzyd: 0,
     vtbg: 0,
+//RODZAJE
     common: 0,
     uncommon: 0,
     rare: 0,
     epic: 0,
     legendary: 0,
     special: 0,
+//HALLOWEEN EVENT
     h1: 0,
+    candy: 0,
+    maska: 0,
+    zombie: 0,
+    opiumhalloween: 0,
+    marasskeleton: 0,
+    strasznaczapka: 0,
+    gargoyle: 0,
+    jigsaw:0,
+    h1lvl:0,
+    h1mnoznik:0,
 // itd
 };
 //RESET WARTOSCI
@@ -80,13 +96,12 @@ var wartosci = {
     resetmnoznik: 1,
     lepszabawelna: 1,
     ziarenka: 0,
-    murzynbezrak: 0,
-    zlotymurzyn: 0,
-    platynowymurzyn: 0,
+//SKRZYNIE
     klucz1: 0,
     klucz2: 0,
     klucz3: 0,
     klucz4: 0,
+//BUDYNKI
     build0: 0,
     licz0: 0,
     build1: 0,
@@ -105,6 +120,10 @@ var wartosci = {
     licz7: 0,
     podwajacz: 0,
     delay1: 1000,
+//NIEWOLNICY
+    murzynbezrak: 0,
+    zlotymurzyn: 0,
+    platynowymurzyn: 0,
     floyd: 0,
     obama: 0,
     gigner: 0,
@@ -119,13 +138,25 @@ var wartosci = {
     znikawnocy: 0,
     rudyzyd: 0,
     vtbg: 0,
+//RODZAJE
     common: 0,
     uncommon: 0,
     rare: 0,
     epic: 0,
     legendary: 0,
     special: 0,
+//HALLOWEEN EVENT
     h1: 0,
+    candy: 0,
+    maska: 0,
+    zombie: 0,
+    opiumhalloween: 0,
+    marasskeleton: 0,
+    strasznaczapka: 0,
+    gargoyle: 0,
+    jigsaw:0,
+    h1lvl:0,
+    h1mnoznik:0,
 // itd
 };
 
@@ -134,25 +165,17 @@ localStorage.setItem("gra", JSON.stringify(wartosci));
 
 if (localStorage.getItem("gra") !== null) wartosci = JSON.parse(localStorage.getItem("gra"));
 function dupa3() {
-    wartosci.gigner= 0;
-    wartosci.blm= 0;
-    wartosci.farm1= 0;
-    wartosci.farm2= 0;
-    wartosci.golem= 0;
-    wartosci.giant= 0;
-    wartosci.bodypositive= 0;
-    wartosci.will= 0;
-    wartosci.stopracism= 0;
-    wartosci.znikawnocy= 0;
-    wartosci.rudyzyd= 0;
-    wartosci.vtbg= 0;
-    wartosci.common= 0;
-    wartosci.uncommon= 0;
-    wartosci.rare= 0;
-    wartosci.epic= 0;
-    wartosci.legendary= 0;
-    wartosci.special= 0;
     wartosci.h1 = 0;
+    wartosci.candy =0;
+    wartosci.maska =0,
+    wartosci.zombie =0;
+    wartosci.opiumhalloween=0;
+    wartosci.marasskeleton=0;
+    wartosci.strasznaczapka=0;
+    wartosci.gargoyle=0;
+    wartosci.jigsaw=0;
+    wartosci.h1lvl = 0;
+    wartosci.h1mnoznik = 0;
 }
 function dupa(){  // Button click
     if (wartosci.narzedzia >= 1) document.getElementById("u1").style.backgroundColor = "moccasin";
@@ -161,7 +184,7 @@ function dupa(){  // Button click
     if (wartosci.nawadnianie > 1) document.getElementById("u4").style.backgroundColor = "moccasin";
     if (wartosci.szybszeraczki > 1) document.getElementById("u5").style.backgroundColor = "moccasin";
     if (wartosci.autoczarny1 > 0) document.getElementById("u6").style.backgroundColor = "moccasin";
-    if (wartosci.stary1 > 0) document.getElementById("u7").style.backgroundColor = "moccasin";
+    if (wartosci.autostary1 > 0) document.getElementById("u7").style.backgroundColor = "moccasin";
     if (wartosci.wuzek > 0) document.getElementById("u8").style.backgroundColor = "moccasin";
 // ZAMIANA BAWELNY
 wartosci.bawelna += 1;
@@ -181,6 +204,7 @@ var xc = document.getElementById('pokazupziarna');
 var xe = document.getElementById('caseshop');
 var xf = document.getElementById('budynki');
 var xg = document.getElementById('pokazindex');
+var xh = document.getElementById('halloween');
 //FUNKCJA KLIKNMIEC
 function klikniecia() {
 
@@ -202,7 +226,14 @@ document.getElementById("progres").setAttribute("value", wartosci.exp);
             zd.style.height = '52px';
             zd.style.width = '52px';
             
+//HALLOWEEN EVENT DODAWANIE CUKIERKOW
+if (wartosci.h1lvl == 1) document.getElementById("h1cena4").innerHTML="X";
 
+document.getElementById("h1cena5").innerHTML=abbrNum(250 * (1+((wartosci.h1mnoznik*10)* wartosci.h1mnoznik)),2);
+
+if (wartosci.h1mnoznik > 33) document.getElementById("h1cena5").innerHTML="X";
+wartosci.candy = wartosci.candy + 1 * (1+(wartosci.h1mnoznik * wartosci.h1mnoznik));
+document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
             document.getElementById('rebirty').innerHTML = wartosci.resetv;
             document.getElementById('rst1').innerHTML = "KOSZT: " + abbrNum((25000 * wartosci.kosztreset),2);
             document.getElementById('zbziarna').innerHTML = wartosci.ziarenka;
@@ -223,6 +254,14 @@ document.getElementById("progres").setAttribute("value", wartosci.exp);
             document.getElementById("znika").innerHTML = abbrNum(wartosci.znikawnocy,1);
             document.getElementById("rudyzyd").innerHTML = abbrNum(wartosci.rudyzyd,1);
             document.getElementById("vtbg").innerHTML = abbrNum(wartosci.vtbg,1);
+            //HALLOWEEEN
+            document.getElementById("h1common").innerHTML = abbrNum(wartosci.maska,1);
+            document.getElementById("h1uncommon").innerHTML = abbrNum(wartosci.zombie,1);
+            document.getElementById("h1rare").innerHTML = abbrNum(wartosci.opiumhalloween,1);
+            document.getElementById("h1epic").innerHTML = abbrNum(wartosci.marasskeleton,1);
+            document.getElementById("h1legendary").innerHTML = abbrNum(wartosci.strasznaczapka,1);
+            document.getElementById("h1special").innerHTML = abbrNum(wartosci.gargoyle,1);
+            document.getElementById("h1secret").innerHTML = abbrNum(wartosci.jigsaw,1);
             //budynek0
             document.getElementById("licz0").innerHTML = abbrNum(100*(1 + wartosci.build0)* (1 + wartosci.licz0),2);
             document.getElementById("licz0a").innerHTML = abbrNum(wartosci.licz0,1);
@@ -309,6 +348,7 @@ function ShowAndHide() {
                 xe.style.display = 'none';
                 xf.style.display = 'none';
                 xg.style.display = 'none';
+                xh.style.display = 'none';
             } else {
                 xa.style.display = 'none';
             }
@@ -323,6 +363,7 @@ function ShowAndHide2() {
                 xe.style.display = 'none';
                 xf.style.display = 'none';
                 xg.style.display = 'none';
+                xh.style.display = 'none';
             } else {
                 xb.style.display = 'none';
             }
@@ -335,6 +376,7 @@ function ShowAndHide3() {
                 xe.style.display = 'none';
                 xf.style.display = 'none';
                 xg.style.display = 'none';
+                xh.style.display = 'none';
             } else {
                 xc.style.display = 'none';
             }
@@ -347,6 +389,7 @@ function ShowAndHide4() {
                 xc.style.display = 'none';
                 xf.style.display = 'none';
                 xg.style.display = 'none';
+                xh.style.display = 'none';
             } else {
                 xe.style.display = 'none';
             }
@@ -359,6 +402,7 @@ function ShowAndHide5() {
                     xc.style.display = 'none';
                     xe.style.display = 'none';
                     xg.style.display = 'none';
+                    xh.style.display = 'none';
                 } else {
                     xf.style.display = 'none';
                 }
@@ -371,10 +415,24 @@ function ShowAndHide6() {
                     xc.style.display = 'none';
                     xe.style.display = 'none';
                     xf.style.display = 'none';
+                    xh.style.display = 'none';
                 } else {
                     xg.style.display = 'none';
                 }
                 }
+function ShowAndHide7() {
+                if (xh.style.display == 'none') {
+                    xh.style.display = 'block';
+                    xb.style.display = 'none';
+                    xa.style.display = 'none';
+                    xc.style.display = 'none';
+                    xe.style.display = 'none';
+                    xf.style.display = 'none';
+                    xg.style.display = 'none';
+                } else {
+                    xh.style.display = 'none';
+                }
+                }       
 function upnarzedzia1() {
             if (wartosci.narzedzia == 0 && wartosci.bawelna >= 20) {
                 wartosci.bawelna = wartosci.bawelna - 20;
@@ -624,6 +682,17 @@ document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
 setInterval(special, 1);
 special();
 
+function halloween() {
+    if (wartosci.h1>=1) {
+        wartosci.bawelna = wartosci.bawelna + 12 * (wartosci.maska + (50*wartosci.zombie) + (130*wartosci.opiumhalloween)+(240*wartosci.marasskeleton)+(800*wartosci.strasznaczapka)+(15000*wartosci.gargoyle)+(75000*wartosci.jigsaw));
+        wartosci.wyliczanie = wartosci.bawelna;
+        wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
+document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
+    }
+}
+
+setInterval(halloween, 150);
+halloween();
 
 function czest1() {
     var c1 = document.getElementById('ches1');
@@ -1007,3 +1076,113 @@ function potrojenie() {
 
     potrojnyxp();
 }
+//HALLOWEEEEEN
+function halloween1() {
+    if (wartosci.candy >= 1000) {
+        wartosci.candy = wartosci.candy - 1000;
+        document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
+        let essa = Math.floor((Math.random() * 1000) + 1);
+        if (essa <= 450) {
+            document.getElementById("informacja2").innerHTML =  "dropnięto: pocięta afroamerykanka halloween";
+            wartosci.maska = wartosci.maska + 1;
+            document.getElementById("h1common").innerHTML =abbrNum(wartosci.maska,1);
+            wartosci.h1 = 1;
+
+        } else if (essa<=750 && essa >= 451) {
+            document.getElementById("informacja2").innerHTML =  "dropnięto: opętana agnieszka";
+            wartosci.zombie= wartosci.zombie + 1;
+            document.getElementById("h1uncommon").innerHTML =abbrNum(wartosci.zombie,1);
+            wartosci.h1 = 1;
+
+        } else if (essa <= 870 && essa >= 751) {
+            document.getElementById("informacja2").innerHTML = "dropnięto: opium z halloween";
+            wartosci.opiumhalloween = wartosci.opiumhalloween + 1;
+            document.getElementById("h1rare").innerHTML =abbrNum(wartosci.opiumhalloween,1);
+            wartosci.h1 = 1;
+        } else if (essa <= 950 && essa >= 871) {
+            document.getElementById("informacja2").innerHTML = "dropnięto: straszny maras";
+            wartosci.marasskeleton = wartosci.marasskeleton + 1;
+            document.getElementById("h1epic").innerHTML =abbrNum(wartosci.marasskeleton,1);
+            wartosci.h1 = 1;
+        } else if (essa <= 999 && essa >= 951) {
+            document.getElementById("informacja2").innerHTML = "dropnięto: elegancki strach na wróble";
+            wartosci.strasznaczapka = wartosci.strasznaczapka + 1;
+            document.getElementById("h1legendary").innerHTML =abbrNum(wartosci.strasznaczapka,1);
+            wartosci.h1 = 1;
+        } else if (essa == 1000) {
+            document.getElementById("informacja2").innerHTML = "dropnięto: ptak w motywie halloween";
+            wartosci.gargoyle = wartosci.gargoyle + 1;
+            document.getElementById("h1special").innerHTML =abbrNum(wartosci.gargoyle,1);
+            wartosci.h1 = 1;
+        }
+    }
+    else {
+        document.getElementById("informacja1").innerHTML = "brak klucza";
+        document.getElementById("info").src="";
+    }
+
+    }
+    function halloween2() {
+        if (wartosci.candy >=10000000000) {
+            wartosci.candy = wartosci.candy - 10000000000;
+            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
+            wartosci.jigsaw = wartosci.jigsaw + 1;
+            document.getElementById("h1secret").innerHTML=abbrNum(wartosci.jigsaw,1);
+        }
+    }
+    function halloween3() {
+        if (wartosci.candy >=1000000) { 
+            wartosci.candy = wartosci.candy - 1000000;
+            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
+
+        wartosci.exp = wartosci.exp + 500;
+        if (wartosci.exp >= 1000 * (wartosci.lvl*1.7)) {
+            wartosci.lvl = wartosci.lvl + 1;
+            wartosci.exp = 0;
+            wartosci.ziarenka = wartosci.ziarenka + (wartosci.lvl *3);
+        }
+
+        document.getElementById('xp').innerHTML = abbrNum(wartosci.exp,2) + " / " +  abbrNum(1000 * (wartosci.lvl*1.7), 2);
+        document.getElementById('lvltekst').innerHTML = wartosci.lvl;
+        document.getElementById("progres").setAttribute("max", ((1.7 *wartosci.lvl) * 1000));
+    document.getElementById("progres").setAttribute("value", wartosci.exp);
+        }
+    }    
+    function halloween4() {
+        if (wartosci.candy >=100000000 && wartosci.h1lvl == 0) { 
+            wartosci.h1lvl = 1;
+            wartosci.candy = wartosci.candy - 100000000;
+            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
+            wartosci.lvl = wartosci.lvl + 1;
+            wartosci.exp = 0;
+            wartosci.ziarenka = wartosci.ziarenka + (wartosci.lvl *3);
+
+            document.getElementById("h1cena4").innerHTML="X";
+        document.getElementById('xp').innerHTML = abbrNum(wartosci.exp,2) + " / " +  abbrNum(1000 * (wartosci.lvl*1.7), 2);
+        document.getElementById('lvltekst').innerHTML = wartosci.lvl;
+        document.getElementById("progres").setAttribute("max", ((1.7 *wartosci.lvl) * 1000));
+    document.getElementById("progres").setAttribute("value", wartosci.exp);
+        }
+    }
+    function halloween5() {
+        if (wartosci.candy >=250 * (1+((wartosci.h1mnoznik*10)*5 * wartosci.h1mnoznik)) && wartosci.h1mnoznik < 33) { 
+            wartosci.candy = wartosci.candy - 250 * (1+((wartosci.h1mnoznik*10)* wartosci.h1mnoznik));
+            wartosci.h1mnoznik = wartosci.h1mnoznik + 3;
+
+            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
+
+
+            document.getElementById("h1cena5").innerHTML=abbrNum(250 * (1+((wartosci.h1mnoznik*10) * wartosci.h1mnoznik)),2);
+
+        }
+    }
+    function halloween6() {
+        if (wartosci.candy >=5000) {
+            wartosci.candy = wartosci.candy - 5000;
+            wartosci.ziarenka = wartosci.ziarenka + 2;
+            
+            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
+            
+            document.getElementById("zbziarna").innerHTML=abbrNum(wartosci.ziarenka,2);
+        }
+    }

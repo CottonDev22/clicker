@@ -1,3 +1,6 @@
+
+
+
 body {
     background-color: rgb(32, 34, 37);  
     margin: 0;
@@ -64,6 +67,26 @@ body {
   color:#0e344d;
   font-size: 35px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.liczcukierki{
+  background-color: #a528df;
+  width: 60%;
+  margin-left: 20px;
+  height: 50px;
+  border-radius: 30px;
+  margin-bottom: 5px;
+  border-style: inset;
+  border-color:rgb(0, 0, 0);
+  flex: 33%;
+}
+.liczcukierki2 {
+  position: relative;
+  top: -45px;
+  left: 50px;
+  color:#000000;
+  font-size: 35px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 .klikanie {
   height: 300px;
@@ -139,6 +162,16 @@ body {
   margin-left: 10px;
   margin: 5px;
 }
+.przycisksklep7 {
+  width: 75px;
+  height: 75px;
+  background-color: #ec9d0a;
+  border-radius: 50px;
+  margin-left: 10px;
+  margin: 5px;
+  border-style: outset;
+  border-color: white;
+}
 .przycisksklep:hover {
   cursor: pointer;
   background-color: #fff;
@@ -160,6 +193,10 @@ body {
   background-color: #fff;
 }
 .przycisksklep6:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+.przycisksklep7:hover {
   cursor: pointer;
   background-color: #fff;
 }
@@ -187,8 +224,9 @@ body {
 }
 .sklepy {
   background-color: #2a3236;
-  position: relative;
-  top: -350px;
+  position: absolute;
+  top: 15%;
+  left: 30%;
   display: flex;
   width: 40%;
   height: 600px;
@@ -314,8 +352,9 @@ body {
 }
 .rebirthy {
   background-color: #2a3236;
-  position: relative;
-  top: -350px;
+  position: absolute;
+  top: 15%;
+  left: 35%;
   display: flex;
   width: 33%;
   height: 600px;
@@ -456,8 +495,9 @@ body {
 }
 .ziarnasklep {
   background-color: #2a3236;
-  position: relative;
-  top: -350px;
+  position: absolute;
+  top: 15%;
+  left: 30%;
   display: flex;
   width: 900px;
   height: 600px;
@@ -549,7 +589,11 @@ body {
   color: white;
   font-size: 25px;
 }
-
+#informacja2 {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
 .opcja1 {
   position: relative;
   top: 10px;
@@ -559,8 +603,9 @@ body {
 }
 .budynkiclass {
   background-color: #2a3236;
-  position: relative;
-  top: -350px;
+  position: absolute;
+  top: 15%;
+  left: 35%;
   display: flex;
   width: 600px;
   height: 600px;
@@ -686,9 +731,13 @@ body {
   border-radius: 15px;
 
 }
+
+
 .id1 {
-  background-color: rgb(127, 128, 127);
-  height: 60px;
+	background: linear-gradient(-45deg, #797776, #a7a4a1, #6b777c, #757474);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 60px;
   width: 60px;
   position: relative;
   top: 10px;
@@ -696,7 +745,10 @@ body {
   border-style: outset;
   border-color: #2e302e;
   border-radius: 10px;
+
 }
+
+
 .id2 {
   background-color: rgb(64, 143, 64);
   height: 60px;
@@ -742,14 +794,16 @@ body {
   border-radius: 10px;
 }
 .id6 {
-  background-color: rgb(255, 90, 227);
+	background: linear-gradient(-45deg, #f0ebea, #98cedf, #f88cf3, #b7f571);
+	background-size: 300% 500%;
+	animation: gradient 2s ease infinite;
   height: 60px;
   width: 60px;
   position: relative;
   top: 10px;
   margin-left: 10px;
   border-style: outset;
-  border-color: #be14a2;
+  border-color: linear-gradient(-45deg, #f0ebea, #98cedf, #f88cf3, #b7f571);
   border-radius: 10px;
 }
 .idh1 {
@@ -773,4 +827,137 @@ body {
   color: rgb(226, 226, 226);
   text-align: center;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.halloweenclass {
+  background-color: #2a3236;
+  position: absolute;
+  top: 15%;
+  left: 35%;
+  display: flex;
+  width: 600px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 4000;
+}
+.rzadek {
+  display: flex;
+  width: 90%;
+  height: 150px;
+  margin: 15px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.zakup {
+  background-color: #161413;
+  height: 150px;
+  width: 50px;
+  flex: 33%;
+  margin: 5px;
+  position: relative;
+  left: 5%;
+  border-radius: 15px;
+}
+.zakup2 {
+  background-color: #161413;
+  height: 150px;
+  width: 50px;
+  flex: 66%;
+  margin: 5px;
+  position: relative;
+  left: 5%;
+  border-radius: 15px;
+}
+.hallowe {
+  position: relative;
+  left: 9px;
+  top: 12px;
+  transition: 100ms;
+}
+.hallowe:hover {
+
+  transform: scale(1.05);
+}
+.hzdj1 {
+  transition: 100ms;
+  position: relative;
+  left: 50px;
+  top: 35px;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  transform-origin: bottom;
+}
+.hzdj1:active {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.hzdj2 {
+  position: relative;
+  top: -5px;
+}
+.hallo1 {
+  height: 80%;
+  position: relative;
+  top: -40px;
+}
+.hallo0 {
+  color: white;
+  position: relative;
+  top: 30px;
+  text-align: center;
+}
+.hallo2 {
+  position: relative;
+  top: -20px;
+  background-color: #f3841c;
+  border-radius: 30px;
+  height: 35px;
+  
+  color: #000;
+  border-color:#9e5007;
+  border-style: outset;
+}
+#h1cena {
+  top: -20px;
+  position: relative;
+  color:rgb(240, 240, 240);
+  font-size: 25px;
+}
+#h1cena4 {
+  top: -20px;
+  position: relative;
+  color:rgb(240, 240, 240);
+  font-size: 25px;
+}
+#h1cena5 {
+  top: -20px;
+  position: relative;
+  color:rgb(240, 240, 240);
+  font-size: 20px;
+}
+.hzdj1:hover {
+  animation-name: bounce;
+  animation-timing-function: ease;
+}
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+@-webkit-keyframes gradient {
+  0%{background-position:59% 0%}
+  50%{background-position:42% 100%}
+  100%{background-position:59% 0%}
+}
+@-moz-keyframes gradient {
+  0%{background-position:59% 0%}
+  50%{background-position:42% 100%}
+  100%{background-position:59% 0%}
+}
+@keyframes gradient {
+  0%{background-position:59% 0%}
+  50%{background-position:42% 100%}
+  100%{background-position:59% 0%}
 }
