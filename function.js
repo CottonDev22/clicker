@@ -74,6 +74,7 @@ var wartosci = {
     strasznaczapka: 0,
     gargoyle: 0,
     jigsaw:0,
+    chucky:0,
     h1lvl:0,
     h1mnoznik:0,
 // itd
@@ -155,6 +156,7 @@ var wartosci = {
     strasznaczapka: 0,
     gargoyle: 0,
     jigsaw:0,
+    chucky:0,
     h1lvl:0,
     h1mnoznik:0,
 // itd
@@ -165,17 +167,8 @@ localStorage.setItem("gra", JSON.stringify(wartosci));
 
 if (localStorage.getItem("gra") !== null) wartosci = JSON.parse(localStorage.getItem("gra"));
 function dupa3() {
-    wartosci.h1 = 0;
-    wartosci.candy =0;
-    wartosci.maska =0,
-    wartosci.zombie =0;
-    wartosci.opiumhalloween=0;
-    wartosci.marasskeleton=0;
-    wartosci.strasznaczapka=0;
-    wartosci.gargoyle=0;
-    wartosci.jigsaw=0;
-    wartosci.h1lvl = 0;
-    wartosci.h1mnoznik = 0;
+
+    wartosci.chucky = 0;
 }
 function dupa(){  // Button click
     if (wartosci.narzedzia >= 1) document.getElementById("u1").style.backgroundColor = "moccasin";
