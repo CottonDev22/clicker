@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotton Clicker</title>
-    <script src="jquery-3.6.3.min.js"></script>
+
 </head>
 <body onload="klikniecia()">
 <div class="pozycja">
@@ -64,6 +64,9 @@
                     </div>
                     <div class="przycisksklep6" ONCLICK="ShowAndHide6()">
                         <img src="enchant.png" width="60px" height="55px" class="xd20">
+                    </div>
+                    <div class="przycisksklep8" ONCLICK="ShowAndHide8()">
+                        <img src="box.png" width="60px" height="55px" class="xd20">
                     </div>
                     <div class="przycisksklep7" ONCLICK="ShowAndHide7()">
                         <img src="pumpkin.png" width="55px" height="55px" class="hallowe">
@@ -150,6 +153,38 @@
             <div class="nazwaulepki">Lepsza bawełna</div>
             <div class="opisulepki">wprowadza do Twojej farmy nową<br> odmianę bawełny o wyjątkowej jakości.<br> Ta wyjątkowa odmiana bawełny jest znacznie<br> bardziej wartościowa i wydajna</div>
             <div class="kosztulepki">25M</div>
+            </b>
+        </div>
+        <div class="ulepszenie" onclick="upnarzedzia4()">
+            <b>
+            <div class="ikonaulepki" id="u10"><p class="zdjecie"><img src="narzedzieiron.png" height="60" width="60px"></p></div>
+            <div class="nazwaulepki">Złote narzędzia</div>
+            <div class="opisulepki">Ulepsz narzędzia do zbierania bawełny,<br> takie jak kosy, podcinacze, czy kombajny,<br> aby zwiększyć wydajność zbierania.</div>
+            <div class="kosztulepki">100M</div>
+            </b>
+        </div>
+        <div class="ulepszenie" onclick="upnarzedzia5()">
+            <b>
+            <div class="ikonaulepki" id="u11"><p class="zdjecie"><img src="narzedzieiron.png" height="60" width="60px"></p></div>
+            <div class="nazwaulepki">Diamentowe narzędzia</div>
+            <div class="opisulepki">Ulepsz narzędzia do zbierania bawełny,<br> takie jak kosy, podcinacze, czy kombajny,<br> aby zwiększyć wydajność zbierania.</div>
+            <div class="kosztulepki">850M</div>
+            </b>
+        </div>
+        <div class="ulepszenie" onclick="upnarzedzia6()">
+            <b>
+            <div class="ikonaulepki" id="u12"><p class="zdjecie"><img src="narzedzieiron.png" height="60" width="60px"></p></div>
+            <div class="nazwaulepki">narzędzia niewolnika +</div>
+            <div class="opisulepki">Ulepsz narzędzia do zbierania bawełny,<br> takie jak kosy, podcinacze, czy kombajny,<br> aby zwiększyć wydajność zbierania.</div>
+            <div class="kosztulepki">5.5B</div>
+            </b>
+        </div>
+        <div class="ulepszenie" onclick="upnarzedzia7()">
+            <b>
+            <div class="ikonaulepki" id="u13"><p class="zdjecie"><img src="narzedzieiron.png" height="60" width="60px"></p></div>
+            <div class="nazwaulepki">narzędzia niewolnika ++</div>
+            <div class="opisulepki">Ulepsz narzędzia do zbierania bawełny,<br> takie jak kosy, podcinacze, czy kombajny,<br> aby zwiększyć wydajność zbierania.</div>
+            <div class="kosztulepki">90B</div>
             </b>
         </div>
     </DIV>
@@ -250,6 +285,7 @@
             </div>
          </div>
          <div class="informacja" ><img src="" height="50px" width="50px" id="info"> <p id="informacja1">informacja</p> </div>
+
     </DIV>
     <DIV ID="budynki" STYLE="display:none" class="budynkiclass">
         <div class="tekst3"><img src="building.png" width="55px" height="50px" >
@@ -534,7 +570,7 @@
                         <b id="h1special" class="id_pozycja"> 0x</b>
                     </div>
                 </div>
-                <div class="idh1">
+                <div class="idh2">
                     <div class="opcja1"> 
                         <img src="h1secret.png" width="50px" height="50px">
                         <b id="h1secret" class="id_pozycja"> 0x</b>
@@ -548,20 +584,35 @@
                         <b id="chucky" class="id_pozycja"> 0x</b>
                     </div>
                 </div>
-                <div class="id">
-                    
+                <div class="idh1">
+                    <div class="opcja1"> 
+                        <img src="demencja.png" width="50px" height="50px">
+                        <b id="demencja" class="id_pozycja"> 0x</b>
+                    </div>
                 </div>
-                <div class="id">
-                    
+                <div class="idh1">
+                    <div class="opcja1"> 
+                        <img src="eleganckijigsaw.png" width="50px" height="50px">
+                        <b id="elegancki" class="id_pozycja"> 0x</b>
+                    </div>
                 </div>
-                <div class="id">
-                    
+                <div class="idh1">
+                    <div class="opcja1"> 
+                        <img src="białaczka.png" width="50px" height="50px">
+                        <b id="white2115" class="id_pozycja"> 0x</b>
+                    </div>
                 </div>
-                <div class="id">
-                    
+                <div class="idh2">
+                    <div class="opcja1"> 
+                        <img src="skolioza.png" width="50px" height="50px">
+                        <b id="skolioza" class="id_pozycja"> 0x</b>
+                    </div>
                 </div>
-                <div class="id">
-                    
+                <div class="idh2">
+                    <div class="opcja1"> 
+                        <img src="podlozkiem.png" width="50px" height="50px">
+                        <b id="podlozkiem" class="id_pozycja"> 0x</b>
+                    </div>
                 </div>
                 <div class="id">
                     
@@ -639,6 +690,74 @@
         </div>
 
     </DIV>
+    <DIV ID="inventory" STYLE="display:none" class="inventor">
+        <div class="tekst"><img src="box.png" width="75px" height="75px" class="tekst1">
+           <b><p class="napiswsklepie">Inventory</p></b>
+           <p class="itemcount" id="itemcount">10/10</p>
+        </div>
+        <div class="itemlist">
+            <div class="itembox">
+                <div class="iteminfo"><span title="10% szybsi niewolnicy 2% mniej bawełny z niewolników">Patyk do bicia</span></div>
+                <div class="itemikona"><img src="stick.png" height="100px" width="100px" class="itemanimation"></div>
+                <div class="itemopcja">
+                    <div class="itemdodaj" onclick="itemcountdodaj1()">
+                        Equip
+                    </div>
+                    <div class="itemusun" onclick="itemcountusun1()">
+                        Unequip
+                    </div>
+                </div>
+            </div>
+            <div class="itembox">
+                <div class="iteminfo"><span title="1250% do zbierania cukierków">Halloweenowy żyrandol</span></div>
+                <div class="itemikona"><img src="zyrandol.png" height="100px" width="100px" class="itemanimation"></div>
+                <div class="itemopcja">
+                    <div class="itemdodaj" onclick="itemcountdodaj2()">
+                        Equip
+                    </div>
+                    <div class="itemusun" onclick="itemcountusun2()">
+                        Unequip
+                    </div>
+                </div>
+            </div>
+            <div class="itembox">
+                <div class="iteminfo"><span title="+20% do zbieranej bawełny przez kliknięcia 25% wolniejsi niewolnicy">łańcuchy na czarnucha</span></div>
+                <div class="itemikona"><img src="chain.png" height="100px" width="100px" class="itemanimation"></div>
+                <div class="itemopcja">
+                    <div class="itemdodaj" onclick="itemcountdodaj3()">
+                        Equip
+                    </div>
+                    <div class="itemusun" onclick="itemcountusun3()">
+                        Unequip
+                    </div>
+                </div>
+            </div>
+            <div class="itembox">
+                <div class="iteminfo"><span title="+500% do dropu najlepszych niewolników (special)">szczęście +</span></div>
+                <div class="itemikona"><img src="luck.png" height="100px" width="100px" class="itemanimation"></div>
+                <div class="itemopcja">
+                    <div class="itemdodaj" onclick="itemcountdodaj4()">
+                        Equip
+                    </div>
+                    <div class="itemusun" onclick="itemcountusun4()">
+                        Unequip
+                    </div>
+                </div>
+            </div>
+            <div class="itembox">
+                <div class="iteminfo"><span title="1xp/sekunda, zmniejsza ilość bawełny z kliknięcia o 2%">automatyczne doświadczenie</span></div>
+                <div class="itemikona"><img src="expitem.png" height="100px" width="100px" class="itemanimation"></div>
+                <div class="itemopcja">
+                    <div class="itemdodaj" onclick="itemcountdodaj5()">
+                        Equip
+                    </div>
+                    <div class="itemusun" onclick="itemcountusun5()">
+                        Unequip
+                    </div>
+                </div>
+            </div>
+        </div>
+    </DIV>
     <DIV ID="halloween" STYLE="display:none" class="halloweenclass">
         <div class="tekst3"><img src="pumpkin.png" width="55px" height="50px" >
             <b><p class="napiswupach">EVENT HALLOWEEN</p></b>
@@ -654,6 +773,7 @@
                     <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena">1k</b>
                 </div>
             </div>
+            
             <div class="zakup">     
                 <div class="hallo1" onclick="halloween2()">
                     <p class="hallo0">Specjalny niewolnik</p>
@@ -703,19 +823,58 @@
             </div>
         </div>
         <div class="rzadek">
+            <div class="zakup">
 
+                <div class="hallo1" onclick="halloween1a()">
+                    <p class="hallo0">Upiorna Szkatułka</p>
+                    <img src="haunted.png" width="60px" height="60px" class="hzdj1">
+                </div>
+                <div class="hallo2">
+                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena">250k</b>
+                </div>
+            </div>
             <div class="zakup2">
                 <p id="informacja2"></p>
             </div>
         </div>
         <div class="rzadek">
-
-            <div class="zakup2">
-                
+            <div class="zakup">
+                <div class="hallo1" onclick="halloween7()">
+                    <p class="hallo0">mnożnik cukierków 2</p>
+                    <img src="candy.png" width="50px" height="50px" class="hzdj1">
+                </div>
+                <div class="hallo2">
+                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena7">100K</b>
+                </div>
+            </div>
+            <div class="zakup">
+                <div class="hallo1" onclick="halloween8()">
+                    <p class="hallo0">żyrandol</p>
+                    <img src="zyrandol.png" width="50px" height="50px" class="hzdj1">
+                </div>
+                <div class="hallo2">
+                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena8">100K</b>
+                </div>
+            </div>
+            <div class="zakup">
+                <div class="hallo1" onclick="halloween9()">
+                    <p class="hallo0">czarnuch zbieracz</p>
+                    <img src="zbieraczh1.png" width="50px" height="50px" class="hzdj1">
+                </div>
+                <div class="hallo2">
+                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena9">50M</b>
+                </div>
             </div>
         </div>
     </DIV>
     <script src="function.js" type="text/javascript"></script>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js'></script>
+<style src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></style>
 </html>

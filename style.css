@@ -162,6 +162,15 @@ body {
   margin-left: 10px;
   margin: 5px;
 }
+.przycisksklep8 {
+  width: 80px;
+  height: 80px;
+  background-color: #393c41;
+  border-radius: 50px;
+  margin-left: 10px;
+  margin: 5px;
+}
+
 .przycisksklep7 {
   width: 75px;
   height: 75px;
@@ -197,6 +206,10 @@ body {
   background-color: #fff;
 }
 .przycisksklep7:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+.przycisksklep8:hover {
   cursor: pointer;
   background-color: #fff;
 }
@@ -310,7 +323,7 @@ body {
 .nazwaulepki {
   color:rgb(67, 167, 230);
   position: relative;
-  top: -60px;
+  top: -70px;
   left: 95px;
   font-size: 20px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -318,7 +331,7 @@ body {
 .opisulepki {
   color:rgb(185, 181, 181);
   position: relative;
-  top: -60px;
+  top: -70px;
   left: 95px;
   font-size: 12px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -817,6 +830,19 @@ body {
   border-color: #161413;
   border-radius: 10px;
 }
+.idh2 {
+	background: linear-gradient(-45deg, #f77f0e, #ee420e, #b44828, #e7b65b);
+	background-size: 300% 500%;
+	animation: gradient 2s ease infinite;
+  height: 60px;
+  width: 60px;
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  border-style: outset;
+  border-color: linear-gradient(-45deg, #d21fd8, #f05ecb, #f88cf3, #b7f571);
+  border-radius: 10px;
+}
 .flex_id {
   display: flex;
 }
@@ -937,10 +963,144 @@ body {
   color:rgb(240, 240, 240);
   font-size: 20px;
 }
+#h1cena7 {
+  top: -20px;
+  position: relative;
+  color:rgb(240, 240, 240);
+  font-size: 20px;
+}
+#h1cena8 {
+  top: -20px;
+  position: relative;
+  color:rgb(240, 240, 240);
+  font-size: 20px;
+}
+#h1cena9 {
+  top: -20px;
+  position: relative;
+  color:rgb(240, 240, 240);
+  font-size: 20px;
+}
 .hzdj1:hover {
   animation-name: bounce;
   animation-timing-function: ease;
 }
+.inventor {
+  background-color: #2a3236;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  display: flex;
+  width: 70%;
+  height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 4000;
+}
+.itemlist {
+  display: flex;
+  height: 250px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.itembox {
+  flex: 20%;
+  background-color: rgba(45, 45, 45, 1);
+  background-image: radial-gradient(circle, rgba(45, 45, 45, 1) 0%, rgba(0, 0, 0, 1) 77%);
+  border-radius: 10%;
+  width: 50px;
+  margin: 10px;
+  transition: 300ms;
+	background-size: 300% 500%;
+}
+.itembox:hover {
+  transform:scale(1.1);
+  background-position:45% 80%;
+  cursor: pointer;
+  border-color: #FAE31E;
+  border-style: solid;
+  border-width: 1px;
+}
+.iteminfo {
+  color:#FAE31E;
+  text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  height: 20%;
+}
+.itemikona {
+
+  margin: auto;
+  width: 50%;
+
+  height: 50%;
+}
+.itemopcja {
+  height: 15%;
+  display: flex;
+  position: relative;
+  top: 15%;
+  text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.itemdodaj {
+  border-style: outset;
+  border-color: #49d154;
+  flex: 50%;
+  border-radius: 10%;
+  margin: 2px;
+  transition: 1000ms;
+}
+.itemusun {
+  border-style: outset;
+  border-color: #a01212;
+  flex: 50%;
+  border-radius: 10%;
+  margin: 2px;
+  transition: 1000ms;
+}
+.itemdodaj:hover {
+  transform:scale(1.1);
+  background-position:45% 80%;
+  cursor: pointer;
+  background-color: #39D529;
+  background-image: radial-gradient(circle, #39D529 0%, #70FF61 77%);
+  opacity:80%;
+}
+.itemusun:hover {
+  transform:scale(1.1);
+  background-position:45% 80%;
+  cursor: pointer;
+  background-color: #E01010;
+  background-image: radial-gradient(circle, #BF2121 0%, #9C1515 77%);
+  opacity:80%;
+}
+.itemdodaj:active {
+	animation: gradient 1s ease infinite;
+  background-image: radial-gradient(circle, #39D529 0%, #70FF61 77%);
+	background-size: 400% 400%;
+}
+.itemusun:active {
+	animation: gradient 1s ease infinite;
+  background-image: radial-gradient(circle, #BF2121 0%, #9C1515 77%);
+  background-size: 400% 400%;
+}
+.itemcount {
+  position: relative;
+  top: -50px;
+  left: 33%;
+  font-size: 20px;
+  color:#9C1515;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}
+.itemanimation:hover {
+  transform:scale(1.05);
+}
+
 @keyframes bounce {
   0%   { transform: translateY(0); }
   50%  { transform: translateY(-15px); }
