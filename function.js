@@ -587,7 +587,7 @@ function upnarzedzia5() {
         wartosci.bawelna = wartosci.bawelna - 850000000;
         wartosci.wyliczanie = wartosci.bawelna;
         document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
-        wartosci.narzedzia = 40;
+        wartosci.narzedzia = 25;
         document.getElementById("u11").style.backgroundColor = "moccasin";
 
     }
@@ -734,7 +734,7 @@ wuzeek();
 
 function abbrNum(number, decPlaces) {
     decPlaces = Math.pow(10, decPlaces);
-    var abbrev = ["K", "M", "B", "T", "Qa", "Qn", "Sx", "Se", "O", "N"];
+    var abbrev = ["K", "M", "B", "T", "Qa", "Qn", "Sx", "Se", "O", "N", "X", "XD", "XDD"];
     for (var i = abbrev.length - 1; i >= 0; i--) {
         var size = Math.pow(10, (i + 1) * 3);
         if (size <= number) {
