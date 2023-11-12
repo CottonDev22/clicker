@@ -280,7 +280,7 @@ var xj = document.getElementById('inventory');
 //FUNKCJA KLIKNMIEC
 function klikniecia() {
 
-    wartosci.bawelna = wartosci.bawelna + abbrNum(((((1 + wartosci.narzedzia * wartosci.lepszabawelna * (wartosci.nawadnianie * wartosci.szybszeraczki))  * wartosci.resetmnoznik)*wartosci.lancuch)*wartosci.autoexp),1) ;
+    wartosci.bawelna = wartosci.bawelna +((((1 + wartosci.narzedzia * wartosci.lepszabawelna * (wartosci.nawadnianie * wartosci.szybszeraczki))  * wartosci.resetmnoznik)*wartosci.lancuch)*wartosci.autoexp) ;
     wartosci.wyliczanie = wartosci.bawelna;
     wartosci.exp = wartosci.exp + 1 + wartosci.podwajacz;
 
