@@ -587,7 +587,7 @@ function upnarzedzia5() {
         wartosci.bawelna = wartosci.bawelna - 850000000;
         wartosci.wyliczanie = wartosci.bawelna;
         document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
-        wartosci.narzedzia = 25;
+        wartosci.narzedzia = 40;
         document.getElementById("u11").style.backgroundColor = "moccasin";
 
     }
