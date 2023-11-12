@@ -294,7 +294,7 @@ document.getElementById("progres").setAttribute("max", ((1.7 *wartosci.lvl) * 10
 document.getElementById("progres").setAttribute("value", wartosci.exp);
     document.getElementById('lvltekst').innerHTML = wartosci.lvl;
     document.getElementById('xp').innerHTML = abbrNum(wartosci.exp,2) + " / " +  abbrNum(1000 * (wartosci.lvl*1.7), 2);
-    document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie,2);
+    document.getElementById("bawelna").innerHTML = abbrNum(wartosci.bawelna,2);
             zd.style.height = '52px';
             zd.style.width = '52px';
             
@@ -577,37 +577,37 @@ function upnarzedzia4() {
         wartosci.bawelna = wartosci.bawelna - 100000000;
         wartosci.wyliczanie = wartosci.bawelna;
         document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
-        wartosci.narzedzia = 120;
+        wartosci.narzedzia = 20;
         document.getElementById("u10").style.backgroundColor = "moccasin";
 
     }
 }
 function upnarzedzia5() {
-    if (wartosci.narzedzia == 120 && wartosci.bawelna >= 850000000) {
+    if (wartosci.narzedzia == 20 && wartosci.bawelna >= 850000000) {
         wartosci.bawelna = wartosci.bawelna - 850000000;
         wartosci.wyliczanie = wartosci.bawelna;
         document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
-        wartosci.narzedzia = 700;
+        wartosci.narzedzia = 40;
         document.getElementById("u11").style.backgroundColor = "moccasin";
 
     }
 }
 function upnarzedzia6() {
-    if (wartosci.narzedzia == 700 && wartosci.bawelna >= 5500000000) {
+    if (wartosci.narzedzia == 40 && wartosci.bawelna >= 5500000000) {
         wartosci.bawelna = wartosci.bawelna - 5500000000;
         wartosci.wyliczanie = wartosci.bawelna;
         document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
-        wartosci.narzedzia = 9000;
+        wartosci.narzedzia = 65;
         document.getElementById("u12").style.backgroundColor = "moccasin";
 
     }
 }
 function upnarzedzia7() {
-    if (wartosci.narzedzia == 9000 && wartosci.bawelna >= 90000000000) {
+    if (wartosci.narzedzia == 65 && wartosci.bawelna >= 90000000000) {
         wartosci.bawelna = wartosci.bawelna - 90000000000;
         wartosci.wyliczanie = wartosci.bawelna;
         document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
-        wartosci.narzedzia = 120000;
+        wartosci.narzedzia = 80;
         document.getElementById("u13").style.backgroundColor = "moccasin";
 
     }
