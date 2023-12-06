@@ -2,6 +2,7 @@ var wartosci = {
     exp: 0,
     lvl: 1,
     bawelna: 0,
+    bamboo: 0,
     wyliczanie: 0,
     narzedzia: 0,
     nawadnianie: 1,
@@ -65,6 +66,8 @@ var wartosci = {
     znikawnocy: 0,
     rudyzyd: 0,
     vtbg: 0,
+    angry: 0,
+    doktor:0,
 //RODZAJE
     common: 0,
     uncommon: 0,
@@ -103,6 +106,17 @@ var wartosci = {
     lancucha:1,
     lucky:0,
     autoexp:1,
+//CHINY
+    bambooitem:0,
+    bamboochata:1,
+    bamboochatamax:60,
+    bamboochatamin:0,
+    bamboofarmmax:500,
+    bamboofarmmin:0,
+    bamboofarm:1,
+    bambootemple:1,
+    bambootemplemax:1200,
+    bambootemplemin:0,
 };
 //RESET WARTOSCI
 function dupa2() {
@@ -110,6 +124,7 @@ var wartosci = {
     exp: 0,
     lvl: 1,
     bawelna: 0,
+    bamboo: 0,
     wyliczanie: 0,
     narzedzia: 0,
     nawadnianie: 1,
@@ -172,6 +187,8 @@ var wartosci = {
     znikawnocy: 0,
     rudyzyd: 0,
     vtbg: 0,
+    angry: 0,
+    doktor:0,
 //RODZAJE
     common: 0,
     uncommon: 0,
@@ -210,6 +227,17 @@ var wartosci = {
     lancucha:1,
     lucky:0,
     autoexp:1,
+    //CHINY
+    bambooitem:0,
+    bamboochata:1,
+    bamboochatamax:60,
+    bamboochatamin:0,
+    bamboofarmmax:500,
+    bamboofarmmin:0,
+    bamboofarm:1,
+    bambootemple:1,
+    bambootemplemax:1200,
+    bambootemplemin:0,
 };
 
 localStorage.setItem("gra", JSON.stringify(wartosci));
@@ -217,30 +245,19 @@ localStorage.setItem("gra", JSON.stringify(wartosci));
 
 if (localStorage.getItem("gra") !== null) wartosci = JSON.parse(localStorage.getItem("gra"));
 function dupa3() {
-    wartosci.demencja = 0;
-    wartosci.skolioza = 0;
-    wartosci.white2115 =0;
-    wartosci.elegancki = 0;
-    wartosci.podlozkiem = 0;
-    wartosci.chucky = 0;
-    wartosci.itemcount = 0;
-    wartosci.itemcountmax = 3;
-    wartosci.patyk = 1;
-    wartosci.patyka=1;
-    wartosci.h1zyrandol=1;
-    wartosci.lancuch=1;
-    wartosci.lancucha=1;
-    wartosci.tc=5000;
-    wartosci.tu=4000;
-    wartosci.tr=2500;
-    wartosci.te=650;
-    wartosci.tl=25;
-    wartosci.ts=1;
-    wartosci.th=150;
-    wartosci.h1zyrandolup=0;
-    wartosci.h1zbieracz=0;
-    wartosci.lucky=0;
-    wartosci.autoexp=1;
+    wartosci.angry = 0;
+    wartosci.doktor = 0;
+    wartosci.bamboo = 0;
+    wartosci.bambooitem=0;
+    wartosci.bamboochata=1;
+    wartosci.bamboochatamax=60;
+    wartosci.bamboochatamin=0;
+    wartosci.bamboofarmmax=500;
+    wartosci.bamboofarmmin=0;
+    wartosci.bamboofarm=1;
+    wartosci.bambootemple=1;
+    wartosci.bambootemplemax=1200;
+    wartosci.bambootemplemin=0;
 }
 function dupa(){  // Button click
     if (wartosci.narzedzia >= 1) document.getElementById("u1").style.backgroundColor = "moccasin";
@@ -277,6 +294,9 @@ var xf = document.getElementById('budynki');
 var xg = document.getElementById('pokazindex');
 var xh = document.getElementById('halloween');
 var xj = document.getElementById('inventory');
+var wchiny = document.getElementById("chiny");
+//FUNKCJA ŁADOWANIA
+
 //FUNKCJA KLIKNMIEC
 function klikniecia() {
 
@@ -329,6 +349,8 @@ document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wart
             document.getElementById("znika").innerHTML = abbrNum(wartosci.znikawnocy,1);
             document.getElementById("rudyzyd").innerHTML = abbrNum(wartosci.rudyzyd,1);
             document.getElementById("vtbg").innerHTML = abbrNum(wartosci.vtbg,1);
+            document.getElementById("angry").innerHTML = abbrNum(wartosci.angry,1);
+            document.getElementById("doktor").innerHTML = abbrNum(wartosci.doktor,1);
             //HALLOWEEEN
             document.getElementById("h1common").innerHTML = abbrNum(wartosci.maska,1);
             document.getElementById("h1uncommon").innerHTML = abbrNum(wartosci.zombie,1);
@@ -404,7 +426,7 @@ function reset() {
         
     document.getElementById('rebirty').innerHTML = wartosci.resetv;
     document.getElementById('zbziarna').innerHTML = wartosci.ziarenka;
-    document.getElementById('rst1').innerHTML = "KOSZT: " + (25000 * wartosci.kosztreset);
+    document.getElementById('rst1').innerHTML = "KOSZT: " + (abbrNum((25000 * wartosci.kosztreset),2));
     document.getElementById("bawelna").innerHTML = wartosci.bawelna;
     document.getElementById("u1").style.backgroundColor = "#E0FFFF";
     document.getElementById("u2").style.backgroundColor = "#E0FFFF";
@@ -1012,6 +1034,82 @@ document.getElementById("progres").setAttribute("value", wartosci.exp);
         document.getElementById("progres").setAttribute("max", ((1.7 *wartosci.lvl) * 1000));
     document.getElementById("progres").setAttribute("value", wartosci.exp);
         }
+    function otwieraj4() {
+            if (wartosci.klucz4 >= 1) {
+                wartosci.klucz4 = wartosci.klucz4 - 1;
+                let essa = Math.floor((Math.random() * 100000) + 1);
+                if (essa <= 35000) {
+                    document.getElementById("informacja1").innerHTML = "dropnieto: 500xp";
+                    wartosci.exp = wartosci.exp + 500;
+                    if (wartosci.exp >= 1000 * (wartosci.lvl*1.7)) {
+                        wartosci.lvl = wartosci.lvl + 1;
+                        wartosci.exp = 0;
+                        wartosci.ziarenka = wartosci.ziarenka + (wartosci.lvl *3);
+                    }
+                    document.getElementById("info").src="star.png";
+                    document.getElementById('xp').innerHTML = abbrNum(wartosci.exp,2) + " / " +  abbrNum(1000 * (wartosci.lvl*1.7), 2);
+    
+                } else if (essa<=70000 && essa >= 35001) {
+    
+                    document.getElementById("informacja1").innerHTML = "dropnięto: Golem po śląsku";
+    
+                    wartosci.golem = wartosci.golem + 1;
+                    document.getElementById("golem").innerHTML =abbrNum(wartosci.golem,1);
+                    document.getElementById("info").src="golem.png";
+                    wartosci.common = 1;
+                } else if (essa <= 90000 && essa >= 70001) {
+                    document.getElementById("informacja1").innerHTML = "dropnieto: Czarny Awanturnik";
+                    wartosci.angry = wartosci.angry + 1;
+                    document.getElementById("angry").innerHTML =abbrNum(wartosci.angry,1);
+                    document.getElementById("info").src="angry.png";
+                    wartosci.uncommon = 1;
+                } else if (essa <= (99000-wartosci.lucky-wartosci.lucky) && essa >= 90001) {
+                    document.getElementById("informacja1").innerHTML = "dropnieto: czarna doktorka";
+                    wartosci.doktor = wartosci.doktor + 1;
+                    document.getElementById("doktor").innerHTML =abbrNum(wartosci.doktor,1);
+                    document.getElementById("info").src="doktor.png";
+                    wartosci.rare = 1;
+                } else if (essa <= (99900-wartosci.lucky-wartosci.lucky) && essa >= (99001-wartosci.lucky-wartosci.lucky)) {
+                    document.getElementById("informacja1").innerHTML = "dropnieto: 1,2x twoja bawelna";
+                    document.getElementById("info").src="bawelna.png";
+                    wartosci.bawelna = wartosci.bawelna * 1.2;
+                    wartosci.wyliczanie = wartosci.bawelna;
+                    wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
+                    document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
+        
+                } else if (essa <= (99989-wartosci.lucky-wartosci.lucky) && essa >= (96001-wartosci.lucky-wartosci.lucky)) {
+                    document.getElementById("informacja1").innerHTML = "dropnieto: 8000xp";
+                    wartosci.exp = wartosci.exp + 8000;
+                    if (wartosci.exp >= 1000 * (wartosci.lvl*1.7)) {
+                        wartosci.lvl = wartosci.lvl + 1;
+                        wartosci.exp = 0;
+                        wartosci.ziarenka = wartosci.ziarenka + (wartosci.lvl *3);
+                    }
+                    document.getElementById("info").src="star.png";
+                    document.getElementById('xp').innerHTML = abbrNum(wartosci.exp,2) + " / " +  abbrNum(1000 * (wartosci.lvl*1.7), 2);
+                }else if (essa <= (99999-wartosci.lucky) && essa >= (99990-wartosci.lucky-wartosci.lucky)) {
+                    document.getElementById("informacja1").innerHTML = "dropnieto: rudy czarny żyd";
+                    wartosci.rudyzyd = wartosci.rudyzyd + 1;
+                    document.getElementById("rudyzyd").innerHTML = abbrNum(wartosci.rudyzyd,1);
+                    document.getElementById("info").src="rudyzyd.png";
+                    wartosci.legendary = 1;
+                
+                }else if (essa <= 100000 && essa >= (99999-wartosci.lucky)) {
+                    document.getElementById("informacja1").innerHTML = "dropnieto: VTBG!";
+                    wartosci.vtbg = wartosci.vtbg + 1;
+                    document.getElementById("vtbg").innerHTML = abbrNum(wartosci.vtbg,1);
+                    document.getElementById("info").src="vengeful true black god.png";
+                    wartosci.special = 1;
+                }
+            }
+            else {
+                document.getElementById("informacja1").innerHTML = "brak klucza";
+                document.getElementById("info").src="";
+            }
+            document.getElementById('lvltekst').innerHTML = wartosci.lvl;
+            document.getElementById("progres").setAttribute("max", ((1.7 *wartosci.lvl) * 1000));
+        document.getElementById("progres").setAttribute("value", wartosci.exp);
+            }    
 ////////// BUDYNKI
 
 
@@ -1563,3 +1661,4 @@ function halloween1() {
     
     setInterval(halloween, wartosci.th);
     halloween();
+    

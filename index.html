@@ -6,7 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotton Clicker</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    
 </head>
 <body onload="klikniecia()">
 <div class="pozycja">
@@ -34,7 +37,7 @@
             <div class="liczziarna">
                 <b><img src="rice.png" height="45px" width="55px"><div id="zbziarna" class="liczziarna2"> 0 </div></b>
             </div>
-            <div class="liczcukierki">
+            <div class="liczcukierki" style="display:none">
                 <b><img src="candy.png" height="45px" width="55px"><div id="candy" class="liczcukierki2"> 0 </div></b>
             </div>
             <button onclick="dupa()">ZAPIS</button>
@@ -68,15 +71,20 @@
                     <div class="przycisksklep8" ONCLICK="ShowAndHide8()">
                         <img src="box.png" width="60px" height="55px" class="xd20">
                     </div>
-                    <div class="przycisksklep7" ONCLICK="ShowAndHide7()">
+                    <div class="przycisksklep7" ONCLICK="ShowAndHide7()" STYLE="display:none">
                         <img src="pumpkin.png" width="55px" height="55px" class="hallowe">
                     </div>
                 </div>
             </div>
             
         <div class="odstep2">
-            <div class="klikanie"   > <img src="bawelna.png" height="200px" width="200px" class="srodek" id="zdjzbieranie" onclick="klikniecia()"></div>
-        </div>
+            <div class='buttonWrap'>
+                <button class='theButton particleButton'> <img src="bawelna.png" height="200px" width="200px" class="srodek" id="zdjzbieranie" onclick="klikniecia()"></button>
+                <div class='theButton particleButton particles'></div>
+            </div>
+
+            </div>
+
     </div>
 
     <DIV ID="pokazsklep" STYLE="display:none" class="sklepy">
@@ -223,34 +231,127 @@
         </div>
          
     </DIV>
-    <DIV ID="pokazupziarna" STYLE="display:none" class="ziarnasklep">
-        <div class="tekst3"><img src="rice.png" width="55px" height="50px" >
-            <b><p class="napiswupach">ULEPSZENIA PERNAMENTNE</p></b>
-         </div> 
-         <div class="konteinerziarna">
-            <div class="konteiner1">
-                <div class="ziarna1">
-                    <div class="ziarna2"> <img src="genetyczne.png" width="50px" height="50px" class="ziarnazdj"></div>
-                    <div class="ziarna3"> <b class="ziarnaopis"> ZAAWANSOWANA GENETYKA</b></div>
-                    <div class="ziarna4">i</div><b class="koszta" id="ziarnakoszt1"> 0/10</b>
+    <DIV ID="pokazupziarna" STYLE="display:none" class="worldmap">
+        <div class="worldflex">
+            <div class="worldselect" onclick="worldchiny()">
+                <div class="worldname">
+                    Chiny
                 </div>
-                <div class="ziarna1">
-                    <div class="ziarna2"> <img src="kofeina.png" width="50px" height="50px" class="ziarnazdj"></div>
-                    <div class="ziarna3"> <b class="ziarnaopis"> CZARNI NAPĘDZANI KOFEINĄ</b></div>
-                    <div class="ziarna4">i</div><b class="koszta" id="ziarnakoszt2"> 0/10</b>
+                <div class="worldimage">
+                    <img src="chiny.png" width="100px" width="100px" class="worldimage">
                 </div>
-                <div class="ziarna1">
-                    <div class="ziarna2"> <img src="prad.png" width="50px" height="50px" class="ziarnazdj"></div>
-                    <div class="ziarna3"> <b class="ziarnaopis"> ELEKTRYFIKACJA NARZĘDZI</b></div>
-                    <div class="ziarna4">i</div><b class="koszta" id="ziarnakoszt3"> 0/10</b>
+                <div class="worldcost">
+                    <img src="expitem.png" width="60px" height="60px" class="worldlvl"> 10
                 </div>
             </div>
-            <div class="konteiner2">
-                <div class="opisziarna">
-                    dasdasd
+            <div class="worldselect">
+                <div class="worldname">
+                    Uzbekistan
+                </div>
+                <div class="worldimage">
+                    <img src="uzbekistan.png" width="100px" width="100px" class="worldimage">
+                </div>
+                <div class="worldcost">
+                    <img src="expitem.png" width="60px" height="60px" class="worldlvl"> 25
+                </div>
+            </div>
+            <div class="worldselect">
+                <div class="worldname">
+                    Polska
+                </div>
+                <div class="worldimage">
+                    <img src="polska.png" width="100px" width="100px" class="worldimage">
+                </div>
+                <div class="worldcost">
+                    <img src="expitem.png" width="60px" height="60px" class="worldlvl"> 60
                 </div>
             </div>
         </div>
+    </DIV>
+    <DIV ID="chiny" STYLE="display:none" class="worldmap">
+        <div class="worldA">
+            <div class="worldA1">
+                <div class="worldexit" onclick="exit()">
+
+                </div>
+                <div class="worldcollect"><img src="bamboo.png" height="50px" width="50px"><b id="chinybambus">0</b></div>
+
+            </div>
+            <div class="worldA2">
+
+                <div class="worldcollect2"><img src="chiny.png" width="40px" width="40px" >Chiny</div>
+                <div class="worldclick">
+                    <img src="bamboo.png" height="200px" width="200px" class="worldclick2" onclick="bamboo()">
+                </div>
+
+            </div>
+            <div class="worldbudynek">
+                <div class="worldname">
+                    bambusowa chata
+                </div>
+                <div class="worldcount" id="bamboocount">
+                    0/10
+                </div>
+                <img src="bamboohouse.png" height="200px" width="200px" class="chinybuild">
+                <div class="tekst3">
+                    <div class="collector" onclick="collect()">
+                        ODBIERZ
+                    </div>
+                    <div class="collector" onclick="chinyupgrade()">
+                        ULEPSZ
+                    </div>
+                    
+                </div>
+                <div class="progressbarWrapper">
+                    <span id="greenBar" ></span>
+                  </div>
+            </div>
+
+            <div class="worldbudynek">
+                <div class="worldname">
+                    bambusowa plantacja
+                </div>
+                <div class="worldcount" id="bamboocount2">
+                    0/10
+                </div>
+                <img src="bamboofarm.png" height="150px" width="200px" class="chinybuild">
+                <div class="tekst3">
+                    <div class="collector" onclick="collect2()">
+                        ODBIERZ
+                    </div>
+                    <div class="collector" onclick="chinyupgrade2()">
+                        ULEPSZ
+                    </div>
+                </div>
+
+                <div class="progressbarWrapper">
+                    <span id="greenBar2" ></span>
+                  </div>
+            </div>
+
+            <div class="worldbudynek">
+                <div class="worldname">
+                    Bambusowa świątynia
+                </div>
+                <div class="worldcount" id="bamboocount3">
+                    0/10
+                </div>
+                <img src="samurai.png" height="150px" width="200px" class="chinybuild">
+                <div class="tekst3">
+                    <div class="collector" onclick="collect3()">
+                        ODBIERZ
+                    </div>
+                    <div class="collector" onclick="chinyupgrade3()">
+                        ULEPSZ
+                    </div>
+                </div>
+
+                <div class="progressbarWrapper">
+                    <span id="greenBar3" ></span>
+                  </div>
+            </div>
+        </div>
+
     </DIV>
     <DIV ID="caseshop" STYLE="display:none" class="ziarnasklep">
         <div class="tekst3"><img src="losowe.png" width="55px" height="50px" >
@@ -418,276 +519,210 @@
             </div>
          </div>
     </DIV>
-    <DIV ID="pokazindex" STYLE="display:none" class="sklepy">
+    <DIV ID="pokazindex" STYLE="display:none" class="index">
         <div class="tekst"><img src="enchant.png" width="75px" height="75px" class="tekst1">
            <b><p class="napiswsklepie">Black Index</p></b>
         </div>
-        <div class="idx">
-            <div class="flex_id">
-                <div class="id1">
-                    <div class="opcja1"> 
-                        <img src="nohands.png" width="50px" height="50px"> 
-                        <b id="bezrak" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id1">
-                    <div class="opcja1"> 
-                        <img src="gigner.png" width="50px" height="50px">
-                        <b id="gigner" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id1">
-                    <div class="opcja1"> 
-                        <img src="blm.png" width="50px" height="50px">
-                        <b id="blm" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id1">
-                    <div class="opcja1"> 
-                        <img src="blackfarmer.png" width="50px" height="50px">
-                        <b id="blackfarmer1" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id1">
-                    <div class="opcja1"> 
-                        <img src="golem.png" width="50px" height="50px">
-                        <b id="golem" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id1">
-                    <div class="opcja1"> 
-                        <img src="blackfarmer2.png" width="50px" height="50px">
-                        <b id="blackfarmer2" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id2">
-                    <div class="opcja1"> 
-                        <img src="floryda.png" width="50px" height="50px">
-                        <b id="floyd" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id2">
-                    <div class="opcja1"> 
-                        <img src="giantfarmer.png" width="50px" height="50px">
-                        <b id="giantfarmer" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-            </div>
-            <div class="flex_id">
-                <div class="id2">
-                    <div class="opcja1"> 
-                        <img src="bodypositive.png" width="50px" height="50px">
-                        <b id="bodypositive" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id3">
-                    <div class="opcja1"> 
-                        <img src="will.png" width="50px" height="50px">
-                        <b id="will" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id3">
-                    <div class="opcja1"> 
-                        <img src="brakrasizmu.png" width="50px" height="50px">
-                        <b id="brakrasizmu" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id4">
-                    <div class="opcja1"> 
-                        <img src="zloty.png" width="50px" height="50px">
-                        <b id="zlotyczern" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id4">
-                    <div class="opcja1"> 
-                        <img src="MJ.png" width="50px" height="50px">
-                        <b id="MJ" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id5">
-                    <div class="opcja1"> 
-                        <img src="znikawnocy.png" width="50px" height="50px">
-                        <b id="znika" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
 
-                <div class="id5">
+            <div class="flex_id">
+                <div class="id_common">
+                    <div class="id_licz"  id="bezrak"> 0x</div>
                     <div class="opcja1"> 
-                        <img src="rudyzyd.png" width="50px" height="50px">
-                        <b id="rudyzyd" class="id_pozycja"> 0x</b>
+                        <img src="nohands.png" width="50px" height="50px" class="indexzdjecie"> 
                     </div>
                 </div>
-                <div class="id6">
+                <div class="id_common">
+                    <div class="id_licz"  id="gigner"> 0x</div>
                     <div class="opcja1"> 
-                        <img src="obama.png" width="50px" height="50px">
+                        <img src="gigner.png" width="50px" height="50px" class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_common">
+                    <div class="id_licz"  id="blm"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="blm.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_common">
+                    <div class="id_licz"  id="blackfarmer1"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="blackfarmer.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_common">
+                    <div class="id_licz"  id="golem"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="golem.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_common">
+                    <div class="id_licz"  id="blackfarmer2"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="blackfarmer2.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_uncommon">
+                    <div class="id_licz"  id="floyd"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="floryda.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_uncommon">
+                    <div class="id_licz"  id="giantfarmer"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="giantfarmer.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_uncommon">
+                    <div class="id_licz"  id="bodypositive"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="bodypositive.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_uncommon">
+                    <div class="id_licz"  id="angry"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="angry.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_rare">
+                    <div class="id_licz"  id="will"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="will.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_rare">
+                    <div class="id_licz"  id="brakrasizmu"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="brakrasizmu.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_rare">
+                    <div class="id_licz"  id="doktor"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="doktor.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_epic">
+                    <div class="id_licz"  id="zlotyczern"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="zloty.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_epic">
+                    <div class="id_licz"  id="MJ"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="MJ.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_legendary">
+                    <div class="id_licz"  id="znika"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="znikawnocy.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+    
+                <div class="id_legendary">
+                    <div class="id_licz"  id="rudyzyd"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="rudyzyd.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_special">
+                    <div class="id_licz"  id="obama"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="obama.png" width="50px" height="50px"class="indexzdjecie">
                         <b id="obama" class="id_pozycja"> 0x</b>
                     </div>
                 </div>
+                <div class="id_special">
+                    <div class="id_licz"  id="vtbg"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="vengeful true black god.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_halloween1">
+                    <div class="id_licz"  id="h1common"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="h1common.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_halloween1">
+                    <div class="id_licz"  id="h1uncommon"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="h1uncommon.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_halloween1">
+                    <div class="id_licz"  id="h1rare"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="h1rare.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_halloween1">
+                    <div class="id_licz"  id="h1epic"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="h1epic.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_halloween1">
+                    <div class="id_licz"  id="h1legendary"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="h1legendary.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_halloween1">
+                    <div class="id_licz"  id="h1special"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="h1special.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_halloween2">
+                    <div class="id_licz"  id="h1secret"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="h1secret.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
 
 
+                <div class="id_halloween1">
+                    <div class="id_licz"  id="chucky"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="horror2.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_halloween1">
+                    <div class="id_licz"  id="demencja"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="demencja.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_halloween1">
+                    <div class="id_licz"  id="elegancki"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="eleganckijigsaw.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_halloween1">
+                    <div class="id_licz"  id="white2115"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="białaczka.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_halloween2">
+                    <div class="id_licz"  id="skolioza"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="skolioza.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+                <div class="id_halloween2">
+                    <div class="id_licz"  id="podlozkiem"> 0x</div>
+                    <div class="opcja1"> 
+                        <img src="podlozkiem.png" width="50px" height="50px"class="indexzdjecie">
+                    </div>
+                </div>
+            </div>
 
-            </div>
-            <div class="flex_id">
-                <div class="id6">
-                    <div class="opcja1"> 
-                        <img src="vengeful true black god.png" width="50px" height="50px">
-                        <b id="vtbg" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="idh1">
-                    <div class="opcja1"> 
-                        <img src="h1common.png" width="50px" height="50px">
-                        <b id="h1common" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="idh1">
-                    <div class="opcja1"> 
-                        <img src="h1uncommon.png" width="50px" height="50px">
-                        <b id="h1uncommon" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="idh1">
-                    <div class="opcja1"> 
-                        <img src="h1rare.png" width="50px" height="50px">
-                        <b id="h1rare" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="idh1">
-                    <div class="opcja1"> 
-                        <img src="h1epic.png" width="50px" height="50px">
-                        <b id="h1epic" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="idh1">
-                    <div class="opcja1"> 
-                        <img src="h1legendary.png" width="50px" height="50px">
-                        <b id="h1legendary" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="idh1">
-                    <div class="opcja1"> 
-                        <img src="h1special.png" width="50px" height="50px">
-                        <b id="h1special" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="idh2">
-                    <div class="opcja1"> 
-                        <img src="h1secret.png" width="50px" height="50px">
-                        <b id="h1secret" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-            </div>
-            <div class="flex_id">
-                <div class="idh1">
-                    <div class="opcja1"> 
-                        <img src="horror2.png" width="50px" height="50px">
-                        <b id="chucky" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="idh1">
-                    <div class="opcja1"> 
-                        <img src="demencja.png" width="50px" height="50px">
-                        <b id="demencja" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="idh1">
-                    <div class="opcja1"> 
-                        <img src="eleganckijigsaw.png" width="50px" height="50px">
-                        <b id="elegancki" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="idh1">
-                    <div class="opcja1"> 
-                        <img src="białaczka.png" width="50px" height="50px">
-                        <b id="white2115" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="idh2">
-                    <div class="opcja1"> 
-                        <img src="skolioza.png" width="50px" height="50px">
-                        <b id="skolioza" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="idh2">
-                    <div class="opcja1"> 
-                        <img src="podlozkiem.png" width="50px" height="50px">
-                        <b id="podlozkiem" class="id_pozycja"> 0x</b>
-                    </div>
-                </div>
-                <div class="id">
-                    
-                </div>
-            </div>
-            <div class="flex_id">
-                <div class="id">
-
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-            </div>
-            <div class="flex_id">
-                <div class="id">
-
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-            </div>
-            <div class="flex_id">
-                <div class="id">
-
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-                <div class="id">
-                    
-                </div>
-            </div>
-        </div>
 
     </DIV>
     <DIV ID="inventory" STYLE="display:none" class="inventor">
@@ -756,6 +791,8 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </DIV>
     <DIV ID="halloween" STYLE="display:none" class="halloweenclass">
@@ -868,10 +905,10 @@
         </div>
     </DIV>
     <script src="function.js" type="text/javascript"></script>
-
+    <script src="china.js"type="text/javascript"></script>
 </body>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
