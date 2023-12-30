@@ -37,6 +37,9 @@
             <div class="liczziarna">
                 <b><img src="rice.png" height="45px" width="55px"><div id="zbziarna" class="liczziarna2"> 0 </div></b>
             </div>
+            <div class="liczevent">
+                <b><img src="candycane.png" height="45px" width="55px"><div id="eventvalue" class="liczevent2"> 0 </div></b>
+            </div>
             <div class="liczcukierki" style="display:none">
                 <b><img src="candy.png" height="45px" width="55px"><div id="candy" class="liczcukierki2"> 0 </div></b>
             </div>
@@ -71,8 +74,8 @@
                     <div class="przycisksklep8" ONCLICK="ShowAndHide8()">
                         <img src="box.png" width="60px" height="55px" class="xd20">
                     </div>
-                    <div class="przycisksklep7" ONCLICK="ShowAndHide7()" STYLE="display:none">
-                        <img src="pumpkin.png" width="55px" height="55px" class="hallowe">
+                    <div class="przycisksklep7" ONCLICK="ShowAndHide7()">
+                        <img src="candycane.png" width="55px" height="55px" class="hallowe">
                     </div>
                 </div>
             </div>
@@ -791,115 +794,192 @@
                     </div>
                 </div>
             </div>
+            <div class="itembox">
+                <div class="iteminfo"><span title="10% więcej za kliknięcia">GÓRA WĘGLA</span></div>
+                <div class="itemikona"><img src="coal.png" height="100px" width="100px" class="itemanimation"></div>
+                <div class="itemopcja">
+                    <div class="itemdodaj" onclick="itemcountdodaj6()">
+                        Equip
+                    </div>
+                    <div class="itemusun" onclick="itemcountusun6()">
+                        Unequip
+                    </div>
+                </div>
+            </div>
+            <div class="itembox">
+                <div class="iteminfo"><span title="2% więcej za niewolników">RÓZGA</span></div>
+                <div class="itemikona"><img src="rozga.png" height="100px" width="100px" class="itemanimation"></div>
+                <div class="itemopcja">
+                    <div class="itemdodaj" onclick="itemcountdodaj7()">
+                        Equip
+                    </div>
+                    <div class="itemusun" onclick="itemcountusun7()">
+                        Unequip
+                    </div>
+                </div>
+            </div>
+            <div class="itembox">
+                <div class="iteminfo"><span title="zwiększa bonusową bawełnę za resety dwukrotnie">CZAPKA ŚWIĄTECZNA</span></div>
+                <div class="itemikona"><img src="santa.png" height="100px" width="100px" class="itemanimation"></div>
+                <div class="itemopcja">
+                    <div class="itemdodaj" onclick="itemcountdodaj8()">
+                        Equip
+                    </div>
+                    <div class="itemusun" onclick="itemcountusun8()">
+                        Unequip
+                    </div>
+                </div>
+            </div>
+            <div class="itembox">
+                <div class="iteminfo"><span title="zmniejsza koszt budynków specjalnych o 10%">10% ZNIŻKI</span></div>
+                <div class="itemikona"><img src="sale.png" height="100px" width="100px" class="itemanimation"></div>
+                <div class="itemopcja">
+                    <div class="itemdodaj" onclick="itemcountdodaj9()">
+                        Equip
+                    </div>
+                    <div class="itemusun" onclick="itemcountusun9()">
+                        Unequip
+                    </div>
+                </div>
+            </div>
+        </div>
+    </DIV>
+    <DIV ID="halloween" STYLE="display:none" class="eventclass">
+        <div class="tekst3"><img src="candycane.png" width="55px" height="50px" >
+            <b><p class="eventnazwa">EVENT ŚWIĄTECZNY</p></b>
+         </div> 
+         <div class="eventmain">
+            <div class="eventitem" onclick="eventbutton1()">
+                <p class="eventname">WYZWANIA</p>
+                <div class="eventimage">
+                    <img src="challenge.png" height="150px" width="150px">
+                </div>
+            </div>
+            <div class="eventitem" onclick="eventbutton2()">
+                <p class="eventname">SKLEP</p>
+                <div class="eventimage">
+                    <img src="christmasshop.png" height="150px" width="150px">
+                </div>
+            </div>
+            <div class="eventitem">
+                <p class="eventname">WYMIANA</p>
+                <div class="eventimage">
+                    <img src="exchange.png" height="150px" width="150px">
+                </div>
+            </div>
+            <div class="eventitem">
+                <p class="eventname">JARMARK ŚWIĄTECZNY</p>
+                <div class="eventimage">
+                    <img src="christmasmarket.png" height="150px" width="150px">
+                </div>
+            </div>
+
 
 
         </div>
     </DIV>
-    <DIV ID="halloween" STYLE="display:none" class="halloweenclass">
-        <div class="tekst3"><img src="pumpkin.png" width="55px" height="50px" >
-            <b><p class="napiswupach">EVENT HALLOWEEN</p></b>
+    <DIV ID="eventchallenge" STYLE="display:none" class="eventclass">
+        <div class="tekst3"><img src="challenge.png" width="55px" height="50px" >
+            <b><p class="eventnazwa">WYZWANIA</p></b>
          </div> 
-         <div class="rzadek">
-            <div class="zakup">
+         <div class="eventmain">
+            <div class="eventbox">
+                <div class="eventimagechallenge">
+                    <img src="bawelna.png" height="150px" width="150px">
+                </div>
+                <div class="eventchallengetext">
+                    ZBIERANIE BAWEŁNY
+                </div>
+                <div class="eventprogressbar">
+                    <span id="eventbar1" ></span>
+                  </div>
+                  <div class="eventchallengetext2" id="challtext1">
+                    0/5K
+                </div>
+            </div>
+            <div class="eventbox">
+                <div class="eventimagechallenge">
+                    <img src="rebirth.png" height="150px" width="150px">
+                </div>
+                <div class="eventchallengetext">
+                    RESETY
+                </div>
+                <div class="eventprogressbar">
+                    <span id="eventbar2" ></span>
+                  </div>
+                  <div class="eventchallengetext2" id="challtext2">
+                    0/2
+                </div>
+            </div>
 
-                <div class="hallo1" onclick="halloween1()">
-                    <p class="hallo0">Skrzynia Strachów</p>
-                    <img src="halloweenchest1.png" width="60px" height="60px" class="hzdj1">
-                </div>
-                <div class="hallo2">
-                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena">1k</b>
-                </div>
-            </div>
-            
-            <div class="zakup">     
-                <div class="hallo1" onclick="halloween2()">
-                    <p class="hallo0">Specjalny niewolnik</p>
-                    <img src="paw.png" width="60px" height="60px" class="hzdj1">
-                </div>
-                <div class="hallo2">
-                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena">10B</b>
-                </div>
-            </div>
-            <div class="zakup">
-                <div class="hallo1" onclick="halloween3()">
-                    <p class="hallo0">250xp</p>
-                    <img src="doublexp.png" width="60px" height="60px" class="hzdj1">
-                </div>
-                <div class="hallo2">
-                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena">1M</b>
-                </div>
-            </div>
         </div>
-        <div class="rzadek">
-            <div class="zakup">
-                <div class="hallo1" onclick="halloween4()">
-                    <p class="hallo0">LVL UP</p>
-                    <img src="star.png" width="50px" height="50px" class="hzdj1">
+    </DIV>
+    <DIV ID="eventshop" STYLE="display:none" class="eventclass">
+        <div class="tekst3"><img src="sklep.png" width="55px" height="50px" >
+            <b><p class="eventnazwa">ŚWIĄTECZNY SKLEP</p></b>
+         </div> 
+         <div class="eventmain">
+            <div class="eventitem"onclick="shop1()" >
+                <p class="eventname">PODWOJENIE KLIKANIA</p>
+                <div class="eventimage">
+                    <img src="christmaspotion.png" height="150px" width="150px">
                 </div>
-                <div class="hallo2">
-                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena4">100m</b>
-                </div>
-            </div>
-            <div class="zakup">
-                <div class="hallo1" onclick="halloween5()">
-                    <p class="hallo0">mnożnik cukierków</p>
-                    <img src="candy.png" width="50px" height="50px" class="hzdj1">
-                </div>
-                <div class="hallo2">
-                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena5">250</b>
+                <div class="eventbutton">
+                    <p class="eventshoptext" id="shop1">4200</p>
                 </div>
             </div>
-            <div class="zakup">
-                <div class="hallo1" onclick="halloween6()">
-                    <p class="hallo0">ziarna ryżu x2</p>
-                    <img src="rice.png" width="50px" height="50px" class="hzdj1">
+            <div class="eventitem" onclick="shop2()">
+                <p class="eventname">MNOŻNIK WALUTY</p>
+                <div class="eventimage">
+                    <img src="candycane.png" height="150px" width="150px">
                 </div>
-                <div class="hallo2">
-                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena">5k</b>
-                </div>
-            </div>
-        </div>
-        <div class="rzadek">
-            <div class="zakup">
-
-                <div class="hallo1" onclick="halloween1a()">
-                    <p class="hallo0">Upiorna Szkatułka</p>
-                    <img src="haunted.png" width="60px" height="60px" class="hzdj1">
-                </div>
-                <div class="hallo2">
-                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena">250k</b>
+                <div class="eventbutton">
+                    <p class="eventshoptext" id="shop2">20</p>
                 </div>
             </div>
-            <div class="zakup2">
-                <p id="informacja2"></p>
-            </div>
-        </div>
-        <div class="rzadek">
-            <div class="zakup">
-                <div class="hallo1" onclick="halloween7()">
-                    <p class="hallo0">mnożnik cukierków 2</p>
-                    <img src="candy.png" width="50px" height="50px" class="hzdj1">
+            <div class="eventitem" onclick="shop3()">
+                <p class="eventname">+1 MIEJSCE NA PRZEDMIOT</p>
+                <div class="eventimage">
+                    <img src="box.png" height="150px" width="150px">
                 </div>
-                <div class="hallo2">
-                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena7">100K</b>
+                <div class="eventbutton">
+                    <p class="eventshoptext" id="shop3">50000</p>
                 </div>
             </div>
-            <div class="zakup">
-                <div class="hallo1" onclick="halloween8()">
-                    <p class="hallo0">żyrandol</p>
-                    <img src="zyrandol.png" width="50px" height="50px" class="hzdj1">
+            <div class="eventitem"onclick="shop4()">
+                <p class="eventname">GÓRA WĘGLA</p>
+                <div class="eventimage">
+                    <img src="coal.png" height="150px" width="150px">
                 </div>
-                <div class="hallo2">
-                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena8">100K</b>
+                <div class="eventbutton">
+                    <p class="eventshoptext" id="shop4">20</p>
                 </div>
             </div>
-            <div class="zakup">
-                <div class="hallo1" onclick="halloween9()">
-                    <p class="hallo0">czarnuch zbieracz</p>
-                    <img src="zbieraczh1.png" width="50px" height="50px" class="hzdj1">
+            <div class="eventitem"onclick="shop5()">
+                <p class="eventname">RÓZGA</p>
+                <div class="eventimage">
+                    <img src="rozga.png" height="150px" width="150px">
                 </div>
-                <div class="hallo2">
-                    <img src="candy.png" height="50px" width="50px" class="hzdj2"> <b id="h1cena9">50M</b>
+                <div class="eventbutton">
+                    <p class="eventshoptext" id="shop5">20</p>
+                </div>
+            </div>
+            <div class="eventitem"onclick="shop6()">
+                <p class="eventname">CZAPKA ŚWIĄTECZNA</p>
+                <div class="eventimage">
+                    <img src="santa.png" height="150px" width="150px">
+                </div>
+                <div class="eventbutton">
+                    <p class="eventshoptext" id="shop6">20</p>
+                </div>
+            </div>
+            <div class="eventitem"onclick="shop7()">
+                <p class="eventname">10% ZNIŻKI</p>
+                <div class="eventimage">
+                    <img src="sale.png" height="150px" width="150px">
+                </div>
+                <div class="eventbutton">
+                    <p class="eventshoptext" id="shop7">20</p>
                 </div>
             </div>
         </div>

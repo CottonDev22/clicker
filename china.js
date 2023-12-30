@@ -15,7 +15,7 @@ function bamboo() {
                 elem.style.width = 0 + "%";
                 elem.innerHTML = 0 + "%";
             }
-            if (wartosci.bamboochatamin <= (0.25*prog) && wartosci.bamboochatamin >=(0.01*prog) ){
+            if (wartosci.bamboochatamin <= (0.1*prog) && wartosci.bamboochatamin >=(0.01*prog) ){
                 elem.style.width = 10 + "%";
                 elem.innerHTML = 10 + "%";
             } else if (wartosci.bamboochatamin > (0.25*prog)&& wartosci.bamboochatamin <(0.5*prog) ) {
@@ -66,7 +66,7 @@ function bamboo() {
         if (wartosci.bamboofarmmin <= wartosci.bamboofarmmax && wartosci.bamboofarm > 1) {
             wartosci.bamboofarmmin = wartosci.bamboofarmmin + 1 + (wartosci.bamboofarm * wartosci.bamboofarm * 150);
 
-                 if (wartosci.bamboofarmmin <= (0.25*prog2) && wartosci.bamboofarmmin >=(0.01*prog2) ){
+                 if (wartosci.bamboofarmmin <= (0.1*prog2) && wartosci.bamboofarmmin >=(0.01*prog2) ){
                     elem2.style.width = 10 + "%";
                     elem2.innerHTML = 10 + "%";
                 } else if (wartosci.bamboofarmmin > (0.25*prog2)&& wartosci.bamboofarmmin <(0.5*prog2) ) {
@@ -114,7 +114,7 @@ function bamboo() {
         if (wartosci.bambootemplemin <= wartosci.bambootemplemax && wartosci.bambootemple > 1) {
             wartosci.bambootemplemin = wartosci.bambootemplemin + 1 + (wartosci.bambootemple * wartosci.bambootemple * 450);
 
-                 if (wartosci.bambootemplemin <= (0.25*prog3) && wartosci.bambootemplemin >=(0.01*prog3) ){
+                 if (wartosci.bambootemplemin <= (0.1*prog3) && wartosci.bambootemplemin >=(0.01*prog3) ){
                     elem3.style.width = 10 + "%";
                     elem3.innerHTML = 10 + "%";
                 } else if (wartosci.bambootemplemin > (0.25*prog3)&& wartosci.bambootemplemin <(0.5*prog3) ) {
@@ -149,11 +149,11 @@ function bamboo() {
             wartosci.bamboo = wartosci.bamboo - (2900 * wartosci.bambootemple * wartosci.bambootemple * 15);
             wartosci.bambootemple = wartosci.bambootemple + 1;
             wartosci.bambootemplemax = (9000 * wartosci.bambootemple * wartosci.bambootemple) * wartosci.bambootemple;
-
-            document.getElementById("chinybambus").innerHTML=abbrNum(wartosci.bamboo,2)
-            document.getElementById("bamboocount3").innerHTML=(wartosci.bambootemple -1) + "/"+"10";
             let elem3 = document.getElementById("greenBar3");
             let prog3 = wartosci.bambootemplemax;
+            document.getElementById("chinybambus").innerHTML=abbrNum(wartosci.bamboo,2)
+            document.getElementById("bamboocount3").innerHTML=(wartosci.bambootemple -1) + "/"+"10";
+
         }
     }
     window.onload = () => {

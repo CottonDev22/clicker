@@ -92,7 +92,7 @@ var wartosci = {
     skolioza:0,
     podlozkiem:0,
     h1lvl:0,
-    h1mnoznik:0,
+    h1mnoznik:1,
     h1zbieracz:0,
 // itd
 //ITEMCOUNTER
@@ -106,6 +106,10 @@ var wartosci = {
     lancucha:1,
     lucky:0,
     autoexp:1,
+    xmascoal:0,
+    xmasrozga:0,
+    xmashat:0,
+    xmassale:0,
 //CHINY
     bambooitem:0,
     bamboochata:1,
@@ -117,6 +121,17 @@ var wartosci = {
     bambootemple:1,
     bambootemplemax:1200,
     bambootemplemin:0,
+//swieta
+    event2chall1:5000,
+    event2chall1a:1,
+    xmascoin:0,
+    eventprogress:0,
+    event2reb:2,
+    event2rebprogress:0,
+    xmasboostcost:20,
+    xmasboost:1,
+    xmaspotion:1,
+    xmasbox1:0,
 };
 //RESET WARTOSCI
 function dupa2() {
@@ -213,7 +228,7 @@ var wartosci = {
     skolioza:0,
     podlozkiem:0,
     h1lvl:0,
-    h1mnoznik:0,
+    h1mnoznik:1,
     h1zbieracz:0,
 // itd
     //ITEMCOUNTER
@@ -227,6 +242,10 @@ var wartosci = {
     lancucha:1,
     lucky:0,
     autoexp:1,
+    xmascoal:0,
+    xmasrozga:0,
+    xmashat:0,
+    xmassale:0,
     //CHINY
     bambooitem:0,
     bamboochata:1,
@@ -238,6 +257,17 @@ var wartosci = {
     bambootemple:1,
     bambootemplemax:1200,
     bambootemplemin:0,
+    //swieta
+    event2chall1:5000,
+    event2chall1a:1,
+    event2reb:2,
+    event2rebprogress:0,
+    xmascoin:0,
+    eventprogress:0,
+    xmasboostcost:20,
+    xmasboost:1,
+    xmaspotion:1,
+    xmasbox1:0,
 };
 
 localStorage.setItem("gra", JSON.stringify(wartosci));
@@ -245,19 +275,21 @@ localStorage.setItem("gra", JSON.stringify(wartosci));
 
 if (localStorage.getItem("gra") !== null) wartosci = JSON.parse(localStorage.getItem("gra"));
 function dupa3() {
-    wartosci.angry = 0;
-    wartosci.doktor = 0;
-    wartosci.bamboo = 0;
-    wartosci.bambooitem=0;
-    wartosci.bamboochata=1;
-    wartosci.bamboochatamax=60;
-    wartosci.bamboochatamin=0;
-    wartosci.bamboofarmmax=500;
-    wartosci.bamboofarmmin=0;
-    wartosci.bamboofarm=1;
-    wartosci.bambootemple=1;
-    wartosci.bambootemplemax=1200;
-    wartosci.bambootemplemin=0;
+    wartosci.event2chall1 = 5000;
+    wartosci.event2chall1a = 1;
+    wartosci.h1mnoznik=1;
+    wartosci.xmascoin=0;
+    wartosci.eventprogress=0;
+    wartosci.event2reb=2;
+    wartosci.event2rebprogress=0;
+    wartosci.xmasboost=1;
+    wartosci.xmasboostcost=20;
+    wartosci.xmascoal=0;
+    wartosci.xmashat=0;
+    wartosci.xmassale=0;
+    wartosci.xmasrozga=0;
+    wartosci.xmasbox1=0;
+    wartosci.xmaspotion=1;
 }
 function dupa(){  // Button click
     if (wartosci.narzedzia >= 1) document.getElementById("u1").style.backgroundColor = "moccasin";
@@ -296,11 +328,13 @@ var xh = document.getElementById('halloween');
 var xj = document.getElementById('inventory');
 var wchiny = document.getElementById("chiny");
 //FUNKCJA ŁADOWANIA
+let eventbar1 = document.getElementById("eventbar1");
+
 
 //FUNKCJA KLIKNMIEC
 function klikniecia() {
 
-    wartosci.bawelna = wartosci.bawelna +((((1 + wartosci.narzedzia * wartosci.lepszabawelna * (wartosci.nawadnianie * wartosci.szybszeraczki))  * wartosci.resetmnoznik)*wartosci.lancuch)*wartosci.autoexp) ;
+    wartosci.bawelna = wartosci.bawelna +((((((1 + wartosci.narzedzia * wartosci.lepszabawelna * (wartosci.nawadnianie * wartosci.szybszeraczki))*wartosci.xmascoal)*wartosci.xmaspotion)  * (wartosci.xmashat*wartosci.resetmnoznik))*wartosci.lancuch)*wartosci.autoexp) ;
     wartosci.wyliczanie = wartosci.bawelna;
     wartosci.exp = wartosci.exp + 1 + wartosci.podwajacz;
 
@@ -317,13 +351,13 @@ document.getElementById("progres").setAttribute("value", wartosci.exp);
     document.getElementById("bawelna").innerHTML = abbrNum(wartosci.bawelna,2);
             zd.style.height = '52px';
             zd.style.width = '52px';
-            
+document.getElementById("challtext2").innerHTML=abbrNum(wartosci.event2rebprogress,2) + "/" + abbrNum(wartosci.event2reb,2);
+wartosci.eventprogress = wartosci.eventprogress +((((((1 + wartosci.narzedzia * wartosci.lepszabawelna * (wartosci.nawadnianie * wartosci.szybszeraczki))*wartosci.xmascoal)*wartosci.xmaspotion)  * wartosci.resetmnoznik)*wartosci.lancuch)*wartosci.autoexp) ;
 //HALLOWEEN EVENT DODAWANIE CUKIERKOW
 if (wartosci.h1lvl == 1) document.getElementById("h1cena4").innerHTML="X";
 if (wartosci.h1zyrandolup == 1) document.getElementById("h1cena8").innerHTML="X";
 if (wartosci.h1zbieracz == 1) document.getElementById("h1cena9").innerHTML="X";
-document.getElementById("h1cena7").innerHTML=abbrNum(700 * (1+((wartosci.h1mnoznik*5)* wartosci.h1mnoznik)),2);
-document.getElementById("h1cena5").innerHTML=abbrNum(250 * (1+((wartosci.h1mnoznik*10)* wartosci.h1mnoznik)),2);
+
 
 if (wartosci.h1mnoznik > 33) document.getElementById("h1cena5").innerHTML="X";
 wartosci.candy = wartosci.candy + (1 * (1+(wartosci.h1mnoznik * wartosci.h1mnoznik * 3)))*wartosci.h1zyrandol;
@@ -331,7 +365,8 @@ document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
 document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
             document.getElementById('rebirty').innerHTML = wartosci.resetv;
             document.getElementById('rst1').innerHTML = "KOSZT: " + abbrNum((25000 * wartosci.kosztreset),2);
-            document.getElementById('zbziarna').innerHTML = wartosci.ziarenka;
+            document.getElementById('zbziarna').innerHTML = abbrNum(wartosci.ziarenka,2);
+            document.getElementById('eventvalue').innerHTML = abbrNum(wartosci.xmascoin,1);
             document.getElementById("bezrak").innerHTML = abbrNum(wartosci.murzynbezrak,1);
             document.getElementById("zlotyczern").innerHTML = abbrNum(wartosci.zlotymurzyn,1);
             document.getElementById("MJ").innerHTML = abbrNum(wartosci.platynowymurzyn,1);
@@ -389,9 +424,46 @@ document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wart
             //budynek7
             document.getElementById("licz13").innerHTML = abbrNum(25000000*(1 + wartosci.build7) * (1 + wartosci.licz7),2);
             document.getElementById("licz14").innerHTML = abbrNum(wartosci.licz7,1);
+            if (wartosci.eventprogress >= wartosci.event2chall1) {
+                wartosci.eventprogress = 0;
+                wartosci.xmascoin = wartosci.xmascoin + ((2*wartosci.event2chall1a)*wartosci.xmasboost);
+                wartosci.event2chall1a = wartosci.event2chall1a * 3;
+                wartosci.event2chall1 = wartosci.event2chall1 * wartosci.event2chall1a ;
 
-
+                eventbar1.style.width = 0 + "%";
+                eventbar1.innerHTML = 0 + "%";
+            }
+            if (wartosci.eventprogress <= (0.1*wartosci.event2chall1)){
+                eventbar1.style.width = 10 + "%";
+                eventbar1.innerHTML = 10 + "%";
+            } 
+             else if (wartosci.eventprogress <= (0.25*wartosci.event2chall1)) {
+                eventbar1.style.width = 25 + "%";
+                eventbar1.innerHTML = 25 + "%";
+            }  else if (wartosci.eventprogress <= (0.5*wartosci.event2chall1)) {
+                eventbar1.style.width = 50 + "%";
+                eventbar1.innerHTML = 50 + "%";
+            } else if (wartosci.eventprogress <= (0.75*wartosci.event2chall1)) {
+                eventbar1.style.width = 75 + "%";
+                eventbar1.innerHTML = 75 + "%";
+            } else  {
+                eventbar1.style.width = 100 + "%";
+                eventbar1.innerHTML = 100 + "%";
+            } 
+            document.getElementById("challtext1").innerHTML=abbrNum(wartosci.eventprogress,2) + "/" + abbrNum(wartosci.event2chall1,2);
+            document.getElementById("challtext2").innerHTML=abbrNum(wartosci.event2rebprogress,2) + "/" + abbrNum(wartosci.event2reb,2);
+            //EVENT SHOP
+            document.getElementById('shop2').innerHTML = abbrNum(wartosci.xmasboost*wartosci.xmasboostcost,2);
+            document.getElementById('shop1').innerHTML = abbrNum(10*wartosci.xmaspotion,2);
+            document.getElementById('shop3').innerHTML = abbrNum(50000,2);
+            document.getElementById('shop4').innerHTML = abbrNum(200,2);
+            document.getElementById('shop5').innerHTML = abbrNum(700,2);
+            document.getElementById('shop6').innerHTML = abbrNum(5000,2);
+            document.getElementById('shop7').innerHTML = abbrNum(25000,2);
         }
+
+
+
 function reset() {
     if (wartosci.bawelna >= 25000 * wartosci.kosztreset) {
         wartosci.bawelna = 0;
@@ -445,6 +517,33 @@ function reset() {
     l.style.display = 'none';
     la.style.display = 'none';
     lb.style.display = 'none';
+  wartosci.event2rebprogress=wartosci.event2rebprogress +1;
+    if (wartosci.event2rebprogress >= wartosci.event2reb) {
+        wartosci.event2rebprogress = 0;
+        wartosci.xmascoin = wartosci.xmascoin + ((5*wartosci.event2reb)*wartosci.xmasboost);
+        wartosci.event2reb = wartosci.event2reb * 2;
+
+        eventbar2.style.width = 0 + "%";
+        eventbar2.innerHTML = 0 + "%";
+    }
+    if (wartosci.event2rebprogress <= (0.1*wartosci.event2reb)){
+        eventbar2.style.width = 10 + "%";
+        eventbar2.innerHTML = 10 + "%";
+    } 
+     else if (wartosci.event2rebprogress <= (0.25*wartosci.event2reb)) {
+        eventbar2.style.width = 25 + "%";
+        eventbar2.innerHTML = 25 + "%";
+    }  else if (wartosci.event2rebprogress <= (0.5*wartosci.event2reb)) {
+        eventbar2.style.width = 50 + "%";
+        eventbar2.innerHTML = 50 + "%";
+    } else if (wartosci.event2rebprogress <= (0.75*wartosci.event2reb)) {
+        eventbar2.style.width = 75 + "%";
+        eventbar2.innerHTML = 75 + "%";
+    } else  {
+        eventbar2.style.width = 100 + "%";
+        eventbar2.innerHTML = 100 + "%";
+    } 
+    document.getElementById("challtext2").innerHTML=abbrNum(wartosci.event2rebprogress,2) + "/" + abbrNum(wartosci.event2reb,2);
 }
 }
 function ShowAndHide() {
@@ -459,6 +558,8 @@ function ShowAndHide() {
                 xg.style.display = 'none';
                 xh.style.display = 'none';
                 xj.style.display = 'none';
+                e1.style.display = 'none';
+                e2.style.display = 'none';
             } else {
                 xa.style.display = 'none';
             }
@@ -475,6 +576,8 @@ function ShowAndHide2() {
                 xg.style.display = 'none';
                 xh.style.display = 'none';
                 xj.style.display = 'none';
+                e1.style.display = 'none';
+                e2.style.display = 'none';
             } else {
                 xb.style.display = 'none';
             }
@@ -489,6 +592,8 @@ function ShowAndHide3() {
                 xg.style.display = 'none';
                 xh.style.display = 'none';
                 xj.style.display = 'none';
+                e1.style.display = 'none';
+                e2.style.display = 'none';
             } else {
                 xc.style.display = 'none';
             }
@@ -503,6 +608,8 @@ function ShowAndHide4() {
                 xg.style.display = 'none';
                 xh.style.display = 'none';
                 xj.style.display = 'none';
+                e1.style.display = 'none';
+                e2.style.display = 'none';
             } else {
                 xe.style.display = 'none';
             }
@@ -517,6 +624,8 @@ function ShowAndHide5() {
                     xg.style.display = 'none';
                     xh.style.display = 'none';
                     xj.style.display = 'none';
+                    e1.style.display = 'none';
+                    e2.style.display = 'none';
                 } else {
                     xf.style.display = 'none';
                 }
@@ -531,6 +640,8 @@ function ShowAndHide6() {
                     xf.style.display = 'none';
                     xh.style.display = 'none';
                     xj.style.display = 'none';
+                    e1.style.display = 'none';
+                    e2.style.display = 'none';
                 } else {
                     xg.style.display = 'none';
                 }
@@ -545,6 +656,8 @@ function ShowAndHide7() {
                     xf.style.display = 'none';
                     xg.style.display = 'none';
                     xj.style.display = 'none';
+                    e1.style.display = 'none';
+                    e2.style.display = 'none';
                 } else {
                     xh.style.display = 'none';
                 }
@@ -559,10 +672,30 @@ function ShowAndHide8() {
                     xf.style.display = 'none';
                     xg.style.display = 'none';
                     xh.style.display = 'none';
+                    e1.style.display = 'none';
+                    e2.style.display = 'none';
                 } else {
                     xj.style.display = 'none';
                 }
                 }   
+var e1= document.getElementById('eventchallenge');
+var e2= document.getElementById('eventshop');
+function eventbutton1() {
+                if (e1.style.display == 'none') {
+                    e1.style.display = 'block';
+                    xh.style.display = 'none';
+                    } else {
+                        e1.style.display = 'none';
+                    }
+                    }   
+function eventbutton2() {
+            if (e2.style.display == 'none') {
+                e2.style.display = 'block';
+             xh.style.display = 'none';
+             } else {
+                e2.style.display = 'none';
+                  }
+              }   
 function upnarzedzia1() {
             if (wartosci.narzedzia == 0 && wartosci.bawelna >= 20) {
                 wartosci.bawelna = wartosci.bawelna - 20;
@@ -599,37 +732,37 @@ function upnarzedzia4() {
         wartosci.bawelna = wartosci.bawelna - 100000000;
         wartosci.wyliczanie = wartosci.bawelna;
         document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
-        wartosci.narzedzia = 20;
+        wartosci.narzedzia = 120;
         document.getElementById("u10").style.backgroundColor = "moccasin";
 
     }
 }
 function upnarzedzia5() {
-    if (wartosci.narzedzia == 20 && wartosci.bawelna >= 850000000) {
+    if (wartosci.narzedzia == 120 && wartosci.bawelna >= 850000000) {
         wartosci.bawelna = wartosci.bawelna - 850000000;
         wartosci.wyliczanie = wartosci.bawelna;
         document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
-        wartosci.narzedzia = 40;
+        wartosci.narzedzia = 250;
         document.getElementById("u11").style.backgroundColor = "moccasin";
 
     }
 }
 function upnarzedzia6() {
-    if (wartosci.narzedzia == 40 && wartosci.bawelna >= 5500000000) {
+    if (wartosci.narzedzia == 250 && wartosci.bawelna >= 5500000000) {
         wartosci.bawelna = wartosci.bawelna - 5500000000;
         wartosci.wyliczanie = wartosci.bawelna;
         document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
-        wartosci.narzedzia = 65;
+        wartosci.narzedzia = 400;
         document.getElementById("u12").style.backgroundColor = "moccasin";
 
     }
 }
 function upnarzedzia7() {
-    if (wartosci.narzedzia == 65 && wartosci.bawelna >= 90000000000) {
+    if (wartosci.narzedzia == 400 && wartosci.bawelna >= 90000000000) {
         wartosci.bawelna = wartosci.bawelna - 90000000000;
         wartosci.wyliczanie = wartosci.bawelna;
         document.getElementById("bawelna").innerHTML = abbrNum(wartosci.wyliczanie, 2);
-        wartosci.narzedzia = 80;
+        wartosci.narzedzia = 1200;
         document.getElementById("u13").style.backgroundColor = "moccasin";
 
     }
@@ -1116,7 +1249,7 @@ document.getElementById("progres").setAttribute("value", wartosci.exp);
 function budynek0() {
     for (var i = 0; i <= 100; i++) {
         if (wartosci.bawelna >=100 * (1 + wartosci.build0) * (1 + wartosci.licz0) && wartosci.licz0 < 2001) {
-            wartosci.bawelna = wartosci.bawelna - 100 * (1 + wartosci.build0) * (1 + wartosci.licz0);
+            wartosci.bawelna = wartosci.bawelna - (100 * (1 + wartosci.build0) * (1 + wartosci.licz0)*wartosci.xmassale);
             wartosci.build0 = wartosci.build0 + 1000;
             wartosci.licz0 = wartosci.licz0 + 1;
             wartosci.wyliczanie = wartosci.bawelna;
@@ -1131,7 +1264,7 @@ function budynek0() {
 function budynek1() {
     for (var i = 0; i <= 100; i++) {
     if (wartosci.bawelna >=1000 * (1 + wartosci.build1) * (1 + wartosci.licz1) && wartosci.licz1 < 2001) {
-        wartosci.bawelna = wartosci.bawelna - 1000 * (1 + wartosci.build1) * (1 + wartosci.licz1);
+        wartosci.bawelna = wartosci.bawelna - (1000 * (1 + wartosci.build1) * (1 + wartosci.licz1)*wartosci.xmassale);
         wartosci.build1 = wartosci.build1 + 8;
         wartosci.licz1 = wartosci.licz1 + 1;
         wartosci.wyliczanie = wartosci.bawelna;
@@ -1145,7 +1278,7 @@ function budynek1() {
 function budynek2() {
     for (var i = 0; i <= 100; i++) {
     if (wartosci.bawelna >=8000 * (1 + wartosci.build2) * (1 + wartosci.licz2) && wartosci.licz2 < 2001) {
-        wartosci.bawelna = wartosci.bawelna - 8000 * (1 + wartosci.build2) * (1 + wartosci.licz2);
+        wartosci.bawelna = wartosci.bawelna - (8000 * (1 + wartosci.build2) * (1 + wartosci.licz2)*wartosci.xmassale);
         wartosci.build2 = wartosci.build2 + 35;
         wartosci.licz2 = wartosci.licz2 + 1;
         wartosci.wyliczanie = wartosci.bawelna;
@@ -1159,7 +1292,7 @@ function budynek2() {
 function budynek3() {
     for (var i = 0; i <= 100; i++) {
     if (wartosci.bawelna >=25000 * (1 + wartosci.build3) * (1 + wartosci.licz3) && wartosci.licz3 < 2001) {
-        wartosci.bawelna = wartosci.bawelna - 25000 * (1 + wartosci.build3) * (1 + wartosci.licz3);
+        wartosci.bawelna = wartosci.bawelna - (25000 * (1 + wartosci.build3) * (1 + wartosci.licz3)*wartosci.xmassale);
         wartosci.build3 = wartosci.build3 + 140;
         wartosci.licz3 = wartosci.licz3 + 1;
         wartosci.wyliczanie = wartosci.bawelna;
@@ -1173,7 +1306,7 @@ function budynek3() {
 function budynek4() {
     for (var i = 0; i <= 100; i++) {
     if (wartosci.bawelna >=180000 * (1 + wartosci.build4) * (1 + wartosci.licz4) && wartosci.licz4 < 2001) {
-        wartosci.bawelna = wartosci.bawelna - 180000 * (1 + wartosci.build4) * (1 + wartosci.licz4);
+        wartosci.bawelna = wartosci.bawelna - (180000 * (1 + wartosci.build4) * (1 + wartosci.licz4)*wartosci.xmassale);
         wartosci.build4 = wartosci.build4 + 350;
         wartosci.licz4 = wartosci.licz4 + 1;
         wartosci.wyliczanie = wartosci.bawelna;
@@ -1187,7 +1320,7 @@ function budynek4() {
 function budynek5() {
     for (var i = 0; i <= 100; i++) {
     if (wartosci.bawelna >=520000 * (1 + wartosci.build5) * (1 + wartosci.licz5) && wartosci.licz5 < 2001) {
-        wartosci.bawelna = wartosci.bawelna - 520000 * (1 + wartosci.build5) * (1 + wartosci.licz5);
+        wartosci.bawelna = wartosci.bawelna - (520000 * (1 + wartosci.build5) * (1 + wartosci.licz5)*wartosci.xmassale);
         wartosci.build5 = wartosci.build5 + 800;
         wartosci.licz5 = wartosci.licz5 + 1;
         wartosci.wyliczanie = wartosci.bawelna;
@@ -1201,7 +1334,7 @@ function budynek5() {
 function budynek6() {
     for (var i = 0; i <= 100; i++) {
     if (wartosci.bawelna >=1200000 * (1 + wartosci.build6) * (1 + wartosci.licz6) && wartosci.licz6 < 2001) {
-        wartosci.bawelna = wartosci.bawelna - 1200000 * (1 + wartosci.build6) * (1 + wartosci.licz6);
+        wartosci.bawelna = wartosci.bawelna - (1200000 * (1 + wartosci.build6) * (1 + wartosci.licz6)*wartosci.xmassale);
         wartosci.build6 = wartosci.build6 + 2500;
         wartosci.licz6 = wartosci.licz6 + 1;
         wartosci.wyliczanie = wartosci.bawelna;
@@ -1255,190 +1388,11 @@ function potrojenie() {
     potrojnyxp();
 }
 //HALLOWEEEEEN
-function halloween1() {
-    if (wartosci.candy >= 1000) {
-        wartosci.candy = wartosci.candy - 1000;
-        document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
-        let essa = Math.floor((Math.random() * 1000) + 1);
-        if (essa <= 450) {
-            document.getElementById("informacja2").innerHTML =  "dropnięto: pocięta afroamerykanka halloween";
-            wartosci.maska = wartosci.maska + 1;
-            document.getElementById("h1common").innerHTML =abbrNum(wartosci.maska,1);
-            wartosci.h1 = 1;
 
-        } else if (essa<=750 && essa >= 451) {
-            document.getElementById("informacja2").innerHTML =  "dropnięto: opętana agnieszka";
-            wartosci.zombie= wartosci.zombie + 1;
-            document.getElementById("h1uncommon").innerHTML =abbrNum(wartosci.zombie,1);
-            wartosci.h1 = 1;
+//
+//SWIATECZNYEVENT
 
-        } else if (essa <= 870 && essa >= 751) {
-            document.getElementById("informacja2").innerHTML = "dropnięto: opium z halloween";
-            wartosci.opiumhalloween = wartosci.opiumhalloween + 1;
-            document.getElementById("h1rare").innerHTML =abbrNum(wartosci.opiumhalloween,1);
-            wartosci.h1 = 1;
-        } else if (essa <= 950 && essa >= 871) {
-            document.getElementById("informacja2").innerHTML = "dropnięto: straszny maras";
-            wartosci.marasskeleton = wartosci.marasskeleton + 1;
-            document.getElementById("h1epic").innerHTML =abbrNum(wartosci.marasskeleton,1);
-            wartosci.h1 = 1;
-        } else if (essa <= 999 && essa >= 951) {
-            document.getElementById("informacja2").innerHTML = "dropnięto: elegancki strach na wróble";
-            wartosci.strasznaczapka = wartosci.strasznaczapka + 1;
-            document.getElementById("h1legendary").innerHTML =abbrNum(wartosci.strasznaczapka,1);
-            wartosci.h1 = 1;
-        } else if (essa == 1000) {
-            document.getElementById("informacja2").innerHTML = "dropnięto: ptak w motywie halloween";
-            wartosci.gargoyle = wartosci.gargoyle + 1;
-            document.getElementById("h1special").innerHTML =abbrNum(wartosci.gargoyle,1);
-            wartosci.h1 = 1;
-        }
-    }
-    else {
-        document.getElementById("informacja1").innerHTML = "brak klucza";
-        document.getElementById("info").src="";
-    }
-
-    }
-    function halloween1a() {
-        if (wartosci.candy >= 250000) {
-            wartosci.candy = wartosci.candy - 250000;
-            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
-            let essa = Math.floor((Math.random() * 1000) + 1);
-            if (essa <= 700) {
-                document.getElementById("informacja2").innerHTML =  "dropnięto: ofiara polskich youtuberów";
-                wartosci.chucky = wartosci.chucky+ 1;
-                document.getElementById("chucky").innerHTML =abbrNum(wartosci.chucky,1);
-                wartosci.h1 = 1;
-    
-            } else if (essa<=850 && essa >= 701) {
-                document.getElementById("informacja2").innerHTML =  "dropnięto: zakonnica z nożem w prawej ręce";
-                wartosci.demencja= wartosci.demencja + 1;
-                document.getElementById("demencja").innerHTML =abbrNum(wartosci.demencja,1);
-                wartosci.h1 = 1;
-    
-            } else if (essa <= 950 && essa >= 851) {
-                document.getElementById("informacja2").innerHTML = "dropnięto: Elegancka Piła";
-                wartosci.elegancki = wartosci.elegancki + 1;
-                document.getElementById("elegancki").innerHTML =abbrNum(wartosci.elegancki,1);
-                wartosci.h1 = 1;
-            } else if (essa <= 998 && essa >= 951) {
-                document.getElementById("informacja2").innerHTML = "dropnięto: Wujas po weselu";
-                wartosci.white2115 = wartosci.white2115 + 1;
-                document.getElementById("white2115").innerHTML =abbrNum(wartosci.white2115,1);
-                wartosci.h1 = 1;
-            } else if (essa ==999) {
-                document.getElementById("informacja2").innerHTML = "dropnięto: Przerzuty cukierek skolioza";
-                wartosci.skolioza = wartosci.skolioza + 1;
-                document.getElementById("skolioza").innerHTML =abbrNum(wartosci.skolioza,1);
-                wartosci.h1 = 1;
-            } else if (essa == 1000) {
-                document.getElementById("informacja2").innerHTML = "dropnięto: Ten gość znajduje się pod łózkiem twojego dziecka";
-                wartosci.podlozkiem = wartosci.podlozkiem + 1;
-                document.getElementById("podlozkiem").innerHTML =abbrNum(wartosci.podlozkiem,1);
-                wartosci.h1 = 1;
-            }
-        }
-        else {
-            document.getElementById("informacja2").innerHTML = "mordo chyba nie ma cukierkow";
-            document.getElementById("info").src="";
-        }
-    
-        }
-    function halloween2() {
-        if (wartosci.candy >=10000000000) {
-            wartosci.candy = wartosci.candy - 10000000000;
-            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
-            wartosci.jigsaw = wartosci.jigsaw + 1;
-            document.getElementById("h1secret").innerHTML=abbrNum(wartosci.jigsaw,1);
-        }
-    }
-    function halloween3() {
-        if (wartosci.candy >=1000000) { 
-            wartosci.candy = wartosci.candy - 1000000;
-            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
-
-        wartosci.exp = wartosci.exp + 500;
-        if (wartosci.exp >= 1000 * (wartosci.lvl*1.7)) {
-            wartosci.lvl = wartosci.lvl + 1;
-            wartosci.exp = 0;
-            wartosci.ziarenka = wartosci.ziarenka + (wartosci.lvl *3);
-        }
-
-        document.getElementById('xp').innerHTML = abbrNum(wartosci.exp,2) + " / " +  abbrNum(1000 * (wartosci.lvl*1.7), 2);
-        document.getElementById('lvltekst').innerHTML = wartosci.lvl;
-        document.getElementById("progres").setAttribute("max", ((1.7 *wartosci.lvl) * 1000));
-    document.getElementById("progres").setAttribute("value", wartosci.exp);
-        }
-    }    
-    function halloween4() {
-        if (wartosci.candy >=100000000 && wartosci.h1lvl == 0) { 
-            wartosci.h1lvl = 1;
-            wartosci.candy = wartosci.candy - 100000000;
-            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
-            wartosci.lvl = wartosci.lvl + 1;
-            wartosci.exp = 0;
-            wartosci.ziarenka = wartosci.ziarenka + (wartosci.lvl *3);
-
-            document.getElementById("h1cena4").innerHTML="X";
-        document.getElementById('xp').innerHTML = abbrNum(wartosci.exp,2) + " / " +  abbrNum(1000 * (wartosci.lvl*1.7), 2);
-        document.getElementById('lvltekst').innerHTML = wartosci.lvl;
-        document.getElementById("progres").setAttribute("max", ((1.7 *wartosci.lvl) * 1000));
-    document.getElementById("progres").setAttribute("value", wartosci.exp);
-        }
-    }
-    function halloween5() {
-        if (wartosci.candy >=250 * (1+((wartosci.h1mnoznik*10) * wartosci.h1mnoznik)) && wartosci.h1mnoznik < 34) { 
-            wartosci.candy = wartosci.candy - 250 * (1+((wartosci.h1mnoznik*10)* wartosci.h1mnoznik));
-            wartosci.h1mnoznik = wartosci.h1mnoznik + 3;
-
-            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
-
-
-            document.getElementById("h1cena5").innerHTML=abbrNum(250 * (1+((wartosci.h1mnoznik*10) * wartosci.h1mnoznik)),2);
-
-        }
-    }
-    function halloween6() {
-        if (wartosci.candy >=5000) {
-            wartosci.candy = wartosci.candy - 5000;
-            wartosci.ziarenka = wartosci.ziarenka + 2;
-            
-            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
-            
-            document.getElementById("zbziarna").innerHTML=abbrNum(wartosci.ziarenka,2);
-        }
-    }
-    function halloween7() {
-        if (wartosci.candy >=700 * (1+((wartosci.h1mnoznik*5) * wartosci.h1mnoznik)) && wartosci.h1mnoznik >= 34 && wartosci.h1mnoznik <250) { 
-            wartosci.candy = wartosci.candy - 700 * (1+((wartosci.h1mnoznik*5)* wartosci.h1mnoznik));
-            wartosci.h1mnoznik = wartosci.h1mnoznik + 10;
-
-            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
-
-
-            document.getElementById("h1cena7").innerHTML=abbrNum(700 * (1+((wartosci.h1mnoznik*5) * wartosci.h1mnoznik)),2);
-
-        }
-    }
-    
-    function halloween8() {
-        if (wartosci.candy >=100000 && wartosci.h1zyrandolup < 1) {
-            wartosci.candy = wartosci.candy - 100000;
-            wartosci.h1zyrandolup = 1;
-            document.getElementById("h1cena8").innerHTML="X";
-            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
-        }
-    }
-    function halloween9() {
-        if (wartosci.candy >=50000000 && wartosci.h1zbieracz < 1) {
-            wartosci.candy = wartosci.candy - 50000000;
-            wartosci.h1zbieracz = 1;
-            document.getElementById("h1cena9").innerHTML="X";
-            document.getElementById("candy").innerHTML=abbrNum(wartosci.candy,2);
-            
-        }
-    }
+//
     function h1zbieranie() {
         if (wartosci.h1zbieracz>=1) {
             wartosci.candy = wartosci.candy + (1 * (1+(wartosci.h1mnoznik * wartosci.h1mnoznik * 3)))*wartosci.h1zyrandol;
@@ -1559,6 +1513,70 @@ function halloween1() {
 
         }
     }
+    function itemcountdodaj6() {
+        if (wartosci.itemcount < wartosci.itemcountmax && wartosci.xmascoal == 1) {
+            wartosci.itemcount = wartosci.itemcount + 1;
+            wartosci.xmascoal = 1.1;
+            document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
+
+        }
+    }
+    function itemcountusun6() {
+        if (wartosci.xmascoal == 1.1) {
+            wartosci.itemcount = wartosci.itemcount - 1;
+            wartosci.xmascoal = 1;
+            document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
+
+        }
+    }
+    function itemcountdodaj7() {
+        if (wartosci.itemcount < wartosci.itemcountmax && wartosci.xmasrozga == 1) {
+            wartosci.itemcount = wartosci.itemcount + 1;
+            wartosci.xmasrozga = 1.02;
+            document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
+
+        }
+    }
+    function itemcountusun7() {
+        if (wartosci.xmasrozga == 1.02) {
+            wartosci.itemcount = wartosci.itemcount - 1;
+            wartosci.xmasrozga = 1;
+            document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
+
+        }
+    }
+    function itemcountdodaj8() {
+        if (wartosci.itemcount < wartosci.itemcountmax && wartosci.xmashat == 1) {
+            wartosci.itemcount = wartosci.itemcount + 1;
+            wartosci.xmashat = 2;
+            document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
+
+        }
+    }
+    function itemcountusun8() {
+        if (wartosci.xmashat == 2) {
+            wartosci.itemcount = wartosci.itemcount - 1;
+            wartosci.xmashat = 1;
+            document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
+
+        }
+    }
+    function itemcountdodaj9() {
+        if (wartosci.itemcount < wartosci.itemcountmax && wartosci.xmassale == 1) {
+            wartosci.itemcount = wartosci.itemcount + 1;
+            wartosci.xmassale = 0.9;
+            document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
+
+        }
+    }
+    function itemcountusun9() {
+        if (wartosci.xmassale == 0.9) {
+            wartosci.itemcount = wartosci.itemcount - 1;
+            wartosci.xmassale = 1;
+            document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
+
+        }
+    }
     function item5exp() {
         if (wartosci.autoexp==0.9) {
             wartosci.exp = wartosci.exp + 1 + wartosci.podwajacz;
@@ -1580,7 +1598,7 @@ function halloween1() {
     item5exp();
     function common() {
         if (wartosci.common>=1) {
-            wartosci.bawelna = wartosci.bawelna + (15 * (wartosci.murzynbezrak + wartosci.gigner + wartosci.blm + wartosci.farm1 + wartosci.golem + wartosci.farm2)*wartosci.patyka);
+            wartosci.bawelna = wartosci.bawelna + ((15 * (wartosci.murzynbezrak + wartosci.gigner + wartosci.blm + wartosci.farm1 + wartosci.golem + wartosci.farm2)*wartosci.patyka)*wartosci.xmasrozga);
             wartosci.wyliczanie = wartosci.bawelna;
             wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
     document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
@@ -1592,7 +1610,7 @@ function halloween1() {
     
     function uncommon() {
         if (wartosci.uncommon>=1) {
-            wartosci.bawelna = wartosci.bawelna + (55 * (wartosci.floyd+ wartosci.giant + wartosci.bodypositive)*wartosci.patyka);
+            wartosci.bawelna = wartosci.bawelna + ((55 * (wartosci.floyd+ wartosci.giant + wartosci.bodypositive)*wartosci.patyka)*wartosci.xmasrozga);
             wartosci.wyliczanie = wartosci.bawelna;
             wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
     document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
@@ -1604,7 +1622,7 @@ function halloween1() {
     
     function rare() {
         if (wartosci.rare>=1) {
-            wartosci.bawelna = wartosci.bawelna + (180 * (wartosci.will + wartosci.stopracism)*wartosci.patyka);
+            wartosci.bawelna = wartosci.bawelna + ((180 * (wartosci.will + wartosci.stopracism)*wartosci.patyka)*wartosci.xmasrozga);
             wartosci.wyliczanie = wartosci.bawelna;
             wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
     document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
@@ -1616,7 +1634,7 @@ function halloween1() {
     
     function epic() {
         if (wartosci.epic>=1) {
-            wartosci.bawelna = wartosci.bawelna + (650 * (wartosci.zlotymurzyn + wartosci.platynowymurzyn)*wartosci.patyka);
+            wartosci.bawelna = wartosci.bawelna + ((650 * (wartosci.zlotymurzyn + wartosci.platynowymurzyn)*wartosci.patyka)*wartosci.xmasrozga);
             wartosci.wyliczanie = wartosci.bawelna;
             wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
     document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
@@ -1628,7 +1646,7 @@ function halloween1() {
     
     function legendary() {
         if (wartosci.legendary>=1) {
-            wartosci.bawelna = wartosci.bawelna + (2350 * (wartosci.znikawnocy + wartosci.rudyzyd)*wartosci.patyka);
+            wartosci.bawelna = wartosci.bawelna + ((2350 * (wartosci.znikawnocy + wartosci.rudyzyd)*wartosci.patyka)*wartosci.xmasrozga);
             wartosci.wyliczanie = wartosci.bawelna;
             wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
     document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
@@ -1640,7 +1658,7 @@ function halloween1() {
     
     function special() {
         if (wartosci.special>=1) {
-            wartosci.bawelna = wartosci.bawelna + (12000 * (wartosci.obama + wartosci.vtbg)*wartosci.patyka);
+            wartosci.bawelna = wartosci.bawelna + ((12000 * (wartosci.obama + wartosci.vtbg)*wartosci.patyka)*wartosci.xmasrozga);
             wartosci.wyliczanie = wartosci.bawelna;
             wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
     document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
@@ -1652,7 +1670,7 @@ function halloween1() {
     
     function halloween() {
         if (wartosci.h1>=1) {
-            wartosci.bawelna = wartosci.bawelna + (12 * (wartosci.maska + (50*wartosci.zombie) + (130*wartosci.opiumhalloween)+(240*wartosci.marasskeleton)+(800*wartosci.strasznaczapka)+(15000*wartosci.gargoyle)+(75000*wartosci.jigsaw)+(10*wartosci.chucky)+(75*wartosci.demencja)+(120*wartosci.elegancki)+(200*wartosci.white2115)+(6000*wartosci.skolioza)+(6000*wartosci.podlozkiem))*wartosci.patyka);
+            wartosci.bawelna = wartosci.bawelna + ((12 * (wartosci.maska + (50*wartosci.zombie) + (130*wartosci.opiumhalloween)+(240*wartosci.marasskeleton)+(800*wartosci.strasznaczapka)+(15000*wartosci.gargoyle)+(75000*wartosci.jigsaw)+(10*wartosci.chucky)+(75*wartosci.demencja)+(120*wartosci.elegancki)+(200*wartosci.white2115)+(6000*wartosci.skolioza)+(6000*wartosci.podlozkiem))*wartosci.patyka)*wartosci.xmasrozga);
             wartosci.wyliczanie = wartosci.bawelna;
             wartosci.wyliczanie = abbrNum(wartosci.wyliczanie, 2);
     document.getElementById("bawelna").innerHTML = wartosci.wyliczanie;
@@ -1661,4 +1679,62 @@ function halloween1() {
     
     setInterval(halloween, wartosci.th);
     halloween();
-    
+    //EVENT//
+    function shop1() {
+        if (wartosci.xmascoin>=(10*wartosci.xmaspotion) && wartosci.xmaspotion < 100) {
+            wartosci.xmascoin = wartosci.xmascoin - (10*wartosci.xmaspotion);
+            wartosci.xmaspotion= wartosci.xmaspotion + 1;
+            document.getElementById('eventvalue').innerHTML = abbrNum(wartosci.xmascoin,2);
+                document.getElementById('shop1').innerHTML = abbrNum(10*wartosci.xmaspotion,2);
+        }
+    }
+    function shop2() {
+        if (wartosci.xmascoin>=(wartosci.xmasboost*wartosci.xmasboostcost) && wartosci.xmasboost < 4000) {
+            wartosci.xmascoin = wartosci.xmascoin - (wartosci.xmasboost*wartosci.xmasboostcost);
+            wartosci.xmasboost= wartosci.xmasboost + 1;
+            wartosci.xmasboostcost = wartosci.xmasboostcost + wartosci.xmasboostcost;
+            document.getElementById('eventvalue').innerHTML = abbrNum(wartosci.xmascoin,2);
+            document.getElementById('shop2').innerHTML = abbrNum(wartosci.xmasboost*wartosci.xmasboostcost,2);
+        }
+    }
+    function shop3() {
+        if (wartosci.xmascoin>=(50000) && wartosci.itemcountmax < 5) {
+            wartosci.xmascoin = wartosci.xmascoin - 50000;
+            wartosci.itemcountmax= wartosci.itemcountmax + 1;
+            document.getElementById('eventvalue').innerHTML = abbrNum(wartosci.xmascoin,2);
+            document.getElementById('shop3').innerHTML = abbrNum(50000,2);
+        }
+    }
+    function shop4() {
+        if (wartosci.xmascoin>=(200) && wartosci.xmascoal < 1) {
+            wartosci.xmascoin = wartosci.xmascoin - 200;
+            wartosci.xmascoal= wartosci.xmascoal + 1;
+            document.getElementById('eventvalue').innerHTML = abbrNum(wartosci.xmascoin,2);
+            document.getElementById('shop4').innerHTML = abbrNum(200,2);
+        }
+    }
+    function shop5() {
+        if (wartosci.xmascoin>=(700) && wartosci.xmasrozga < 1) {
+            wartosci.xmascoin = wartosci.xmascoin - 700;
+            wartosci.xmasrozga= wartosci.xmasrozga + 1;
+            document.getElementById('eventvalue').innerHTML = abbrNum(wartosci.xmascoin,2);
+            document.getElementById('shop5').innerHTML = abbrNum(700,2);
+        }
+    }
+    function shop6() {
+        if (wartosci.xmascoin>=(5000) && wartosci.xmashat < 1) {
+            wartosci.xmascoin = wartosci.xmascoin - 700;
+            wartosci.xmashat =wartosci.xmashat + 1;
+            document.getElementById('eventvalue').innerHTML = abbrNum(wartosci.xmascoin,2);
+            document.getElementById('shop6').innerHTML = abbrNum(5000,2);
+        }
+    }
+    function shop7() {
+        if (wartosci.xmascoin>=(25000) && wartosci.xmassale < 1) {
+            wartosci.xmascoin = wartosci.xmascoin - 700;
+            wartosci.xmassale =wartosci.xmassale + 1;
+            document.getElementById('eventvalue').innerHTML = abbrNum(wartosci.xmascoin,2);
+            document.getElementById('shop7').innerHTML = abbrNum(25000,2);
+        }
+    }
+
