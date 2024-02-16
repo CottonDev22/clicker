@@ -106,10 +106,14 @@ var wartosci = {
     lancucha:1,
     lucky:0,
     autoexp:1,
-    xmascoal:0,
-    xmasrozga:0,
-    xmashat:0,
-    xmassale:0,
+    xmascoal:1,
+    xmascoala:0,
+    xmasrozga:1,
+    xmasrozgaa:1,
+    xmashat:1,
+    xmashata:1,
+    xmassale:1,
+    xmassalea:1,
 //CHINY
     bambooitem:0,
     bamboochata:1,
@@ -242,10 +246,14 @@ var wartosci = {
     lancucha:1,
     lucky:0,
     autoexp:1,
-    xmascoal:0,
-    xmasrozga:0,
-    xmashat:0,
-    xmassale:0,
+    xmascoal:1,
+    xmascoala:0,
+    xmasrozga:1,
+    xmasrozgaa:1,
+    xmashat:1,
+    xmashata:1,
+    xmassale:1,
+    xmassalea:1,
     //CHINY
     bambooitem:0,
     bamboochata:1,
@@ -284,12 +292,18 @@ function dupa3() {
     wartosci.event2rebprogress=0;
     wartosci.xmasboost=1;
     wartosci.xmasboostcost=20;
-    wartosci.xmascoal=0;
-    wartosci.xmashat=0;
-    wartosci.xmassale=0;
-    wartosci.xmasrozga=0;
-    wartosci.xmasbox1=0;
+    wartosci.xmascoal=1;
+    wartosci.xmascoala=1;
+    wartosci.xmashat=1;
+    wartosci.xmashata=1;
+    wartosci.xmassale=1;
+    wartosci.xmassalea=1;
+    wartosci.xmasrozga=1;
+    wartosci.xmasrozgaa=1;
+    wartosci.xmasbox1=1;
+    wartosci.xmasbox1a=1;
     wartosci.xmaspotion=1;
+    wartosci.xmaspotiona=1;
 }
 function dupa(){  // Button click
     if (wartosci.narzedzia >= 1) document.getElementById("u1").style.backgroundColor = "moccasin";
@@ -1514,7 +1528,7 @@ function potrojenie() {
         }
     }
     function itemcountdodaj6() {
-        if (wartosci.itemcount < wartosci.itemcountmax && wartosci.xmascoal == 1) {
+        if (wartosci.itemcount < wartosci.itemcountmax && wartosci.xmascoala == 2 && wartosci.xmascoal==1) {
             wartosci.itemcount = wartosci.itemcount + 1;
             wartosci.xmascoal = 1.1;
             document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
@@ -1530,7 +1544,7 @@ function potrojenie() {
         }
     }
     function itemcountdodaj7() {
-        if (wartosci.itemcount < wartosci.itemcountmax && wartosci.xmasrozga == 1) {
+        if (wartosci.itemcount < wartosci.itemcountmax && wartosci.xmasrozgaa == 2 && wartosci.xmasrozga ==1) {
             wartosci.itemcount = wartosci.itemcount + 1;
             wartosci.xmasrozga = 1.02;
             document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
@@ -1546,7 +1560,7 @@ function potrojenie() {
         }
     }
     function itemcountdodaj8() {
-        if (wartosci.itemcount < wartosci.itemcountmax && wartosci.xmashat == 1) {
+        if (wartosci.itemcount < wartosci.itemcountmax && wartosci.xmashata == 2 && wartosci.xmashat == 1) {
             wartosci.itemcount = wartosci.itemcount + 1;
             wartosci.xmashat = 2;
             document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
@@ -1562,7 +1576,7 @@ function potrojenie() {
         }
     }
     function itemcountdodaj9() {
-        if (wartosci.itemcount < wartosci.itemcountmax && wartosci.xmassale == 1) {
+        if (wartosci.itemcount < wartosci.itemcountmax && wartosci.xmassalea == 2 && wartosci.xmassale == 1) {
             wartosci.itemcount = wartosci.itemcount + 1;
             wartosci.xmassale = 0.9;
             document.getElementById("itemcount").innerHTML=wartosci.itemcount + " / " + wartosci.itemcountmax;
@@ -1706,33 +1720,33 @@ function potrojenie() {
         }
     }
     function shop4() {
-        if (wartosci.xmascoin>=(200) && wartosci.xmascoal < 1) {
+        if (wartosci.xmascoin>=(200) && wartosci.xmascoala <= 1) {
             wartosci.xmascoin = wartosci.xmascoin - 200;
-            wartosci.xmascoal= wartosci.xmascoal + 1;
+            wartosci.xmascoala= wartosci.xmascoala + 1;
             document.getElementById('eventvalue').innerHTML = abbrNum(wartosci.xmascoin,2);
             document.getElementById('shop4').innerHTML = abbrNum(200,2);
         }
     }
     function shop5() {
-        if (wartosci.xmascoin>=(700) && wartosci.xmasrozga < 1) {
+        if (wartosci.xmascoin>=(700) && wartosci.xmasrozgaa <= 1) {
             wartosci.xmascoin = wartosci.xmascoin - 700;
-            wartosci.xmasrozga= wartosci.xmasrozga + 1;
+            wartosci.xmasrozgaa= wartosci.xmasrozgaa + 1;
             document.getElementById('eventvalue').innerHTML = abbrNum(wartosci.xmascoin,2);
             document.getElementById('shop5').innerHTML = abbrNum(700,2);
         }
     }
     function shop6() {
-        if (wartosci.xmascoin>=(5000) && wartosci.xmashat < 1) {
+        if (wartosci.xmascoin>=(5000) && wartosci.xmashata <= 1) {
             wartosci.xmascoin = wartosci.xmascoin - 700;
-            wartosci.xmashat =wartosci.xmashat + 1;
+            wartosci.xmashata =wartosci.xmashata + 1;
             document.getElementById('eventvalue').innerHTML = abbrNum(wartosci.xmascoin,2);
             document.getElementById('shop6').innerHTML = abbrNum(5000,2);
         }
     }
     function shop7() {
-        if (wartosci.xmascoin>=(25000) && wartosci.xmassale < 1) {
+        if (wartosci.xmascoin>=(25000) && wartosci.xmassalea <= 1) {
             wartosci.xmascoin = wartosci.xmascoin - 700;
-            wartosci.xmassale =wartosci.xmassale + 1;
+            wartosci.xmassalea =wartosci.xmassalea + 1;
             document.getElementById('eventvalue').innerHTML = abbrNum(wartosci.xmascoin,2);
             document.getElementById('shop7').innerHTML = abbrNum(25000,2);
         }
